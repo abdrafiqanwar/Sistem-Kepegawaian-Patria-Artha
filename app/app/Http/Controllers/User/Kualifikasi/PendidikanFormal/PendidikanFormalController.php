@@ -14,4 +14,8 @@ class PendidikanFormalController extends Controller
     public function detail(){
         return view('user.kualifikasi.pendidikan-formal.detail');
     }
+
+    public function create(){
+        return view('user.kualifikasi.pendidikan-formal.new');
+    }
 }

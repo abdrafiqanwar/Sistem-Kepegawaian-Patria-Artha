@@ -19,6 +19,12 @@
         <a href="{{ route('user.pendidikan-formal') }}" class="btn p-0">
             <h6>Pendidikan Formal</h6>
         </a>
+
+        <h6 class="pl-2 pr-2">/</h6>
+
+        <a href="" class="btn p-0">
+            <h6>Detail</h6>
+        </a>
     </div>
 @stop
 
