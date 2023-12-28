@@ -49,7 +49,7 @@
                 <tr>
                     <th class="w-25">Jabatan Fungsional</th>
                     <td>Lektor 300.00</td>
-                    <td>Tidak dapat diubah</td>
+                    <td class="text-center">Tidak dapat diubah</td>
                 </tr>
                 <tr>
                     <th class="w-25">Nomor SK</th>
