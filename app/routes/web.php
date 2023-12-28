@@ -74,7 +74,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
     Route::group(['prefix' => 'kualifikasi', 'namespace' => 'Kualifikasi'], function(){
         Route::group(['prefix' => 'pendidikan-formal', 'namespace' => 'PendidikanFormal'], function(){
             Route::get('/', 'PendidikanFormalController@index')->name('user.pendidikan-formal');
-            // Route::get('/detail', 'PendidikanFormalController@detail')->name('user.pendidikan-formal.detail');
+            Route::get('/detail', 'PendidikanFormalController@detail')->name('user.pendidikan-formal.detail');
 
             // Route::get('/create', 'PendidikanFormalController@create')->name('user.pendidikan-formal.create');
 
