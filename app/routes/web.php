@@ -28,24 +28,22 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
 
     Route::group(['prefix' => 'profile', 'namespace' => 'Profile'], function(){
 
-        Route::group(['prefix' => 'data-pribadi'], function(){
-            Route::get('/', 'ProfileController@index')->name('user.data-pribadi');
+        Route::group(['prefix' => 'data-pribadi', 'namespace' => 'DataPribadi'], function(){
+            Route::get('/', 'DataPribadiController@index')->name('user.data-pribadi');
 
-            Route::group(['namespace' => 'DataPribadi'], function(){
-                Route::get('/biodata', 'BiodataController@index')->name('user.biodata');
-    
-                Route::get('/alamat-kontak', 'AlamatController@index')->name('user.alamat-kontak');
-    
-                Route::get('/keluarga', 'KeluargaController@index')->name('user.keluarga');
-    
-                Route::get('/kependudukan', 'KependudukanController@index')->name('user.kependudukan');
-    
-                Route::get('/kepegawaian', 'KepegawaianController@index')->name('user.kepegawaian');
-    
-                Route::get('/bidang-keilmuan', 'KeilmuanController@index')->name('user.bidang-keilmuan');
-                
-                Route::get('/lain', 'LainController@index')->name('user.lain');
-            });
+            Route::get('/biodata', 'BiodataController@index')->name('user.biodata');
+
+            Route::get('/alamat-kontak', 'AlamatController@index')->name('user.alamat-kontak');
+
+            Route::get('/keluarga', 'KeluargaController@index')->name('user.keluarga');
+
+            Route::get('/kependudukan', 'KependudukanController@index')->name('user.kependudukan');
+
+            Route::get('/kepegawaian', 'KepegawaianController@index')->name('user.kepegawaian');
+
+            Route::get('/bidang-keilmuan', 'KeilmuanController@index')->name('user.bidang-keilmuan');
+            
+            Route::get('/lain', 'LainController@index')->name('user.lain');
         });
 
         Route::group(['prefix' => 'inpassing', 'namespace' => 'Inpassing'], function(){
