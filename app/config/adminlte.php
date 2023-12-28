@@ -340,6 +340,11 @@ return [
                     'url'  => 'user/profile/jabatan-fungsional',
                     'icon' => false,
                 ],
+                [
+                    'text' => 'Kepangkatan',
+                    'url'  => 'user/profile/kepangkatan',
+                    'icon' => false,
+                ],
             ],
         ],
         // [
