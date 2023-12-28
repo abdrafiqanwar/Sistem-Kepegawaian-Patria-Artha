@@ -11,6 +11,10 @@ class KepangkatanController extends Controller
         return view('user.profile.kepangkatan');
     }
 
+    public function detail(){
+        return view('user.profile.kepangkatan.detail');
+    }
+
     public function create(){
         return view('user.profile.kepangkatan.new');
     }

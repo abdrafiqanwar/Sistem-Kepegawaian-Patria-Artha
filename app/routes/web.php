@@ -64,6 +64,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
 
         Route::group(['prefix' => 'kepangkatan', 'namespace' => 'Kepangkatan'], function(){
             Route::get('/', 'KepangkatanController@index')->name('user.kepangkatan');
+            Route::get('/detail', 'KepangkatanController@detail')->name('user.kepangkatan.detail');
 
             Route::get('/create', 'KepangkatanController@create')->name('user.kepangkatan.create');
         });
