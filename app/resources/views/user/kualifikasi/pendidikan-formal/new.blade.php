@@ -43,92 +43,92 @@
                 <tr>
                     <th class="w-25">Perguruan Tinggi</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Program Studi</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Gelar Akademik</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Bidang Studi</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tahun Masuk</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tahun Lulus</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tanggal Kelulusan</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Nomor Induk Mahasiswa</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Jumlah Semester Tempuh</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Jumlah SKS Kelulusan</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">IPK Kelulusan</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                         <p class="mb-0 font-italic" style="font-size: 12px">*Masukkan angka menggunakan tanda titik.</p>
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Nomor SK Penyetaraan</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tanggal SK Penyetaraan</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Nomor Ijazah</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Judul Tesis/Disertasi</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
             </table>

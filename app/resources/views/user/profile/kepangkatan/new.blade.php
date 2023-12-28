@@ -44,7 +44,7 @@
                 <tr>
                     <th class="w-25">Golongan/Pangkat</th>
                     <td>
-                        <select class="form-select form-select-sm w-75" aria-label="Small select example">
+                        <select class="form-select form-select-sm w-100" aria-label="Small select example">
                             <option selected>Pilih yang sesuai</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -55,32 +55,32 @@
                 <tr>
                     <th class="w-25">Nomor SK</th>
                     <td>
-                        <input type="text" class="w-75" placeholder="Contoh: 03/PL30/SK/D/2018">
+                        <input type="text" class="w-100" placeholder="Contoh: 03/PL30/SK/D/2018">
                         <p class="mb-0 font-italic" style="font-size: 12px">*Pastikan nomor SK sesuai. Satu SK hanya dapat tersimpan satu kali.</p>
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tanggal SK</th>
                     <td>
-                        <input type="date" class="w-75">
+                        <input type="date" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Terhitung Mulai Tanggal</th>
                     <td>
-                        <input type="date" class="w-75">
+                        <input type="date" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Masa Kerja Golongan (Tahun)</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Masa Kerja Golongan (Bulan)</th>
                     <td>
-                        <input type="text" class="w-75">
+                        <input type="text" class="w-100">
                     </td>
                 </tr>
             </table>
