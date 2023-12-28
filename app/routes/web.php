@@ -78,7 +78,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
 
             Route::get('/create', 'PendidikanFormalController@create')->name('user.pendidikan-formal.create');
 
-            // Route::get('/edit', 'PendidikanFormalController@edit')->name('user.pendidikan-formal.edit');
+            Route::get('/edit', 'PendidikanFormalController@edit')->name('user.pendidikan-formal.edit');
         });
     });
 });

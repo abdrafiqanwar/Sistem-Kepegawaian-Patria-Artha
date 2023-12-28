@@ -73,7 +73,7 @@
                     <td>(Tidak ada data)</td>
                 </tr>
                 <tr>
-                    <th class="w-25">Nomor Induk</th>
+                    <th class="w-25">Nomor Induk Mahasiswa</th>
                     <td>-</td>
                 </tr>
                 <tr>
