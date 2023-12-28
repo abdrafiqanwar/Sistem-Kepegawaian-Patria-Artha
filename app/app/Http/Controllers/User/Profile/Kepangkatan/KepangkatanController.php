@@ -10,4 +10,8 @@ class KepangkatanController extends Controller
     public function index(){
         return view('user.profile.kepangkatan');
     }
+
+    public function create(){
+        return view('user.profile.kepangkatan.new');
+    }
 }
