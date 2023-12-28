@@ -27,7 +27,6 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
     Route::get('/', 'HomeController@index')->name('user.home');
 
     Route::group(['prefix' => 'profile', 'namespace' => 'Profile'], function(){
-
         Route::group(['prefix' => 'data-pribadi', 'namespace' => 'DataPribadi'], function(){
             Route::get('/', 'DataPribadiController@index')->name('user.data-pribadi');
 
@@ -69,6 +68,17 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
             Route::get('/create', 'KepangkatanController@create')->name('user.kepangkatan.create');
 
             Route::get('/edit', 'KepangkatanController@edit')->name('user.kepangkatan.edit');
+        });
+    });
+
+    Route::group(['prefix' => 'kualifikasi', 'namespace' => 'Kualifikasi'], function(){
+        Route::group(['prefix' => 'pendidikan-formal', 'namespace' => 'PendidikanFormal'], function(){
+            Route::get('/', 'PendidikanFormalController@index')->name('user.pendidikan-formal');
+            // Route::get('/detail', 'PendidikanFormalController@detail')->name('user.pendidikan-formal.detail');
+
+            // Route::get('/create', 'PendidikanFormalController@create')->name('user.pendidikan-formal.create');
+
+            // Route::get('/edit', 'PendidikanFormalController@edit')->name('user.pendidikan-formal.edit');
         });
     });
 });

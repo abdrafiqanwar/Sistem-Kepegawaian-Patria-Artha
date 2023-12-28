@@ -347,6 +347,17 @@ return [
                 ],
             ],
         ],
+        [
+            'text' => 'Kualifikasi',
+            'icon' => 'fas fa-fw fa-graduation-cap',
+            'submenu' => [
+                [
+                    'text' => 'Pendidikan Formal',
+                    'url' => 'user/kualifikasi/pendidikan-formal',
+                    'icon' => false,
+                ]
+            ],
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',
