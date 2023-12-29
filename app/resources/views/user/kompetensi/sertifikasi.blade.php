@@ -42,7 +42,7 @@
             <div class="collapse position-absolute mt-2" id="collapseExample">
                 <div class="card p-3">
                     <a href="{{ route('user.sertifikasi.createDosen') }}" class="btn mb-2 font-weight-bold bg-secondary" style="font-size: 14px">Sertifikasi Dosen</a>
-                    <a href="" class="btn font-weight-bold bg-secondary" style="font-size: 14px">Sertifikasi Profesi</a>
+                    <a href="{{ route('user.sertifikasi.createProfesi') }}" class="btn font-weight-bold bg-secondary" style="font-size: 14px">Sertifikasi Profesi</a>
                 </div>
             </div>
             <table class="table mt-2 table-bordered" style="font-size: 14px">

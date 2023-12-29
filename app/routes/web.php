@@ -88,7 +88,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
             // Route::get('/detail', 'SertifikasiController@detail')->name('user.sertifikasi.detail');
 
             Route::get('/create-dosen', 'SertifikasiController@createDosen')->name('user.sertifikasi.createDosen');
-            // Route::get('/createdosen', 'SertifikasiController@createdosen')->name('user.sertifikasi.createdosen');
+            Route::get('/create-profesi', 'SertifikasiController@createProfesi')->name('user.sertifikasi.createProfesi');
 
             // Route::get('/edit', 'SertifikasiController@edit')->name('user.sertifikasi.edit');
         });
