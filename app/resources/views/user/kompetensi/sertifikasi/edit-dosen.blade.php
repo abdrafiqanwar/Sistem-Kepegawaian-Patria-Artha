@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Profile | Kepangkatan')
+@section('title', 'Kompetensi | Sertifikasi')
 
 @section('content_header')
     <div class="d-flex">

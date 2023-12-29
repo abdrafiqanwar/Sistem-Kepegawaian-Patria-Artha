@@ -87,6 +87,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
     Route::group(['prefix' => 'kompetensi', 'namespace' => 'Kompetensi'], function(){
         Route::group(['prefix' => 'sertifikasi', 'namespace' => 'Sertifikasi'], function(){
             Route::get('/', 'SertifikasiController@index')->name('user.sertifikasi');
+            Route::get('/detail-dosen', 'SertifikasiController@detailDosen')->name('user.sertifikasi.detailDosen');
             // Route::get('/detail', 'SertifikasiController@detail')->name('user.sertifikasi.detail');
 
             Route::get('/create-dosen', 'SertifikasiController@createDosen')->name('user.sertifikasi.createDosen');
