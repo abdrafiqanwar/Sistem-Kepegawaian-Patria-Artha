@@ -22,4 +22,8 @@ class SertifikasiController extends Controller
     public function editDosen(){
         return view('user.kompetensi.sertifikasi.edit-dosen');  
     }
+
+    public function editProfesi(){
+        return view('user.kompetensi.sertifikasi.edit-profesi');  
+    }
 }
