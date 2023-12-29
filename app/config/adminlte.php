@@ -358,6 +358,17 @@ return [
                 ]
             ],
         ],
+        [
+            'text' => 'Kompentensi',
+            'icon' => 'fas fa-fw fa-cubes',
+            'submenu' => [
+                [
+                    'text' => 'Sertifikasi',
+                    'url' => 'user/kompetensi/sertifikasi',
+                    'icon' => false,
+                ],
+            ],
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',

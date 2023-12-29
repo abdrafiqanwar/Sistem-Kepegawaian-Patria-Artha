@@ -81,4 +81,15 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
             Route::get('/edit', 'PendidikanFormalController@edit')->name('user.pendidikan-formal.edit');
         });
     });
+
+    Route::group(['prefix' => 'kompetensi', 'namespace' => 'Kompetensi'], function(){
+        Route::group(['prefix' => 'sertifikasi', 'namespace' => 'Sertifikasi'], function(){
+            Route::get('/', 'SertifikasiController@index')->name('user.sertifikasi');
+            // Route::get('/detail', 'SertifikasiController@detail')->name('user.sertifikasi.detail');
+
+            // Route::get('/create', 'SertifikasiController@create')->name('user.sertifikasi.create');
+
+            // Route::get('/edit', 'SertifikasiController@edit')->name('user.sertifikasi.edit');
+        });
+    });
 });
