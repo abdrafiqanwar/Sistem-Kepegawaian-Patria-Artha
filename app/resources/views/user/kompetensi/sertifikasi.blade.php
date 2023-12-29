@@ -32,13 +32,19 @@
             </a>
         </div>
         <div>
-            <a href="" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 14px; fill: white">
+            <a href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 14px; fill: white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
                 Tambah
             </a>
         </div>
 
         <div class="table-responsive">
+            <div class="collapse position-absolute mt-2" id="collapseExample">
+                <div class="card p-3">
+                    <a href="{{ route('user.sertifikasi.createDosen') }}" class="btn mb-2 font-weight-bold bg-secondary" style="font-size: 14px">Sertifikasi Dosen</a>
+                    <a href="" class="btn font-weight-bold bg-secondary" style="font-size: 14px">Sertifikasi Profesi</a>
+                </div>
+            </div>
             <table class="table mt-2 table-bordered" style="font-size: 14px">
                 <tr class="text-center table-active">
                     <th>No.</th>
@@ -77,4 +83,5 @@
 @stop
 
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 @stop

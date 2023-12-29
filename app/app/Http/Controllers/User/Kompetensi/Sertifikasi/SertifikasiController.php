@@ -10,4 +10,8 @@ class SertifikasiController extends Controller
     public function index(){
         return view('user.kompetensi.sertifikasi');
     }
+
+    public function createDosen(){
+        return view('user.kompetensi.sertifikasi.new-dosen');
+    }
 }
