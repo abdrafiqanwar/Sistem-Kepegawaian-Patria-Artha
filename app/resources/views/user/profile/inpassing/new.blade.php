@@ -97,7 +97,7 @@
             </div>
 
             <div class="col border pb-3 pl-0 pr-0" style="font-size: 14px">
-                <p class="bg-secondary p-1 pl-2 font-weight-bold">Dokumen 1</p>
+                <p class="bg-secondary p-1 pl-2 font-weight-bold">Dokumen</p>
                 <div class="pl-2 pr-2">
                     <p class="m-0 font-weight-bold">
                         File
@@ -150,47 +150,40 @@
 
 @section('js')
     <script>
-        let num = 1;
+        let tr = `<div class="row mt-2">
+            <div class="col-lg-4" style="font-size: 12px">
+            </div>
+
+            <div class="col border pb-3 pl-0 pr-0" style="font-size: 14px">
+                <p class="bg-secondary p-1 pl-2 font-weight-bold">Dokumen</p>
+                <div class="pl-2 pr-2">
+                    <p class="m-0 font-weight-bold">
+                        Dokumen Dilampirkan
+                        <svg style="fill: red; padding-bottom: 2px" xmlns="http://www.w3.org/2000/svg" height="8" width="8" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M208 32c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V172.9l122-70.4c15.3-8.8 34.9-3.6 43.7 11.7l16 27.7c8.8 15.3 3.6 34.9-11.7 43.7L352 256l122 70.4c15.3 8.8 20.5 28.4 11.7 43.7l-16 27.7c-8.8 15.3-28.4 20.6-43.7 11.7L304 339.1V480c0 17.7-14.3 32-32 32H240c-17.7 0-32-14.3-32-32V339.1L86 409.6c-15.3 8.8-34.9 3.6-43.7-11.7l-16-27.7c-8.8-15.3-3.6-34.9 11.7-43.7L160 256 38 185.6c-15.3-8.8-20.5-28.4-11.7-43.7l16-27.7C51.1 98.8 70.7 93.6 86 102.4l122 70.4V32z"/></svg>
+                    </p>
+                    <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 5MB)</p>
+                    <input type="file" class="w-100" placeholder="Pilih file">
+                    <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
+                    <input type="text" class="w-100">
+                    <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
+                    <input type="text" class="w-100">
+                    
+                    <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
+                    <select class="form-select w-100 mt-1" aria-label="Small select example">
+                        <option selected>Pilih...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+
+                    <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
+                    <input type="text" class="w-100">
+                </div>
+            </div>
+        </div>`;
 
         $('#tambah').click(() =>{
-            num++;
-            inputRow(num);
-        })
-
-        inputRow = (i) => {
-            let tr = `<div class="row mt-2">
-                <div class="col-lg-4" style="font-size: 12px">
-                </div>
-    
-                <div class="col border pb-3 pl-0 pr-0" style="font-size: 14px">
-                    <p class="bg-secondary p-1 pl-2 font-weight-bold">Dokumen ${num}</p>
-                    <div class="pl-2 pr-2">
-                        <p class="m-0 font-weight-bold">
-                            Dokumen Dilampirkan
-                            <svg style="fill: red; padding-bottom: 2px" xmlns="http://www.w3.org/2000/svg" height="8" width="8" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M208 32c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V172.9l122-70.4c15.3-8.8 34.9-3.6 43.7 11.7l16 27.7c8.8 15.3 3.6 34.9-11.7 43.7L352 256l122 70.4c15.3 8.8 20.5 28.4 11.7 43.7l-16 27.7c-8.8 15.3-28.4 20.6-43.7 11.7L304 339.1V480c0 17.7-14.3 32-32 32H240c-17.7 0-32-14.3-32-32V339.1L86 409.6c-15.3 8.8-34.9 3.6-43.7-11.7l-16-27.7c-8.8-15.3-3.6-34.9 11.7-43.7L160 256 38 185.6c-15.3-8.8-20.5-28.4-11.7-43.7l16-27.7C51.1 98.8 70.7 93.6 86 102.4l122 70.4V32z"/></svg>
-                        </p>
-                        <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 5MB)</p>
-                        <input type="file" class="w-100" placeholder="Pilih file">
-                        <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
-                        <input type="text" class="w-100">
-                        <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                        <input type="text" class="w-100">
-                        
-                        <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
-                        <select class="form-select w-100 mt-1" aria-label="Small select example">
-                            <option selected>Pilih...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-    
-                        <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
-                        <input type="text" class="w-100">
-                    </div>
-                </div>
-            </div>`;
-            
             $('#parent').append(tr);
-        }
+        });
     </script>
 @stop

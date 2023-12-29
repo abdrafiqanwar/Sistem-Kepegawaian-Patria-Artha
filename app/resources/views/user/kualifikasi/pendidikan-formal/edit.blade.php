@@ -323,7 +323,7 @@
         </div>
 
         <div class="col border pb-3 pl-0 pr-0" style="font-size: 14px">
-            <p class="bg-secondary p-1 pl-2 font-weight-bold">Dokumen Tambahan</p>
+            <p class="bg-secondary p-1 pl-2 font-weight-bold">Dokumen</p>
             <div class="pl-2 pr-2">
                     <p class="m-0 font-weight-bold">
                         File
