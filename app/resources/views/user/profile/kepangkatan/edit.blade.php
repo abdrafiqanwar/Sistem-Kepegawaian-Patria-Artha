@@ -49,7 +49,7 @@
             <tr>
                 <th class="w-25">Golongan/Pangkat</th>
                 <td>III/c (Penata)</td>
-                <td class="text-center">Tidak dapat diubah</td>
+                <td>Tidak dapat diubah</td>
             </tr>
             <tr>
                 <th class="w-25">Nomor SK</th>
