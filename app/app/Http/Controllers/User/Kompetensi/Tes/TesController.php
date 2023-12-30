@@ -10,4 +10,8 @@ class TesController extends Controller
     public function index(){
         return view('user.kompetensi.tes');
     }
+
+    public function create(){
+        return view('user.kompetensi.tes.new');
+    }
 }

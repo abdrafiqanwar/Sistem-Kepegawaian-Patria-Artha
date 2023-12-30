@@ -99,11 +99,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
 
         Route::group(['prefix' => 'tes', 'namespace' => 'Tes'], function(){
             Route::get('/', 'TesController@index')->name('user.tes');
-            // Route::get('/detail', 'TesController@detail')->name('user.tes.detail');
-
-            // Route::get('/create', 'TesController@create')->name('user.tes.create');
-
-            // Route::get('/edit', 'TesController@edit')->name('user.tes.edit');
+            Route::get('/create', 'TesController@create')->name('user.tes.create');
         });
     });
 });
