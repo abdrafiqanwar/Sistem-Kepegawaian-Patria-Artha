@@ -367,6 +367,11 @@ return [
                     'url' => 'user/kompetensi/sertifikasi',
                     'icon' => false,
                 ],
+                [
+                    'text' => 'Tes',
+                    'url' => 'user/kompetensi/tes',
+                    'icon' => false,
+                ],
             ],
         ],
         // [
