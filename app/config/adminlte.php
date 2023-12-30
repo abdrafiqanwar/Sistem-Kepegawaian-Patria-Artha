@@ -374,6 +374,17 @@ return [
                 ],
             ],
         ],
+        [
+            'text' => 'Pelaksana Penelitian',
+            'icon' => 'fas fa-fw fa-flask',
+            'submenu' => [
+                [
+                    'text' => 'Penelitian',
+                    'url' => 'user/penelitian/penelitian',
+                    'icon' => false, 
+                ],
+            ],
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',

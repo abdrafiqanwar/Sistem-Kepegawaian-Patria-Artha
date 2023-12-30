@@ -102,4 +102,10 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
             Route::get('/create', 'TesController@create')->name('user.tes.create');
         });
     });
+
+    Route::group(['prefix' => 'penelitian', 'namespace' => 'Penelitian'], function(){
+        Route::group(['prefix' => 'penelitian', 'namespace' => 'Penelitian'], function(){
+            Route::get('/', 'PenelitianController@index')->name('user.penelitian');
+        });
+    });
 });
