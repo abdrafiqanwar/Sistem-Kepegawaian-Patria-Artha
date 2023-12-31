@@ -72,7 +72,7 @@
         <div class="table-responsive">
             <table class="table table-bordered" style="font-size: 14px">
                 <tr class="text-center">
-                    <th>Nomor</th>
+                    <th>No.</th>
                     <th>Nama File</th>
                     <th>Jenis Dokumen</th>
                     <th>Aksi</th>
