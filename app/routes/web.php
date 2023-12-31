@@ -106,6 +106,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User'], f
     Route::group(['prefix' => 'penelitian', 'namespace' => 'Penelitian'], function(){
         Route::group(['prefix' => 'penelitian', 'namespace' => 'Penelitian'], function(){
             Route::get('/', 'PenelitianController@index')->name('user.penelitian');
+            Route::get('/detail', 'PenelitianController@detail')->name('user.penelitian.detail');
 
             Route::get('/create', 'PenelitianController@create')->name('user.penelitian.create');
         });
