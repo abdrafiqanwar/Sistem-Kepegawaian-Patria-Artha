@@ -129,13 +129,27 @@
 @stop   
 
 @section('js')
-    <script>
-        let tr = `<div class="row mt-2">
+<script>
+    let dokumenRow = 0;
+
+    $('#tambah').click(() =>{
+        dokumenRow++;
+        inputDokumen(dokumenRow);
+    })
+
+    inputDokumen = (i) => {
+        let tr = `<div class="row mt-2" id="dokumen-${i}">
             <div class="col-lg-4" style="font-size: 12px">
             </div>
 
             <div class="col border pb-3 pl-0 pr-0" style="font-size: 14px">
-                <p class="bg-secondary p-1 pl-2 font-weight-bold">Dokumen</p>
+                <div class="d-flex justify-content-between bg-secondary" style="margin-bottom: 16px">
+                    <p class="p-1 pl-2 font-weight-bold mb-auto">Dokumen</p>
+                    <button dokumen-id="${i}" class="btn pt-0 pb-0" style="font-size: 12px; fill: white">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+                    </button>
+                </div>
+
                 <div class="pl-2 pr-2">
                     <p class="m-0 font-weight-bold">
                         Dokumen Dilampirkan
@@ -147,8 +161,12 @@
             </div>
         </div>`;
 
-        $('#tambah').click(() =>{
-            $('#parent').append(tr);
-        })
-    </script>
+    $('#parent').append(tr);
+    }       
+    
+    $('#parent').on('click', 'button', function(){
+        let id = $(this).attr('dokumen-id');
+        $(`#dokumen-${id}`).remove();
+    })
+</script>
 @stop
