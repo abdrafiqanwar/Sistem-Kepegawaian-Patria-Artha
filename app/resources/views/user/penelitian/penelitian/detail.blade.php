@@ -193,17 +193,23 @@
         </div>
 
         <div class="table-responsive">
-            <table id="tableBidang" class="table mt-2 border" style="font-size: 14px">
-                <tr class="text-center">
-                    <th class="w-75">Pilih Kelompok Bidang</th>
-                    <th style="width: 5%"></th>
+            <table id="tableBidang" class="table mt-2 table-bordered table-sm" style="font-size: 14px">
+                <tr class="text-center table-active">
+                    <th style="width: 5%">No.</th>
+                    <th class="w-75">Nama</th>
+                    <th></th>
                 </tr>
                 <tr>
-                    <td class="w-75">
-                        <input type="text" class="w-100">
-                    </td>
-                    <td style="width: 5%"></td>
+                    <td class="text-center">1</td>
+                    <td class="w-75">SUHENDRA S</td>
+                    <td></td>
                 </tr>
+                {{-- tampilan jika tidak ada data --}}
+                {{-- <tr>
+                    <td></td>
+                    <th class="text-center">Tidak ada data yang dapat ditampilkan</th>
+                    <td></td>
+                </tr> --}}
             </table>
         </div>
 
