@@ -265,7 +265,7 @@
                     <th>Status</th>
                     <th style="width: 5%"></th>
                 </tr>
-                <tr>
+                <tr id="mahasiswa-0">
                     <td class="w-50">
                         <input type="text" class="w-100">
                     </td>
@@ -280,7 +280,11 @@
                     <td>
                         <input type="checkbox" class="mr-1">Aktif
                     </td>
-                    <td style="width: 5%"></td>
+                    <td>
+                        <button mahasiswa-id="0" class="btn btn-danger btn-sm" style="fill: white">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+                        </button>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -423,7 +427,7 @@
                     <th>Status</th>
                     <th style="width: 5%"></th>
                 </tr>
-                <tr>
+                <tr id="eksternal-0">
                     <td class="w-50">
                         <select class="form-select form-select-sm w-100" aria-label="Small select example">
                             <option selected>Pilih...</option>
@@ -443,7 +447,11 @@
                     <td>
                         <input type="checkbox" class="mr-1">Aktif
                     </td>
-                    <td style="width: 5%"></td>
+                    <td>
+                        <button eksternal-id="0" class="btn btn-danger btn-sm" style="fill: white">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+                        </button>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -465,11 +473,15 @@
                     <th class="w-75">Pilih Kelompok Bidang</th>
                     <th style="width: 5%"></th>
                 </tr>
-                <tr>
+                <tr id="bidang-0">
                     <td class="w-75">
                         <input type="text" class="w-100">
                     </td>
-                    <td style="width: 5%"></td>
+                    <td>
+                        <button bidang-id="0" class="btn btn-danger btn-sm" style="fill: white">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+                        </button>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -502,7 +514,7 @@
     })
 
     inputDosen = (i) => {
-        let dosen = `<tr id="input-tr-${i}">
+        let dosen = `<tr id="dosen-${i}">
                         <td>
                             <input type="text" class="w-100">
                         </td>
@@ -521,7 +533,7 @@
                             <input type="checkbox" class="mr-1">Aktif
                         </td>
                         <td>
-                            <button data-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
+                            <button dosen-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
                             </button>
                         </td>
@@ -530,8 +542,8 @@
     }
 
     $('#tableDosen').on('click', '.btn', function(){
-        let id = $(this).attr('data-id');
-        $('#input-tr-'+id).remove();
+        let id = $(this).attr('dosen-id');
+        $('#dosen-'+id).remove();
     })
 
     let mahasiswaRow = 0;
@@ -542,7 +554,7 @@
     })
 
     inputMahasiswa = (i) => {
-        let mahasiswa = `<tr id="input-tr-${i}">
+        let mahasiswa = `<tr id="mahasiswa-${i}">
                         <td>
                             <input type="text" class="w-100">
                         </td>
@@ -558,7 +570,7 @@
                             <input type="checkbox" class="mr-1">Aktif
                         </td>
                         <td>
-                            <button data-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
+                            <button mahasiswa-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
                             </button>
                         </td>
@@ -567,8 +579,8 @@
     }
 
     $('#tableMahasiswa').on('click', '.btn', function(){
-        let id = $(this).attr('data-id');
-        $('#input-tr-'+id).remove();
+        let id = $(this).attr('mahasiswa-id');
+        $('#mahasiswa-'+id).remove();
     })
 
 
@@ -580,7 +592,7 @@
     })
 
     inputEksternal = (i) => {
-        let eksternal = `<tr id="input-tr-${i}">
+        let eksternal = `<tr id="eksternal-${i}">
                         <td>
                             <select class="form-select form-select-sm w-100" aria-label="Small select example">
                                 <option selected>Pilih...</option>
@@ -601,7 +613,7 @@
                             <input type="checkbox" class="mr-1">Aktif
                         </td>
                         <td>
-                                <button data-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
+                                <button eksternal-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
                                 </button>
                             </td>
@@ -610,8 +622,8 @@
     }
 
     $('#tableEksternal').on('click', '.btn', function(){
-        let id = $(this).attr('data-id');
-        $('#input-tr-'+id).remove();
+        let id = $(this).attr('eksternal-id');
+        $('#eksternal-'+id).remove();
     })
 
     let bidangRow = 0;
@@ -622,12 +634,12 @@
     })
 
     inputBidang = (i) => {
-        let bidang = `<tr id="input-tr-${i}">
+        let bidang = `<tr id="bidang-${i}">
                         <td>
                             <input type="text" class="w-100">
                         </td>
                         <td>
-                                <button data-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
+                                <button bidang-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
                                 </button>
                             </td>
@@ -636,8 +648,8 @@
     }
 
     $('#tableBidang').on('click', '.btn', function(){
-        let id = $(this).attr('data-id');
-        $('#input-tr-'+id).remove();
+        let id = $(this).attr('bidang-id');
+        $('#bidang-'+id).remove();
     })
     
     let dokumen = `<div class="row mt-2">
