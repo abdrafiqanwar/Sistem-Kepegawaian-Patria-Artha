@@ -49,7 +49,7 @@
                             <td>SUHENDRA S</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Jenis Kelami</td>
+                            <td style="width: 35%">Jenis Kelamin</td>
                             <td style="width: 5%">:</td>
                             <td>Laki-laki</td>
                         </tr>

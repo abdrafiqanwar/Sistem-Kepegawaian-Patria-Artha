@@ -47,6 +47,13 @@
                     <th class="text-center">Data Baru</th>
                 </tr>
                 <tr>
+                    <th class="w-25">NIDN</th>
+                    <td class="w-25">0902017708</td>
+                    <td>
+                        <input type="text" class="w-100">
+                    </td>
+                </tr>
+                <tr>
                     <th class="w-25">Nama</th>
                     <td class="w-25">Suhendra S</td>
                     <td>

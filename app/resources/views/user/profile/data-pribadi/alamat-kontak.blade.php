@@ -37,6 +37,7 @@
                 Kembali
             </a>
         </div>
+        <p style="font-size: 14px">Perubahan data ini memerlukan validasi yang akan diproses dalam maksimal 21 hari kerja setelah diajukan</p>
 
         <div class="table-responsive">
             <table class="table mt-2 border-left border-right" style="font-size: 14px">
