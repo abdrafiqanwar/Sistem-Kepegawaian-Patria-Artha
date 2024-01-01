@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('file_name');
             $table->string('file_name_original');
             $table->timestamps();
+
+            $table->foreign('lecturer_functional_id')
+                ->references('id')
+                ->on('lecturer_functional')
+                ->onDelete('cascade');
         });
     }
 
