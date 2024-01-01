@@ -18,4 +18,8 @@ class PenelitianController extends Controller
     public function create(){
         return view('user.penelitian.penelitian.new');
     }
+
+    public function edit(){
+        return view('user.penelitian.penelitian.edit');
+    }
 }
