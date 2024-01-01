@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('lecturer_scientific_field', function (Blueprint $table) {
             $table->string('scientific_field_code');
             $table->unsignedBigInteger('user_id');
-            $table->string('name');
             $table->timestamps();
 
             $table->foreign('scientific_field_code')
