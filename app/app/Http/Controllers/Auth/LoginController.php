@@ -21,7 +21,12 @@ class LoginController extends Controller
         ]);
 
         if (auth()->attempt($credentials)) {
-            return redirect()->route('user.home');
+            $user = auth()->user();
+            if($user->role == 'ADMIN'){
+                return redirect()->intended('admin');
+            }else{
+                return redirect()->intended('user');
+            }
         }
 
         return redirect()->back()->with('error', 'Email atau password salah');

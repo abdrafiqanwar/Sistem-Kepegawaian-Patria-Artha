@@ -322,65 +322,69 @@ return [
         // ['header' => 'account_settings'],
         [
             'text' => 'profile',
+            'can' => 'user',
             // 'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
                     'text' => 'Data Pribadi',
-                    'url'  => 'user/profile/data-pribadi',
+                    'route'  => 'user.data-pribadi',
                     'icon' => false,
                 ],
                 [
                     'text' => 'Inpassing',
-                    'url'  => 'user/profile/inpassing',
+                    'route'  => 'user.inpassing',
                     'icon' => false,
                 ],
                 [
                     'text' => 'Jabatan Fungsional',
-                    'url'  => 'user/profile/jabatan-fungsional',
+                    'route'  => 'user.jabatan-fungsional',
                     'icon' => false,
                 ],
                 [
                     'text' => 'Kepangkatan',
-                    'url'  => 'user/profile/kepangkatan',
+                    'route'  => 'user.kepangkatan',
                     'icon' => false,
                 ],
             ],
         ],
         [
             'text' => 'Kualifikasi',
+            'can' => 'user',
             'icon' => 'fas fa-fw fa-graduation-cap',
             'submenu' => [
                 [
                     'text' => 'Pendidikan Formal',
-                    'url' => 'user/kualifikasi/pendidikan-formal',
+                    'route' => 'user.pendidikan-formal',
                     'icon' => false,
                 ]
             ],
         ],
         [
             'text' => 'Kompentensi',
+            'can' => 'user',
             'icon' => 'fas fa-fw fa-cubes',
             'submenu' => [
                 [
                     'text' => 'Sertifikasi',
-                    'url' => 'user/kompetensi/sertifikasi',
+                    'route' => 'user.sertifikasi',
                     'icon' => false,
                 ],
                 [
                     'text' => 'Tes',
-                    'url' => 'user/kompetensi/tes',
+                    'route' => 'user.tes',
                     'icon' => false,
                 ],
             ],
         ],
         [
             'text' => 'Pelaksana Penelitian',
+            'can' => 'user',
             'icon' => 'fas fa-fw fa-flask',
             'submenu' => [
                 [
                     'text' => 'Penelitian',
-                    'url' => 'user/penelitian/penelitian',
+                    'route' => 'user.penelitian',
                     'icon' => false, 
                 ],
             ],

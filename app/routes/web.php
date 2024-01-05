@@ -23,7 +23,11 @@ Route::group(['prefix' => '', 'namespace' => 'App\Http\Controllers\Auth'], funct
     Route::post('/logout', 'LoginController@logout')->name('logout')->middleware('auth');
 });
 
-Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User', 'middleware' => ['user']], function(){
+Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['admin', 'auth']], function(){
+    Route::get('/', 'HomeController@index')->name('admin.home');
+});
+
+Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User', 'middleware' => ['user', 'auth']], function(){
     Route::get('/', 'HomeController@index')->name('user.home');
 
     Route::group(['prefix' => 'profile', 'namespace' => 'Profile'], function(){
