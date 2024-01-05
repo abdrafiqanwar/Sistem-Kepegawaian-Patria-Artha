@@ -321,6 +321,12 @@ return [
         // ],
         // ['header' => 'account_settings'],
         [
+            'text' => 'Beranda',
+            'can' => 'admin',
+            'route' => 'admin.home',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        [
             'text' => 'profile',
             'can' => 'user',
             // 'url'  => 'admin/settings',
