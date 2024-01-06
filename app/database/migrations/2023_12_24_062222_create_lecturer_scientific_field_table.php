@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturer_scientific_field', function (Blueprint $table) {
+        Schema::create('scientific_field_user', function (Blueprint $table) {
             $table->string('scientific_field_code');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lecturer_scientific_field');
+        Schema::dropIfExists('scientific_field_user');
     }
 };

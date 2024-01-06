@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('lecturer_citizenships', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('nik');
             $table->enum('religion', ['ISLAM', 'KRISTEN', 'KATOLIK', 'HINDU', 'BUDHA', 'KONGHUCU']);
@@ -19,10 +20,9 @@ return new class extends Migration
             $table->string('kk_image_path');
             $table->string('ktp_image_path');
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
-            $table->text('reason_of_rejection')->nullable();
+            $table->text('reason_for_rejection')->nullable();
             $table->timestamps();
 
-            $table->primary('user_id');
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')

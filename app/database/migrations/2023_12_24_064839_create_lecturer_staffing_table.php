@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('tmmd_number')->nullable()->unique();
             $table->date('sk_tmmd_start_at')->unique();
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
-            $table->text('reason_of_rejection')->nullable();
+            $table->text('reason_for_rejection')->nullable();
             $table->string('source_of_income');
             $table->timestamps();
 

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('date_of_birth');
             $table->string('mother_name');
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
-            $table->text('reason_of_rejection')->nullable();
+            $table->text('reason_for_rejection')->nullable();
             $table->string('ktp_image_path');
             $table->string('kk_image_path');
             $table->timestamps();

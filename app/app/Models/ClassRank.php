@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DocumentType extends Model
+class ClassRank extends Model
 {
     use HasFactory;
 
+    protected $table = 'class_rank';
+
     protected $fillable = [
-        'document_type',
+        'name',
     ];
 }
