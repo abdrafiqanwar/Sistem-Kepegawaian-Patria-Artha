@@ -18,7 +18,9 @@
                 <div class="d-flex">
                     <p>Universitas Patria Artha</p>
                     <p class="pl-2 pr-2">-</p>
-                    <p>Universitas Patria Artha</p>
+                    <p>Fakultas Ekonomi</p>
+                    <p class="pl-2 pr-2">-</p>
+                    <p>Manajemen</p>
                 </div>
             </div>
         </div>
@@ -77,7 +79,7 @@
             <div class="col">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Pendidikan Terakhir</h5>
-                    <a href="" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 10px">Selengkapnya</a>
+                    <a href="{{ route('user.pendidikan-formal') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 10px">Selengkapnya</a>
                 </div>
                 <p style="font-size: 12px; visibility: hidden;">hehe</p>
 
