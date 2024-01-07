@@ -79,7 +79,7 @@
             <div class="col">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Pendidikan Terakhir</h5>
-                    <a href="{{ route('user.pendidikan-formal') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 10px">Selengkapnya</a>
+                    <a href="{{ route('user.pendidikan-formal') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px">Selengkapnya</a>
                 </div>
                 <p style="font-size: 12px; visibility: hidden;">hehe</p>
 
@@ -110,7 +110,7 @@
             <div class="col">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Status Serdos</h5>
-                    <a href="" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 10px">Selengkapnya</a>
+                    <a href="" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px">Selengkapnya</a>
                 </div>
                 <p style="font-size: 12px;">Untuk informasi lebih lanjut bisa menghubungi PSD-PTU Perguruan Tinggi masing-masing atau cek PO Serdos</p>
 
