@@ -25,6 +25,10 @@ Route::group(['prefix' => '', 'namespace' => 'App\Http\Controllers\Auth'], funct
 
 Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['admin', 'auth']], function(){
     Route::get('/', 'HomeController@index')->name('admin.home');
+
+    Route::group(['prefix' => 'data-dosen'], function(){
+        Route::get('/', 'UserController@index')->name('admin.data-dosen');
+    });
 });
 
 Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User', 'middleware' => ['user', 'auth']], function(){

@@ -327,6 +327,12 @@ return [
             'icon' => 'fas fa-fw fa-home',
         ],
         [
+            'text' => 'Data Dosen',
+            'can' => 'admin',
+            'route' => 'admin.data-dosen',
+            'icon' => 'fas fa-fw fa-chalkboard-teacher',
+        ],
+        [
             'text' => 'profile',
             'can' => 'user',
             // 'url'  => 'admin/settings',
