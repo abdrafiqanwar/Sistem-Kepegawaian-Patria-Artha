@@ -26,15 +26,29 @@
 <div class="card p-3">
     <h5 class="text-bold">Tambah Dosen</h5>
 
-    <form action="">
+    @if($errors->any())
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <ul style="list-style: none">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
+    <form action="{{ route('admin.data-dosen.store') }}" method="POST">
+        @csrf
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputName" class="font-weight-normal">Nama Dosen</label>
-                <input type="text" name="" id="inputName" class="form-control" placeholder="Nama">
+                <input type="text" name="name" id="inputName" class="form-control" placeholder="Nama">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputEmail" class="font-weight-normal">Email</label>
-                <input type="email" name="" id="inputEmail" class="form-control" placeholder="Email">
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email">
             </div>
         </div>
         <div class="form-row">
@@ -42,7 +56,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPassword" class="font-weight-normal">Password</label>
-                <input type="password" name="" id="inputPassword" class="form-control" placeholder="Password">
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
             </div>
         </div>
         <div class="d-md-flex justify-content-md-end">

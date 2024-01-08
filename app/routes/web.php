@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 
         Route::get('/', 'UserController@index')->name('admin.data-dosen');
 
         Route::get('/create', 'UserController@create')->name('admin.data-dosen.create');
+        Route::post('/create', 'UserController@store')->name('admin.data-dosen.store');
     });
 });
 

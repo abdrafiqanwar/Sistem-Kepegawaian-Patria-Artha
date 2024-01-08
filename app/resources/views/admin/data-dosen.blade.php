@@ -26,6 +26,15 @@
         </a>
     </div>
 
+    @if($msg = Session::get('success'))
+    <div class="alert alert-success alert-dismissible fade show m-3" role="alert">
+        {{ $msg }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
     <div class="table-responsive mt-4">
         <table id="userTable" class="table" style="width:100%">
             <thead class="table-active">
@@ -39,14 +48,15 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($users as $user)
                 <tr>
-                    <td>1</td>
+                    <td>{{ $loop->iteration }}</td>
                     <td>
-                        <img src="https://source.unsplash.com/random/150x150?sig=1" class="img-fluid img-sm"/>
+                        {{-- <img src="{{ $user->lecturerProfiles->ktp_image_path }}" class="img-fluid img-sm"/> --}}
                     </td>
-                    <td>Zabil</td>
-                    <td>zabil@gmail.com</td>
-                    <td>Besok</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->created_at }}</td>
                     <td class="text-center">
                         <a href="" class="btn btn-info">
                             <i class="fas fa-info-circle"></i>
@@ -56,6 +66,7 @@
                         </a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
