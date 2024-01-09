@@ -29,4 +29,8 @@ class UserController extends Controller
 
         return redirect()->route('admin.data-dosen')->with('success', 'Data dosen berhasil ditambahkan.');
     }
+
+    public function destroy($id){
+        User::find($id)->delete();
+    }
 }

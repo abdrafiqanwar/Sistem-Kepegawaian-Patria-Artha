@@ -40,7 +40,6 @@
             <thead class="table-active">
                 <tr>
                     <th scope="col" style="width: 10px">No.</th>
-                    <th scope="col">Foto</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Email</th>
                     <th scope="col">Tanggal Dibuat</th>
@@ -49,19 +48,17 @@
             </thead>
             <tbody>
                 @foreach($users as $user)
-                <tr>
+                <tr id="row-{{ $user->id }}">
                     <td>{{ $loop->iteration }}</td>
-                    <td>
-                        {{-- <img src="{{ $user->lecturerProfiles->ktp_image_path }}" class="img-fluid img-sm"/> --}}
-                    </td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->created_at }}</td>
+                    <td>{{ $user->created_at->format('d-m-Y') }}</td>
                     <td class="text-center">
                         <a href="" class="btn btn-info">
                             <i class="fas fa-info-circle"></i>
                         </a>
-                        <a href="" class="btn btn-danger">
+                        <a href="" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#modal-hapus" 
+                        data-id="{{ $user->id }}">
                             <i class="fas fa-trash"></i>
                         </a>
                     </td>
@@ -71,15 +68,65 @@
         </table>
     </div>
 </div>
+
+<div class="modal fade" id="modal-hapus" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <img src="{{ asset('img/alert_merah.svg')}}" alt="">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h4 class="modal-title ml-3 align-self-center">Hapus Akun Dosen</h4>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Data yang sudah dihapus tidak bisa dikembalikan</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="btn-hapus">Hapus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-success" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle fa-2x" style="color: #6cc070"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h4 class="modal-title ml-3 align-self-center">Akun Berhasil Dihapus</h4>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Data Yang Anda Pilih Telah Berhasil Dihapus!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 @stop
 
 @section('css')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
 @stop
 
 @section('js')
-<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-
 <script>
     $(document).ready(function() {
         var t = $('#userTable').DataTable({
@@ -105,29 +152,26 @@
             });
         }).draw();
 
-        // let delete_id;
-        // $(document).on('click', '.btn-delete', function() {
-        //     delete_id = $(this).data('id');
-        //     console.log('masuk ndak?');
-        // });
+        let id;
+        $(document).on('click', '.btn-delete', function(){
+            id = $(this).data('id');
+        });
 
-
-        // $('#btn-hapus').on('click', function() {
-        //     $.ajax({
-        //         type: "POST",
-        //         data: {
-        //             _token: "{{ csrf_token() }}",
-        //             _method: "delete"
-        //         },
-        //         url: "/admin/project/delete/" + delete_id,
-        //         success: function(response) {
-        //             t.row($('#row-' + delete_id)).remove().draw();
-        //             $('#modal-hapus').modal('hide');
-        //             $('#modal-success').modal('show');
-        //         },
-        //     });
-
-        // });
+        $('#btn-hapus').on('click', function(){
+            $.ajax({
+                url: "data-dosen/delete/" + id,
+                method: "post",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    _method: "post"
+                },
+                success: function(response){
+                    t.row($('#row-' + id)).remove().draw();
+                    $('#modal-hapus').modal('hide');
+                    $('#modal-success').modal('show');
+                },
+            });
+        });
     });
 </script>
 @stop
