@@ -33,7 +33,7 @@ class LoginController extends Controller
             }
         }
 
-        return redirect()->back()->with('error', 'Email atau password salah');
+        return redirect()->back()->withInput()->with('error', 'Email atau password salah');
     }
 
     public function logout()
