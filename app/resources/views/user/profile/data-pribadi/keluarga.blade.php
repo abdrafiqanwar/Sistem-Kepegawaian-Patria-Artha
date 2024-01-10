@@ -50,28 +50,28 @@
                     <th class="w-25">Status Perkawinan</th>
                     <td class="w-25">Cerai</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Nama Suami/Istri</th>
                     <td class="w-25">Hasvivi Hasdin</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Pekerjaan Suami/Istri</th>
                     <td class="w-25">Tidak bekerja</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">NIP Suami/Istri</th>
                     <td class="w-25">-</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
             </table>
@@ -106,7 +106,7 @@
                 <button id="tambah" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
                     Tambah dokumen lain
                 </button>
-                <button class="btn btn-primary" style="fill: white; font-size: 12px">
+                <button class="btn btn-primary" style="fill: white; font-size: 14px">
                     <i class="fas fa-save"></i>
                     Simpan
                 </button>

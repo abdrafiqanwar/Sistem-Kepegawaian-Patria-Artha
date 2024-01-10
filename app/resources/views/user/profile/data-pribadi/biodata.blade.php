@@ -50,42 +50,42 @@
                     <th class="w-25">NIDN</th>
                     <td class="w-25">0902017708</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Nama</th>
                     <td class="w-25">Suhendra S</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Jenis Kelamin</th>
                     <td class="w-25">Laki-laki</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tempat Lahir</th>
                     <td class="w-25">Malino</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tanggal Lahir</th>
                     <td class="w-25">2 Januari 1977</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Nama Ibu Kandung</th>
                     <td class="w-25">Mumang</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
             </table>
@@ -137,7 +137,7 @@
                 <button id="tambah" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
                     Tambah dokumen lain
                 </button>
-                <button class="btn btn-primary" style="fill: white; font-size: 12px">
+                <button class="btn btn-primary" style="fill: white; font-size: 14px">
                     <i class="fas fa-save"></i>
                     Simpan
                 </button>

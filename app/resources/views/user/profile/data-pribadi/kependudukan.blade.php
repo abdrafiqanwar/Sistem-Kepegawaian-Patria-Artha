@@ -50,21 +50,21 @@
                     <th class="w-25">NIK</th>
                     <td class="w-25">7371100201770009</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Agama</th>
                     <td class="w-25">Islam</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Kewarganegaraan</th>
                     <td class="w-25">Indonesia</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
             </table>
@@ -116,7 +116,7 @@
                 <button id="tambah" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
                     Tambah dokumen lain
                 </button>
-                <button class="btn btn-primary" style="fill: white; font-size: 12px">
+                <button class="btn btn-primary" style="fill: white; font-size: 14px">
                     <i class="fas fa-save"></i>
                     Simpan
                 </button>

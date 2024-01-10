@@ -47,7 +47,7 @@
                 </tr>
                 <tr>
                     <td class="w-75">   
-                        <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                        <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                             <option selected>Pilih...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -55,7 +55,7 @@
                           </select>
                     </td>
                     <td class="text-center">
-                        <button class="btn btn-primary pt-1 pb-1" style="fill: white; font-size: 12px">
+                        <button class="btn btn-primary pt-1 pb-1" style="fill: white; font-size: 14px">
                             <i class="fas fa-save"></i>
                             Simpan
                         </button>
