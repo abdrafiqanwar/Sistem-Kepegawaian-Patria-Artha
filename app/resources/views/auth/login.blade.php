@@ -21,6 +21,13 @@
 @section('auth_header', __('adminlte::adminlte.login_message'))
 
 @section('auth_body')
+
+    @if(session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
+    
     <form action="{{ route('login.post') }}" method="post">
         @csrf
 
@@ -74,9 +81,19 @@
 
             <div class="col-5 m-auto">
                 <button type=submit class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
-                    <span class="fas fa-sign-in-alt"></span>
+                    {{-- <span class="fas fa-sign-in-alt"></span> --}}
                     {{ __('adminlte::adminlte.sign_in') }}
                 </button>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-5 m-auto">
+                <center>
+                    <a href="{{ route('password.request') }}">
+                        Lupa Password
+                    </a>
+                </center>
             </div>
         </div>
 

@@ -27,8 +27,8 @@
     </div>
 
     @if($msg = Session::get('success'))
-    <div class="alert alert-success alert-dismissible fade show m-3" role="alert">
-        {{ $msg }}
+    <div class="alert alert-success alert-dismissible fade show mt-3 mb-0" role="alert">
+        {{ $msg }} 
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

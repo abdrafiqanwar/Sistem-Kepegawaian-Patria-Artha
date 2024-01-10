@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Password;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,12 @@ Route::group(['prefix' => '', 'namespace' => 'App\Http\Controllers\Auth'], funct
     Route::get('/login', 'LoginController@index')->name('login')->middleware('guest');
     Route::post('/login', 'LoginController@login')->name('login.post')->middleware('guest');
     Route::post('/logout', 'LoginController@logout')->name('logout')->middleware('auth');
+    Route::get('/forgot-password', 'LoginController@request')->name('password.request')->middleware('guest');
+    Route::post('/forgot-password', 'LoginController@email')->name('password.email')->middleware('guest');
+    Route::get('/reset-password/{token}', 'LoginController@reset')->name('password.reset')->middleware('guest');
+    Route::post('/reset-password', 'LoginController@update')->name('password.update')->middleware('guest');
 });
+
 
 Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['admin', 'auth']], function(){
     Route::get('/', 'HomeController@index')->name('admin.home');

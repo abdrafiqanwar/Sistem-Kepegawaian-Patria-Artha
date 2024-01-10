@@ -18,7 +18,7 @@
         </div>
     @endif
 
-    <form action="{{ $password_email_url }}" method="post">
+    <form action="{{ route('password.email') }}" method="post">
         @csrf
 
         {{-- Email field --}}
@@ -41,7 +41,7 @@
 
         {{-- Send reset link button --}}
         <button type="submit" class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
-            <span class="fas fa-share-square"></span>
+            {{-- <span class="fas fa-share-square"></span> --}}
             {{ __('adminlte::adminlte.send_password_reset_link') }}
         </button>
 
