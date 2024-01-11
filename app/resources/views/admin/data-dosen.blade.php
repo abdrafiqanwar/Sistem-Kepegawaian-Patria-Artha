@@ -43,6 +43,7 @@
                     <th scope="col">Nama</th>
                     <th scope="col">Email</th>
                     <th scope="col">Tanggal Dibuat</th>
+                    <th scope="col" hidden>Role</th>
                     <th class="text-center" scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -53,6 +54,7 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at->format('d-m-Y') }}</td>
+                    <td hidden>{{ $user->role }}</td>
                     <td class="text-center">
                         <a href="" class="btn btn-info">
                             <i class="fas fa-info-circle"></i>
@@ -139,6 +141,7 @@
             order: [
                 [1, 'asc']
             ],
+            "dom": '<"sw-reklame-add">ftpr',
         });
 
         t.on('order.dt search.dt', function() {
@@ -171,6 +174,13 @@
                     $('#modal-success').modal('show');
                 },
             });
+        });
+
+
+        $('div.sw-reklame-add').html('<div style="display:flex; flex-direction: row; float:left;" class="mb-2"><div><select id="categoryFilterStatus" style="width: auto;" class="form-control form-control-sm special"><option value="">All</option><option value="LECTURER">Dosen</option><option value="ADMIN">Admin</option></select></div></div>');
+
+        $("#categoryFilterStatus").on('change', function (e) {
+            t.column(4).search(this.value).draw();
         });
     });
 </script>
