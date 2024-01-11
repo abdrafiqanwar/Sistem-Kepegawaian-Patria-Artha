@@ -55,35 +55,35 @@
                 <th class="w-25">Nomor SK</th>
                 <td>12449/LL9/KP.08.00/2023</td>
                 <td>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </td>
             </tr>
             <tr>
                 <th class="w-25">Tanggal SK</th>
                 <td>6 Desember 2023</td>
                 <td>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </td>
             </tr>
             <tr>
                 <th class="w-25">Terhitung Mulai Tanggal</th>
                 <td>1 Januari 2024</td>
                 <td>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </td>
             </tr>
             <tr>
                 <th class="w-25">Masa Kerja Golongan (Tahun)</th>
                 <td>6</td>
                 <td>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </td>
             </tr>
             <tr>
                 <th class="w-25">Masa Kerja Golongan (Bulan)</th>
                 <td>0</td>
                 <td>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </td>
             </tr>
         </table>
@@ -141,7 +141,7 @@
             <button id="tambah" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
                 Tambah dokumen lain
             </button>
-            <button class="btn btn-primary" style="fill: white; font-size: 12px">
+            <button class="btn btn-primary" style="fill: white; font-size: 14px">
                 <i class="fas fa-save"></i>
                 Simpan
             </button>

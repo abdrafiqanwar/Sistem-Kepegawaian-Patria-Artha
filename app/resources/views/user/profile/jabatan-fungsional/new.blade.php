@@ -44,7 +44,7 @@
                 <tr>
                     <th class="w-25">Jabatan Fungsional</th>
                     <td>
-                        <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                        <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                             <option selected>Pilih yang sesuai</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -55,14 +55,14 @@
                 <tr>
                     <th class="w-25">Nomor SK</th>
                     <td>
-                        <input type="text" class="w-100" placeholder="Contoh: 03/PL30/SK/D/2018">
+                        <input type="text" class="w-100 form-control form-control-sm" placeholder="Contoh: 03/PL30/SK/D/2018">
                         <p class="mb-0 font-italic" style="font-size: 12px">*Pastikan nomor SK sesuai. Satu SK hanya dapat tersimpan satu kali.</p>
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Terhitung Mulai Tanggal</th>
                     <td>
-                        <input type="date" class="w-100">
+                        <input type="date" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
             </table>
@@ -97,7 +97,7 @@
                 <button id="tambah" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
                     Tambah dokumen lain
                 </button>
-                <button class="btn btn-primary" style="fill: white; font-size: 12px">
+                <button class="btn btn-primary" style="fill: white; font-size: 14px">
                     <i class="fas fa-save"></i>
                     Simpan
                 </button>
