@@ -42,84 +42,84 @@
             <table class="table mt-2 border" style="font-size: 14px">
                 <tr>
                     <th class="w-25"></th>
-                    <th class="text-center">Data Saat Ini</th>
+                    <th class="text-center w-25">Data Saat Ini</th>
                     <th class="text-center">Data Baru</th>
                 </tr>
                 <tr>
                     <th class="w-25">Perguruan Tinggi</th>
                     <td>Sekolah Tinggi Ilmu Manajemen Nitro Makassar</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Program Studi</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Gelar Akademik</th>
                     <td>S.E.</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Bidang Studi</th>
                     <td>*</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tahun Masuk</th>
                     <td>0</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tahun Lulus</th>
                     <td>2000</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tanggal Kelulusan</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Nomor Induk Mahasiswa</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Jumlah Semester Tempuh</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Jumlah SKS Kelulusan</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">IPK Kelulusan</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                         <p class="mb-0 font-italic" style="font-size: 12px">*Masukkan angka menggunakan tanda titik.</p>
                     </td>
                 </tr>
@@ -127,28 +127,28 @@
                     <th class="w-25">Nomor SK Penyetaraan</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tanggal SK Penyetaraan</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Nomor Ijazah</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Judul Tesis/Disertasi</th>
                     <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
             </table>
@@ -207,13 +207,13 @@
                     <input type="file" class="w-100" placeholder="Pilih file">
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                     
                     <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
-                    <select class="form-select w-100 mt-1" aria-label="Small select example">
+                    <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                         <option selected>Pilih...</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -221,7 +221,7 @@
                     </select>
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </div>
             </div>
         </div>
@@ -241,13 +241,13 @@
                     <input type="file" class="w-100" placeholder="Pilih file">
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                     
                     <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
-                    <select class="form-select w-100 mt-1" aria-label="Small select example">
+                    <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                         <option selected>Pilih...</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -255,7 +255,7 @@
                     </select>
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </div>
             </div>
         </div>
@@ -275,13 +275,13 @@
                     <input type="file" class="w-100" placeholder="Pilih file">
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                     
                     <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
-                    <select class="form-select w-100 mt-1" aria-label="Small select example">
+                    <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                         <option selected>Pilih...</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -289,7 +289,7 @@
                     </select>
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </div>
             </div>
         </div>
@@ -304,7 +304,7 @@
                 <button id="tambah" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
                     Tambah dokumen lain
                 </button>
-                <button class="btn btn-primary" style="fill: white; font-size: 12px">
+                <button class="btn btn-primary" style="fill: white; font-size: 14px">
                     <i class="fas fa-save"></i>
                     Simpan
                 </button>
@@ -345,12 +345,12 @@
                     <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png, doc, docx, xls, xlsx, txt)</p>
                     <input type="file" class="w-100" placeholder="Pilih file">
                     <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                     
                     <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
-                    <select class="form-select w-100 mt-1" aria-label="Small select example">
+                    <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                         <option selected>Pilih...</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -358,7 +358,7 @@
                     </select>
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </div>
             </div>
         </div>`;
