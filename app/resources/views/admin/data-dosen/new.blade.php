@@ -7,15 +7,15 @@
         <a href="{{ route('admin.home') }}" class="btn p-0">
             <h6>Beranda</h6>
         </a>
-    
+
         <h6 class="pl-2 pr-2">/</h6>
-    
+
         <a href="{{ route('admin.data-dosen') }}" class="btn p-0">
             <h6>Data Dosen</h6>
         </a>
 
         <h6 class="pl-2 pr-2">/</h6>
-    
+
         <a href="" class="btn p-0">
             <h6>Tambah</h6>
         </a>
@@ -44,11 +44,11 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputName" class="font-weight-normal">Nama Dosen</label>
-                <input type="text" name="name" id="inputName" class="form-control" placeholder="Nama">
+                <input type="text" name="name" id="inputName" class="form-control" placeholder="Nama" value="{{ old('name') }}">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputEmail" class="font-weight-normal">Email</label>
-                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email">
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" value="{{ old('email') }}">
             </div>
         </div>
         <div class="form-row">
