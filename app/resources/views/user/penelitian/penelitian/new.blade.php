@@ -43,31 +43,31 @@
                 <tr>
                     <th class="w-25">Judul Kegiatan</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Afiliasi</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Kelompok Bidang</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Litabmas Sebelumnya</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Jenis SKIM</th>
                     <td>
-                        <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                        <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                             <option selected>Pilih...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -78,83 +78,83 @@
                 <tr>
                     <th class="w-25">Lokasi Kegiatan</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tahun Usulan</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 </tr>
                 <tr>
                     <th class="w-25">Tahun Kegiatan</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 </tr>
                 <tr>
                     <th class="w-25">Tahun Pelaksanaan</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 </tr>
                 <tr>
                     <th class="w-25">Lama Kegiatan (Tahun)</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 </tr>
                 <tr>
                     <th class="w-25">Tahun Pelaksanaan Ke</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Dana dari Dikti (Rp.)</th>
                     <td>
-                        <input type="text" class="w-100" value="0.00">
+                        <input type="text" class="w-100 form-control form-control-sm" value="0.00">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Dana dari Perguruan Tinggi (Rp.)</th>
                     <td>
-                        <input type="text" class="w-100" value="0.00">
+                        <input type="text" class="w-100 form-control form-control-sm" value="0.00">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Dana dari Institusi Lain (Rp.)</th>
                     <td>
-                        <input type="text" class="w-100" value="0.00">
+                        <input type="text" class="w-100 form-control form-control-sm" value="0.00">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">In Kind</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Nomor SK Penugasan</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Tanggal SK Penugasan</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
                     <th class="w-25">Mitra Litabmas</th>
                     <td>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
             </table>
@@ -177,13 +177,13 @@
                     <input type="file" class="w-100" placeholder="Pilih file">
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                     
                     <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
-                    <select class="form-select w-100 mt-1" aria-label="Small select example">
+                    <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                         <option selected>Pilih...</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -191,7 +191,7 @@
                     </select>
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </div>
             </div>
         </div>
@@ -225,22 +225,22 @@
                 </tr>
                 <tr>
                     <td class="w-25">
-                        <input type="text" class="w-100" value="Universitas Patria Artha" disabled>
+                        <input type="text" class="w-100 form-control form-control-sm" value="Universitas Patria Artha" disabled>
                     </td>
                     <td>
-                        <input type="text" class="w-100" value="09020177708 - SUHENDRA S" disabled>
+                        <input type="text" class="w-100 form-control form-control-sm" value="09020177708 - SUHENDRA S" disabled>
                     </td>
                     <td>
-                        <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                        <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                             <option selected>Pilih...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
                     </td>
-                    <td>
-                        <input type="checkbox" class="mr-1">Aktif
-                    </td>
+                    <td class="text-center">
+                        <input type="checkbox" class="form-check-input">Aktif
+                    </td> 
                     <td style="width: 5%"></td>
                 </tr>
             </table>
@@ -267,18 +267,18 @@
                 </tr>
                 <tr id="mahasiswa-0">
                     <td class="w-50">
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                     <td>
-                        <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                        <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                             <option selected>Pilih...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
                     </td>
-                    <td>
-                        <input type="checkbox" class="mr-1">Aktif
+                    <td class="text-center">
+                        <input type="checkbox" class="form-check-input">Aktif
                     </td>
                     <td>
                         <button mahasiswa-id="0" class="btn btn-danger btn-sm" style="fill: white">
@@ -317,99 +317,102 @@
                                     <tr>
                                         <th>Nama</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Negara</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Jenis Kelamin</th>
                                         <td>
-                                            <input type="radio" name="gender" class="mr-1">Laki-laki
-                                            <input type="radio" name="gender" class="mr-1">Perempuan
+                                            <input type="radio" name="gender" class="form-check-input">
+                                            <label for="" class="form-check-label">Laki-Laki</label>
+                                            <br>
+                                            <input type="radio" name="gender" class="form-check-input">
+                                            <label for="" class="form-check-label">Perempuan</label>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>NIK</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Tempat Lahir</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Tanggal Lahir</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="date" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Jalan</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>RT</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>RW</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Dusun</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Desa/Kelurahan</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Kode Pos</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>No. Telepon Rumah</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>No. Telepon Seluler</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="text" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Email</th>
                                         <td>
-                                            <input type="text" class="w-100">
+                                            <input type="email" class="w-100 form-control form-control-sm">
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn btn-primary" style="fill: white; font-size: 12px">
+                            <button class="btn btn-primary" style="fill: white; font-size: 14px">
                                 <i class="fas fa-save"></i>
                                 Simpan
                             </button>
@@ -429,7 +432,7 @@
                 </tr>
                 <tr id="eksternal-0">
                     <td class="w-50">
-                        <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                        <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                             <option selected>Pilih...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -437,15 +440,15 @@
                         </select>
                     </td>
                     <td>
-                        <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                        <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                             <option selected>Pilih...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
                     </td>
-                    <td>
-                        <input type="checkbox" class="mr-1">Aktif
+                    <td class="text-center">
+                        <input type="checkbox" class="form-check-input">Aktif
                     </td>
                     <td>
                         <button eksternal-id="0" class="btn btn-danger btn-sm" style="fill: white">
@@ -475,7 +478,7 @@
                 </tr>
                 <tr id="bidang-0">
                     <td class="w-75">
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                     <td>
                         <button bidang-id="0" class="btn btn-danger btn-sm" style="fill: white">
@@ -493,7 +496,7 @@
         </div>
 
         <div class="mt-4">
-            <button class="btn btn-primary" style="fill: white; font-size: 12px">
+            <button class="btn btn-primary" style="fill: white; font-size: 14px">
                 <i class="fas fa-save"></i>
                 Simpan
             </button>
@@ -516,21 +519,21 @@
     inputDosen = (i) => {
         let dosen = `<tr id="dosen-${i}">
                         <td>
-                            <input type="text" class="w-100">
+                            <input type="text" class="w-100 form-control form-control-sm">
                         </td>
                         <td>
-                            <input type="text" class="w-100" placeholder="NIP - NAMA">
+                            <input type="text" class="w-100 form-control form-control-sm" placeholder="NIP - NAMA">
                         </td>
                         <td>
-                            <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                            <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                                 <option selected>Pilih...</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
                         </td>
-                        <td>
-                            <input type="checkbox" class="mr-1">Aktif
+                        <td class="text-center">
+                            <input type="checkbox" class="form-check-input">Aktif
                         </td>
                         <td>
                             <button dosen-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
@@ -556,18 +559,18 @@
     inputMahasiswa = (i) => {
         let mahasiswa = `<tr id="mahasiswa-${i}">
                         <td>
-                            <input type="text" class="w-100">
+                            <input type="text" class="w-100 form-control form-control-sm">
                         </td>
                         <td>
-                            <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                            <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                                 <option selected>Pilih...</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
                         </td>
-                        <td>
-                            <input type="checkbox" class="mr-1">Aktif
+                        <td class="text-center">
+                            <input type="checkbox" class="form-check-input">Aktif
                         </td>
                         <td>
                             <button mahasiswa-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
@@ -594,7 +597,7 @@
     inputEksternal = (i) => {
         let eksternal = `<tr id="eksternal-${i}">
                         <td>
-                            <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                            <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                                 <option selected>Pilih...</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -602,15 +605,15 @@
                             </select>
                         </td>
                         <td>
-                            <select class="form-select form-select-sm w-100" aria-label="Small select example">
+                            <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                                 <option selected>Pilih...</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
                         </td>
-                        <td>
-                            <input type="checkbox" class="mr-1">Aktif
+                        <td class="text-center">
+                            <input type="checkbox" class="form-check-input">Aktif
                         </td>
                         <td>
                                 <button eksternal-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
@@ -636,7 +639,7 @@
     inputBidang = (i) => {
         let bidang = `<tr id="bidang-${i}">
                         <td>
-                            <input type="text" class="w-100">
+                            <input type="text" class="w-100 form-control form-control-sm">
                         </td>
                         <td>
                                 <button bidang-id="${i}" class="btn btn-danger btn-sm" style="fill: white">
@@ -679,12 +682,12 @@
                         <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png, doc, docx, xls, xlsx, txt)</p>
                         <input type="file" class="w-100" placeholder="Pilih file">
                         <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                         <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                         
                         <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
-                        <select class="form-select w-100 mt-1" aria-label="Small select example">
+                        <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                             <option selected>Pilih...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -692,7 +695,7 @@
                         </select>
     
                         <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
-                        <input type="text" class="w-100">
+                        <input type="text" class="w-100 form-control form-control-sm">
                     </div>
                 </div>
             </div>`;

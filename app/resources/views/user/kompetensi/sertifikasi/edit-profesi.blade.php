@@ -54,28 +54,28 @@
                 <th class="w-25">Bidang Studi</th>
                 <td>Manajemen</td>
                 <td>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </td>
             </tr>
             <tr>
                 <th class="w-25">No. Registrasi Pendidik</th>
                 <td>19109104702073</td>
                 <td>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </td>
             </tr>
             <tr>
                 <th class="w-25">No. SK Sertifikasi</th>
                 <td>1900100200368</td>
                 <td>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </td>
             </tr>
             <tr>
                 <th class="w-25">Tahun Sertifikasi</th>
                 <td>2019</td>
                 <td>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </td>
             </tr>
         </table>
@@ -127,13 +127,13 @@
                 <input type="file" class="w-100" placeholder="Pilih file">
 
                 <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
-                <input type="text" class="w-100">
+                <input type="text" class="w-100 form-control form-control-sm">
 
                 <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                <input type="text" class="w-100">
+                <input type="text" class="w-100 form-control form-control-sm">
                 
                 <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
-                <select class="form-select w-100 mt-1" aria-label="Small select example">
+                <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                     <option selected>Pilih...</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
@@ -141,7 +141,7 @@
                 </select>
 
                 <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
-                <input type="text" class="w-100">
+                <input type="text" class="w-100 form-control form-control-sm">
             </div>
         </div>
     </div>
@@ -156,7 +156,7 @@
             <button id="tambah" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
                 Tambah dokumen lain
             </button>
-            <button class="btn btn-primary" style="fill: white; font-size: 12px">
+            <button class="btn btn-primary" style="fill: white; font-size: 14px">
                 <i class="fas fa-save"></i>
                 Simpan
             </button>
@@ -197,12 +197,12 @@
                     <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png, doc, docx, xls, xlsx, txt)</p>
                     <input type="file" class="w-100" placeholder="Pilih file">
                     <p class="m-0 mt-2 font-weight-bold pb-1">Nama Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                     
                     <p class="m-0 mt-2 font-weight-bold pb-1">Jenis Dokumen</p>
-                    <select class="form-select w-100 mt-1" aria-label="Small select example">
+                    <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
                         <option selected>Pilih...</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -210,7 +210,7 @@
                     </select>
 
                     <p class="m-0 mt-2 font-weight-bold pb-1">Tautan Dokumen</p>
-                    <input type="text" class="w-100">
+                    <input type="text" class="w-100 form-control form-control-sm">
                 </div>
             </div>
         </div>`;
