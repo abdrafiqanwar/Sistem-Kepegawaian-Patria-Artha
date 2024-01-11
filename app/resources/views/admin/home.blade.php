@@ -16,7 +16,7 @@
                 <div class="row p-t-10 p-b-10">
                     <!-- Column -->
                     <div class="col p-r-0">
-                        <h1 class="font-light">10327</h1>
+                        <h1 class="font-light">{{ $jumlahDosen ?? 0 }}</h1>
                         <h6 class="text-muted">Total Dosen</h6>
                     </div>
                     <!-- Column -->
@@ -35,7 +35,7 @@
                 <div class="row p-t-10 p-b-10">
                     <!-- Column -->
                     <div class="col p-r-0">
-                        <h1 class="font-light">10327</h1>
+                        <h1 class="font-light">{{ $jumlahDosenGender['MALE'] ?? 0 }}</h1>
                         <h6 class="text-muted">Laki-Laki</h6>
                     </div>
                     <!-- Column -->
@@ -54,7 +54,7 @@
                 <div class="row p-t-10 p-b-10">
                     <!-- Column -->
                     <div class="col p-r-0">
-                        <h1 class="font-light">10327</h1>
+                        <h1 class="font-light">{{ $jumlahDosenGender['FEMALE'] ?? 0 }}</h1>
                         <h6 class="text-muted">Perempuan</h6>
                     </div>
                     <!-- Column -->
