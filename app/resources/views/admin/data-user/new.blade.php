@@ -39,23 +39,29 @@
     </div>
     @endif
 
-    <form action="{{ route('admin.data-user.store') }}" method="POST">
+    <form action="{{ route('admin.data-user.store') }}" method="POST" class="mt-2">
         @csrf
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputName" class="font-weight-normal">Nama</label>
+                <label for="inputName" class="font-weight-normal form-check-label">Nama</label>
                 <input type="text" name="name" id="inputName" class="form-control" placeholder="Nama" value="{{ old('name') }}">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputEmail" class="font-weight-normal">Email</label>
+                <label for="inputEmail" class="font-weight-normal form-check-label">Email</label>
                 <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" value="{{ old('email') }}">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
+                <label for="role" class="font-weight-normal form-check-label">Role</label>
+                <select id="role" name="role" class="form-select w-100 form-control" aria-label="Small select example">
+                    <option selected disabled>Pilih</option>
+                    <option value="LECTURER">Dosen</option>
+                    <option value="ADMIN">Admin</option>
+                </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPassword" class="font-weight-normal">Password</label>
+                <label for="inputPassword" class="font-weight-normal form-check-label">Password</label>
                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
             </div>
         </div>
