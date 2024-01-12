@@ -21,13 +21,17 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users|email:dns',
-            // 'role' => 'required',
+            'role' => 'required',
             'password' => 'required',
         ]);
 
         User::create($validated);
 
-        return redirect()->route('admin.data-user')->with('success', 'Data dosen berhasil ditambahkan.');
+        if($request->role == 'LECTURER'){
+            return redirect()->route('admin.data-user')->with('success', 'Akun dosen berhasil ditambahkan.');
+        }else{
+            return redirect()->route('admin.data-user')->with('success', 'Akun admin berhasil ditambahkan.');
+        }
     }
 
     public function destroy($id){

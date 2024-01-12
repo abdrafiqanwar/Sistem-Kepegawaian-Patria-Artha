@@ -19,8 +19,8 @@
 @section('content')
 <div class="card p-3">
     <div class="d-flex justify-content-between">
-        <h4 class="text-bold">Data User</h4>
-        <a href="{{ route('admin.data-user.create') }}" class="btn btn-secondary" style="font-size: 16px">
+        <h5 class="text-bold">Data User</h5>
+        <a href="{{ route('admin.data-user.create') }}" class="btn btn-secondary" style="font-size: 14px">
             <i class="fas fa-plus"></i>
             Tambah User
         </a>
