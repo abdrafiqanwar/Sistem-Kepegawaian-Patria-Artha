@@ -10,8 +10,8 @@
 
         <h6 class="pl-2 pr-2">/</h6>
 
-        <a href="{{ route('admin.data-dosen') }}" class="btn p-0">
-            <h6>Data Dosen</h6>
+        <a href="{{ route('admin.data-user') }}" class="btn p-0">
+            <h6>Data User</h6>
         </a>
 
         <h6 class="pl-2 pr-2">/</h6>
@@ -24,7 +24,7 @@
 
 @section('content')
 <div class="card p-3">
-    <h5 class="text-bold">Tambah Dosen</h5>
+    <h5 class="text-bold">Tambah User</h5>
 
     @if($errors->any())
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -39,11 +39,11 @@
     </div>
     @endif
 
-    <form action="{{ route('admin.data-dosen.store') }}" method="POST">
+    <form action="{{ route('admin.data-user.store') }}" method="POST">
         @csrf
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputName" class="font-weight-normal">Nama Dosen</label>
+                <label for="inputName" class="font-weight-normal">Nama</label>
                 <input type="text" name="name" id="inputName" class="form-control" placeholder="Nama" value="{{ old('name') }}">
             </div>
             <div class="form-group col-md-6">
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="d-md-flex justify-content-md-end">
-            <a href="{{ route('admin.data-dosen') }}" class="btn btn-outline-danger mr-md-2">Batal</a>
+            <a href="{{ route('admin.data-user') }}" class="btn btn-outline-danger mr-md-2">Batal</a>
             <button type="submit" class="btn btn-primary">Konfirmasi</button>
         </div>
     </form>

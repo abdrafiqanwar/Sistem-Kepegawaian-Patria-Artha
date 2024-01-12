@@ -327,9 +327,9 @@ return [
             'icon' => 'fas fa-fw fa-home',
         ],
         [
-            'text' => 'Data Dosen',
+            'text' => 'Data User',
             'can' => 'admin',
-            'route' => 'admin.data-dosen',
+            'route' => 'admin.data-user',
             'icon' => 'fas fa-fw fa-chalkboard-teacher',
         ],
         [

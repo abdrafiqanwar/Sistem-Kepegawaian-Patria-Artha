@@ -33,13 +33,13 @@ Route::group(['prefix' => '', 'namespace' => 'App\Http\Controllers\Auth'], funct
 Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['admin', 'auth']], function(){
     Route::get('/', 'HomeController@index')->name('admin.home');
 
-    Route::group(['prefix' => 'data-dosen'], function(){
-        Route::get('/', 'UserController@index')->name('admin.data-dosen');
+    Route::group(['prefix' => 'data-user'], function(){
+        Route::get('/', 'UserController@index')->name('admin.data-user');
 
-        Route::get('/create', 'UserController@create')->name('admin.data-dosen.create');
-        Route::post('/create', 'UserController@store')->name('admin.data-dosen.store');
+        Route::get('/create', 'UserController@create')->name('admin.data-user.create');
+        Route::post('/create', 'UserController@store')->name('admin.data-user.store');
 
-        Route::post('/delete/{id}', 'UserController@destroy')->name('admin.data-dosen.delete');
+        Route::post('/delete/{id}', 'UserController@destroy')->name('admin.data-user.delete');
     });
 });
 

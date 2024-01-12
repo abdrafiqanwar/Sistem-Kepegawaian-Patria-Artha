@@ -11,7 +11,7 @@
         <h6 class="pl-2 pr-2">/</h6>
     
         <a href="" class="btn p-0">
-            <h6>Data Dosen</h6>
+            <h6>Data User</h6>
         </a>
     </div>
 @stop
@@ -19,10 +19,10 @@
 @section('content')
 <div class="card p-3">
     <div class="d-flex justify-content-between">
-        <h4 class="text-bold">Data Dosen</h4>
-        <a href="{{ route('admin.data-dosen.create') }}" class="btn btn-secondary" style="font-size: 16px">
+        <h4 class="text-bold">Data User</h4>
+        <a href="{{ route('admin.data-user.create') }}" class="btn btn-secondary" style="font-size: 16px">
             <i class="fas fa-plus"></i>
-            Tambah Dosen
+            Tambah User
         </a>
     </div>
 
@@ -80,7 +80,7 @@
                         <img src="{{ asset('img/alert_merah.svg')}}" alt="">
                     </div>
                     <div class="flex-grow-1 ms-3">
-                        <h4 class="modal-title ml-3 align-self-center">Hapus Akun Dosen</h4>
+                        <h4 class="modal-title ml-3 align-self-center">Hapus Akun</h4>
                     </div>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -141,7 +141,7 @@
             order: [
                 [1, 'asc']
             ],
-            "dom": '<"sw-reklame-add">ftpr',
+            "dom": '<"filter">ftpr',
         });
 
         t.on('order.dt search.dt', function() {
@@ -162,7 +162,7 @@
 
         $('#btn-hapus').on('click', function(){
             $.ajax({
-                url: "data-dosen/delete/" + id,
+                url: "data-user/delete/" + id,
                 method: "post",
                 data: {
                     _token: "{{ csrf_token() }}",
@@ -177,7 +177,7 @@
         });
 
 
-        $('div.sw-reklame-add').html('<div style="display:flex; flex-direction: row; float:left;" class="mb-2"><div><select id="categoryFilterStatus" style="width: auto;" class="form-control form-control-sm special"><option value="">All</option><option value="LECTURER">Dosen</option><option value="ADMIN">Admin</option></select></div></div>');
+        $('div.filter').html('<div style="display:flex; flex-direction: row; float:left;" class="mb-2"><div><select id="categoryFilterStatus" style="width: auto;" class="form-control special"><option value="">All</option><option value="LECTURER">Dosen</option><option value="ADMIN">Admin</option></select></div></div>');
 
         $("#categoryFilterStatus").on('change', function (e) {
             t.column(4).search(this.value).draw();
