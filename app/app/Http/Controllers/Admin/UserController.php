@@ -10,11 +10,11 @@ class UserController extends Controller
 {
     public function index(){
         $users = User::all();
-        return view('admin.data-dosen', compact('users'));
+        return view('admin.data-user', compact('users'));
     }
 
     public function create(){
-        return view('admin.data-dosen.new');
+        return view('admin.data-user.new');
     }
 
     public function store(Request $request){
@@ -27,7 +27,7 @@ class UserController extends Controller
 
         User::create($validated);
 
-        return redirect()->route('admin.data-dosen')->with('success', 'Data dosen berhasil ditambahkan.');
+        return redirect()->route('admin.data-user')->with('success', 'Data dosen berhasil ditambahkan.');
     }
 
     public function destroy($id){
