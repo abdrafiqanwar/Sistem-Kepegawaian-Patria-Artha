@@ -333,6 +333,12 @@ return [
             'icon' => 'fas fa-fw fa-chalkboard-teacher',
         ],
         [
+            'text' => 'Referensi',
+            'can' => 'admin',
+            'route' => 'admin.data-user',
+            'icon' => 'fas fa-fw fa-paperclip'
+        ],
+        [
             'text' => 'profile',
             'can' => 'user',
             // 'url'  => 'admin/settings',

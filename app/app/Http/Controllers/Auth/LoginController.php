@@ -86,4 +86,34 @@ class LoginController extends Controller
             ? redirect()->route('login')->with('status', __($status))
             : back()->withErrors(['email' => [__($status)]]);
     }
+
+    public function setting(){
+        return view('auth.setting');
+    }
+
+    public function changePassword(Request $request){
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required',
+            'confirm_password' => 'required'
+        ]);
+
+        if(!Hash::check($request->old_password, auth()->user()->password)){
+            return redirect()->back()->with('error', 'Password lama tidak sesuai');
+        }
+
+        if($request->new_password != $request->confirm_password){
+            return redirect()->back()->with('error', 'Password baru tidak sama');
+        }
+
+        if($request->new_password == $request->old_password){
+            return redirect()->back()->with('error', 'Password baru tidak boleh sama dengan password lama');
+        }
+
+        auth()->user()->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return redirect()->back()->with('success', 'Password berhasil diubah');
+    }
 }
