@@ -27,6 +27,8 @@ Route::group(['prefix' => '', 'namespace' => 'App\Http\Controllers\Auth'], funct
     Route::post('/forgot-password', 'LoginController@email')->name('password.email')->middleware('guest');
     Route::get('/reset-password/{token}', 'LoginController@reset')->name('password.reset')->middleware('guest');
     Route::post('/reset-password', 'LoginController@update')->name('password.update')->middleware('guest');
+    Route::get('/setting', 'LoginController@setting')->name('setting')->middleware('auth');
+    Route::post('/setting', 'LoginController@changePassword')->name('setting.change')->middleware('auth');
 });
 
 

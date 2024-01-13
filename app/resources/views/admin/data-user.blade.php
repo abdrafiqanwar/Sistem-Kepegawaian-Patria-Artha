@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Data Dosen')
+@section('title', 'Data User')
 
 @section('content_header')
     <div class="d-flex">
