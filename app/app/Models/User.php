@@ -59,11 +59,6 @@ class User extends Authenticatable
         return $this->hasMany(LecturerCitizenship::class);
     }
 
-    public function lecturerPlacements()
-    {
-        return $this->hasMany(LecturerPlacement::class);
-    }
-
     public function lecturerFunctionals()
     {
         return $this->hasMany(LecturerFunctional::class);

@@ -53,6 +53,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User', 'm
             Route::get('/', 'DataPribadiController@index')->name('user.data-pribadi');
 
             Route::get('/biodata', 'BiodataController@index')->name('user.biodata');
+            Route::post('/biodata', 'BiodataController@store')->name('user.biodata.store');
 
             Route::get('/alamat-kontak', 'AlamatController@index')->name('user.alamat-kontak');
 
