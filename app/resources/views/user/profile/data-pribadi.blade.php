@@ -62,36 +62,42 @@
 
                 <div class="table-responsive">
                     <table class="table mt-2 mb-0" style="font-size: 14px">
+                        @foreach($biodata as $row)
                         <tr>
-                            <td style="width: 35%">NIDN</td>
-                            <td style="width: 5%">:</td>
-                            <td>0902017708</td>
+                            <td style="width: 15%">NIDN</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $row->nidn }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Nama</td>
-                            <td style="width: 5%">:</td>
-                            <td>SUHENDRA S</td>
+                            <td style="width: 15%">Nama</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $row->full_name }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Jenis Kelamin</td>
-                            <td style="width: 5%">:</td>
-                            <td>Laki-laki</td>
+                            <td style="width: 15%">Jenis Kelamin</td>
+                            <td style="width: 1%">:</td>
+                            @if($row->gender == 'MALE')
+                            <td class="w-25">Laki-Laki</td>
+                            @else
+                            <td class="w-25">Perempuan</td>
+                            @endif
                         </tr>
                         <tr>
-                            <td style="width: 35%">Tempat Lahir</td>
-                            <td style="width: 5%">:</td>
-                            <td>MALINO</td>
+                            <td style="width: 15%">Tempat Lahir</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $row->place_of_birth }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Tangal Lahir</td>
-                            <td style="width: 5%">:</td>
-                            <td>02 Januari 1977</td>
+                            <td style="width: 15%">Tangal Lahir</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $row->date_of_birth }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Nama Ibu Kandung</td>
-                            <td style="width: 5%">:</td>
-                            <td>Mumang</td>
+                            <td style="width: 15%">Nama Ibu Kandung</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $row->mother_name }}</td>
                         </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>
