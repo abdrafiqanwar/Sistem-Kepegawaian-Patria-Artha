@@ -53,14 +53,14 @@
                         <th class="w-25">NIDN</th>
                         <td class="w-25">{{ $row->nidn }}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm" name="nidn">
+                            <input type="text" class="w-100 form-control form-control-sm" name="nidn" required>
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Nama</th>
                         <td class="w-25">{{ $row->full_name }}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm" name="full_name">
+                            <input type="text" class="w-100 form-control form-control-sm" name="full_name" required>
                         </td>
                     </tr>
                     <tr>
@@ -71,8 +71,8 @@
                         <td class="w-25">Perempuan</td>
                         @endif
                         <td>
-                            <select class="form-select w-100 h-100 form-control form-control-sm" aria-label="Small select example" name="gender">
-                                <option selected disabled>Pilih...</option>
+                            <select class="form-select w-100 h-100 form-control form-control-sm" aria-label="Small select example" name="gender" required>
+                                <option value="">Pilih...</option>
                                 <option value="MALE">Laki-Laki</option>
                                 <option value="FEMALE">Perempuan</option>
                             </select>
@@ -82,21 +82,21 @@
                         <th class="w-25">Tempat Lahir</th>
                         <td class="w-25">{{ $row->place_of_birth }}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm" name="place_of_birth">
+                            <input type="text" class="w-100 form-control form-control-sm" name="place_of_birth" required>
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Tanggal Lahir</th>
                         <td class="w-25">{{ $row->date_of_birth }}</td>
                         <td>
-                            <input type="date" class="w-100 form-control form-control-sm" name="date_of_birth">
+                            <input type="date" class="w-100 form-control form-control-sm" name="date_of_birth" required>
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Nama Ibu Kandung</th>
                         <td class="w-25">{{ $row->mother_name }}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm" name="mother_name">
+                            <input type="text" class="w-100 form-control form-control-sm" name="mother_name" required>
                         </td>
                     </tr>
                     @endforeach
@@ -117,7 +117,7 @@
                             <span style="color: red">*</span>
                         </p>
                         <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 5MB)</p>
-                        <input type="file" class="w-100" placeholder="Pilih file" name="ktp_image_path">
+                        <input type="file" class="w-100" placeholder="Pilih file" name="ktp_image_path" required>
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@
                             <span style="color: red">*</span>
                         </p>
                         <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 5MB)</p>
-                        <input type="file" class="w-100" placeholder="Pilih file" name="kk_image_path">
+                        <input type="file" class="w-100" placeholder="Pilih file" name="kk_image_path" required>
                     </div>
                 </div>
             </div>
