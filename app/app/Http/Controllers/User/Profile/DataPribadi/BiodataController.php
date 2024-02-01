@@ -39,4 +39,18 @@ class BiodataController extends Controller
 
         return redirect()->route('user.data-pribadi');
     }
+    
+    public function image(Request $request){
+        $validated = $request->validate([
+            'profile_image_path' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $data = auth()->user();
+        $nama_file = time(). '.' . $request->profile_image_path->extension();
+        $request->profile_image_path->move(public_path('file_path/profile/data_pribadi'), $nama_file);
+        $data->profile_image_path = $nama_file;
+        $data->save();
+
+        return redirect()->route('user.data-pribadi');
+    }
 }
