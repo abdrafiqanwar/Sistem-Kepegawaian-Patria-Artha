@@ -62,42 +62,36 @@
 
                 <div class="table-responsive">
                     <table class="table mt-2 mb-0" style="font-size: 14px">
-                        @foreach($biodata as $row)
                         <tr>
                             <td style="width: 15%">NIDN</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $row->nidn }}</td>
+                            <td>{{ $biodata->nidn ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">Nama</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $row->full_name }}</td>
+                            <td>{{ $biodata->full_name ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">Jenis Kelamin</td>
                             <td style="width: 1%">:</td>
-                            @if($row->gender == 'MALE')
-                            <td class="w-25">Laki-Laki</td>
-                            @else
-                            <td class="w-25">Perempuan</td>
-                            @endif
+                            <td class="w-25">{{ $biodata->gender ?? 'Belum ada data' }}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">Tempat Lahir</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $row->place_of_birth }}</td>
+                            <td>{{ $biodata->place_of_birth ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">Tangal Lahir</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $row->date_of_birth }}</td>
+                            <td>{{ $biodata->date_of_birth ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">Nama Ibu Kandung</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $row->mother_name }}</td>
+                            <td>{{ $biodata->mother_name ?? 'Belum ada data'}}</td>
                         </tr>
-                        @endforeach
                     </table>
                 </div>
             </div>

@@ -48,28 +48,23 @@
                         <th class="text-center w-25">Data Saat Ini</th>
                         <th class="text-center">Data Baru</th>
                     </tr>
-                    @foreach($data as $row)
                     <tr>
                         <th class="w-25">NIDN</th>
-                        <td class="w-25">{{ $row->nidn }}</td>
+                        <td class="w-25">{{ $data->nidn ?? 'Belum ada data' }}</td>
                         <td>
                             <input type="text" class="w-100 form-control form-control-sm" name="nidn" required>
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Nama</th>
-                        <td class="w-25">{{ $row->full_name }}</td>
+                        <td class="w-25">{{ $data->full_name ?? 'Belum ada data'}}</td>
                         <td>
                             <input type="text" class="w-100 form-control form-control-sm" name="full_name" required>
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Jenis Kelamin</th>
-                        @if($row->gender == 'MALE')
-                        <td class="w-25">Laki-Laki</td>
-                        @else
-                        <td class="w-25">Perempuan</td>
-                        @endif
+                        <td class="w-25">{{ $data->gender ?? 'Belum ada data' }}</td>
                         <td>
                             <select class="form-select w-100 h-100 form-control form-control-sm" aria-label="Small select example" name="gender" required>
                                 <option value="">Pilih...</option>
@@ -80,26 +75,25 @@
                     </tr>
                     <tr>
                         <th class="w-25">Tempat Lahir</th>
-                        <td class="w-25">{{ $row->place_of_birth }}</td>
+                        <td class="w-25">{{ $data->place_of_birth ?? 'Belum ada data'}}</td>
                         <td>
                             <input type="text" class="w-100 form-control form-control-sm" name="place_of_birth" required>
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Tanggal Lahir</th>
-                        <td class="w-25">{{ $row->date_of_birth }}</td>
+                        <td class="w-25">{{ $data->date_of_birth ?? 'Belum ada data'}}</td>
                         <td>
                             <input type="date" class="w-100 form-control form-control-sm" name="date_of_birth" required>
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Nama Ibu Kandung</th>
-                        <td class="w-25">{{ $row->mother_name }}</td>
+                        <td class="w-25">{{ $data->mother_name ?? 'Belum ada data'}}</td>
                         <td>
                             <input type="text" class="w-100 form-control form-control-sm" name="mother_name" required>
                         </td>
                     </tr>
-                    @endforeach
                 </table>
             </div>
 
