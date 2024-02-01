@@ -55,7 +55,7 @@
                             <input type="text" class="w-100 form-control form-control-sm @error('nidn') is-invalid @enderror" name="nidn" value="{{ old('nidn') }}">
                             @error('nidn')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>NIDN wajib diisi</strong>
+                                    <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </td>
@@ -67,7 +67,7 @@
                             <input type="text" class="w-100 form-control form-control-sm @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}">
                             @error('full_name')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>Nama wajib diisi</strong>
+                                    <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </td>
@@ -83,7 +83,7 @@
                             </select>
                             @error('gender')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>Jenis kelamin wajib diisi</strong>
+                                    <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </td>
@@ -95,7 +95,7 @@
                             <input type="text" class="w-100 form-control form-control-sm @error('place_of_birth') is-invalid @enderror" name="place_of_birth" value="{{ old('place_of_birth') }}">
                             @error('place_of_birth')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>Tempat Lahir wajib diisi</strong>
+                                    <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </td>
@@ -107,7 +107,7 @@
                             <input type="date" class="w-100 form-control form-control-sm @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}">
                             @error('date_of_birth')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>Tanggal Lahir wajib diisi</strong>
+                                    <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </td>
@@ -119,7 +119,7 @@
                             <input type="text" class="w-100 form-control form-control-sm @error('mother_name') is-invalid @enderror" name="mother_name" value="{{ old('mother_name') }}">
                             @error('mother_name')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>Nama Ibu Kandung wajib diisi</strong>
+                                    <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </td>
@@ -141,7 +141,12 @@
                             <span style="color: red">*</span>
                         </p>
                         <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>
-                        <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100" placeholder="Pilih file" name="ktp_image_path" required>
+                        <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
+                        @error('ktp_image_path')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -158,7 +163,12 @@
                             <span style="color: red">*</span>
                         </p>
                         <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>
-                        <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100" placeholder="Pilih file" name="kk_image_path" required>
+                        <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('kk_image_path') is-invalid @enderror" placeholder="Pilih file" name="kk_image_path">
+                        @error('kk_image_path')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
             </div>
