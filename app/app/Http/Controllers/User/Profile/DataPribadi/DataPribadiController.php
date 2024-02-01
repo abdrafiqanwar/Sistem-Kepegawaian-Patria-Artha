@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class DataPribadiController extends Controller
 {
     public function index(){
-        $biodata = LecturerProfile::where('user_id', auth()->user()->id)->orderByDesc('created_at')->limit(1)->get();
+        $biodata = LecturerProfile::where('user_id', auth()->user()->id)->orderByDesc('created_at')->first();
         return view('user.profile.data-pribadi', compact('biodata'));
     }
 }
