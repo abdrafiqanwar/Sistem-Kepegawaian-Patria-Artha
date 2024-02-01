@@ -57,8 +57,9 @@
                             </div>
                             <div class="modal-body">
                                 <p class="mb-auto">Pilih Foto</p>
-                                <input type="file" class="w-100" placeholder="Pilih foto" name="profile_image_path" accept="image/png, image/jpeg, image/jpg">
-                                <p class="mt-auto">Ukuran file maksimal 2MB</p>
+                                <input type="file" class="w-100" placeholder="Pilih foto" name="profile_image_path" accept="image/png, image/jpeg, image/jpg" required>
+                                <small class="mt-auto mb-0">Ukuran file maksimal 2MB</small>
+                                <p class="font-italic m-0" style="font-size: 12px">(Jenis file yang diijinkan: jpg, jpeg, png dengan ukuran maksimal 2MB)</p>
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

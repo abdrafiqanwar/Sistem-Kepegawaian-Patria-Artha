@@ -52,46 +52,76 @@
                         <th class="w-25">NIDN</th>
                         <td class="w-25">{{ $data->nidn ?? 'Belum ada data' }}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm" name="nidn" required>
+                            <input type="text" class="w-100 form-control form-control-sm @error('nidn') is-invalid @enderror" name="nidn" value="{{ old('nidn') }}">
+                            @error('nidn')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>NIDN wajib diisi</strong>
+                                </span>
+                            @enderror
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Nama</th>
                         <td class="w-25">{{ $data->full_name ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm" name="full_name" required>
+                            <input type="text" class="w-100 form-control form-control-sm @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}">
+                            @error('full_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Nama wajib diisi</strong>
+                                </span>
+                            @enderror
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Jenis Kelamin</th>
                         <td class="w-25">{{ $data->gender ?? 'Belum ada data' }}</td>
                         <td>
-                            <select class="form-select w-100 h-100 form-control form-control-sm" aria-label="Small select example" name="gender" required>
+                            <select class="form-select w-100 h-100 form-control form-control-sm @error('gender') is-invalid @enderror" aria-label="Small select example" name="gender">
                                 <option value="">Pilih...</option>
                                 <option value="MALE">Laki-Laki</option>
                                 <option value="FEMALE">Perempuan</option>
                             </select>
+                            @error('gender')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Jenis kelamin wajib diisi</strong>
+                                </span>
+                            @enderror
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Tempat Lahir</th>
                         <td class="w-25">{{ $data->place_of_birth ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm" name="place_of_birth" required>
+                            <input type="text" class="w-100 form-control form-control-sm @error('place_of_birth') is-invalid @enderror" name="place_of_birth" value="{{ old('place_of_birth') }}">
+                            @error('place_of_birth')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Tempat Lahir wajib diisi</strong>
+                                </span>
+                            @enderror
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Tanggal Lahir</th>
                         <td class="w-25">{{ $data->date_of_birth ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="date" class="w-100 form-control form-control-sm" name="date_of_birth" required>
+                            <input type="date" class="w-100 form-control form-control-sm @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}">
+                            @error('date_of_birth')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Tanggal Lahir wajib diisi</strong>
+                                </span>
+                            @enderror
                         </td>
                     </tr>
                     <tr>
                         <th class="w-25">Nama Ibu Kandung</th>
                         <td class="w-25">{{ $data->mother_name ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm" name="mother_name" required>
+                            <input type="text" class="w-100 form-control form-control-sm @error('mother_name') is-invalid @enderror" name="mother_name" value="{{ old('mother_name') }}">
+                            @error('mother_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Nama Ibu Kandung wajib diisi</strong>
+                                </span>
+                            @enderror
                         </td>
                     </tr>
                 </table>
@@ -110,8 +140,8 @@
                             Dokumen Dilampirkan
                             <span style="color: red">*</span>
                         </p>
-                        <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 5MB)</p>
-                        <input type="file" class="w-100" placeholder="Pilih file" name="ktp_image_path" required>
+                        <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>
+                        <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100" placeholder="Pilih file" name="ktp_image_path" required>
                     </div>
                 </div>
             </div>
@@ -127,8 +157,8 @@
                             Dokumen Dilampirkan
                             <span style="color: red">*</span>
                         </p>
-                        <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 5MB)</p>
-                        <input type="file" class="w-100" placeholder="Pilih file" name="kk_image_path" required>
+                        <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>
+                        <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100" placeholder="Pilih file" name="kk_image_path" required>
                     </div>
                 </div>
             </div>
@@ -183,8 +213,8 @@
                             Dokumen Dilampirkan
                             <span style="color: red">*</span>
                         </p>
-                        <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 5MB)</p>
-                        <input type="file" class="w-100" placeholder="Pilih file">
+                        <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>
+                        <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100" placeholder="Pilih file">
                     </div>
                 </div>
             </div>`;
