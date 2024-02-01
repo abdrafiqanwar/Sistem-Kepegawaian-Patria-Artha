@@ -39,7 +39,7 @@
         </div>
         <p style="font-size: 14px">Perubahan data ini memerlukan validasi yang akan diproses dalam maksimal 21 hari kerja setelah diajukan</p>
 
-        <form action="{{ route('user.biodata.store') }}" method="POST">
+        <form action="{{ route('user.biodata.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="table-responsive">
                 <table class="table border-left border-right border-bottom" style="font-size: 14px">

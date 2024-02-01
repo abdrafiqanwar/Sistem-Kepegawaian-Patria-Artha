@@ -21,9 +21,15 @@ class BiodataController extends Controller
             'place_of_birth' => 'required',
             'date_of_birth' => 'required',
             'mother_name' => 'required',
-            'ktp_image_path' => 'required',
-            'kk_image_path' => 'required',
+            'ktp_image_path' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048',
+            'kk_image_path' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048',
         ]);
+        
+        $ktp_file = time(). '.' . $request->ktp_image_path->extension();
+        $request->ktp_image_path->move(public_path('file_path/profile/data_pribadi'), $ktp_file);
+        
+        $kk_file = time(). '.' . $request->kk_image_path->extension();
+        $request->kk_image_path->move(public_path('file_path/profile/data_pribadi'), $kk_file);
 
         LecturerProfile::create([
             'user_id' => auth()->user()->id,
@@ -33,8 +39,8 @@ class BiodataController extends Controller
             'place_of_birth' => $validated['place_of_birth'],
             'date_of_birth' => $validated['date_of_birth'],
             'mother_name' => $validated['mother_name'],
-            'ktp_image_path' => $validated['ktp_image_path'],
-            'kk_image_path' => $validated['kk_image_path'],
+            'ktp_image_path' => $ktp_file,
+            'kk_image_path' => $kk_file,
         ]);
 
         return redirect()->route('user.data-pribadi');
