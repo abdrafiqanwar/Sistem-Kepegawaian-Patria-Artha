@@ -30,35 +30,45 @@
                     <h5 class="text-bold">Profil</h5>
                     <a href="{{ route('user.biodata') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px">Ajukan Perubahan</a>
                 </div>
+                @if(auth()->user()->profile_image_path)
                 <div class="text-center">
-                    <img src="https://source.unsplash.com/random/150x150?sig=1" class="p-3 img-fluid"/>
+                    <img src="{{ asset('file_path/profile/data_pribadi/'.auth()->user()->profile_image_path) }}" class="p-3 img-fluid" style="width: 200px; height: 200px"/>
                 </div>
+                @else
+                <div class="text-center">
+                    <img src="{{ asset('img/user.jpg') }}" class="p-3 img-fluid" style="width: 200px; height: 200px;"/>
+                </div>
+                @endif
                 <button type="button" data-bs-toggle="modal" data-bs-target="#foto" class="btn btn-info pt-1 pb-1" style="font-size: 14px; fill: white">
                     Unggah Foto
                     <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3l-73.4 73.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l128-128c12.5-12.5 32.8-12.5 45.3 0l128 128c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L288 109.3zM64 352H192c0 35.3 28.7 64 64 64s64-28.7 64-64H448c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V416c0-35.3 28.7-64 64-64zM432 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg>
                 </button>
 
-                <div class="modal fade" id="foto" tabindex="-1" aria-labelledby="fotoLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h6 class="modal-title fs-5" id="fotoLabel">Update Foto</h6>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                <form action="{{ route('user.biodata.image') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal fade" id="foto" tabindex="-1" aria-labelledby="fotoLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h6 class="modal-title fs-5" id="fotoLabel">Update Foto</h6>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="mb-auto">Pilih Foto</p>
+                                <input type="file" class="w-100" placeholder="Pilih foto" name="profile_image_path" accept="image/png, image/jpeg, image/jpg" required>
+                                <small class="mt-auto mb-0">Ukuran file maksimal 2MB</small>
+                                <p class="font-italic m-0" style="font-size: 12px">(Jenis file yang diijinkan: jpg, jpeg, png dengan ukuran maksimal 2MB)</p>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <p class="mb-auto">Pilih Foto</p>
-                            <input type="file">
-                            <p class="mt-auto">Ukuran file maksimal 2MB</p>
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save</button>
                         </div>
                     </div>
-                    </div>
-                </div>
+                </form>
 
                 <div class="table-responsive">
                     <table class="table mt-2 mb-0" style="font-size: 14px">
