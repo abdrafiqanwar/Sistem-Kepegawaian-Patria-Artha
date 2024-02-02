@@ -15,7 +15,7 @@ class BiodataController extends Controller
 
     public function store(Request $request){
         $validated = $request->validate([
-            'nidn' => 'required|unique:lecturer_profile,nidn',
+            'nidn' => 'required',
             'full_name' => 'required',
             'gender' => 'required',
             'place_of_birth' => 'required',

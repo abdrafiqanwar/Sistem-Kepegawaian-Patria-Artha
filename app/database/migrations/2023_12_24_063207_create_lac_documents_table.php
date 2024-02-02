@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('lac_documents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('lac_id');
+            $table->string('file_doc');
             $table->string('file_name');
-            $table->string('file_path');
             $table->text('description')->nullable();
             $table->unsignedBigInteger('document_type_id');
             $table->timestamps();
