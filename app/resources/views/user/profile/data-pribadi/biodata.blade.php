@@ -180,7 +180,7 @@
                 <div class="col-lg-4" style="font-size: 12px">
                 </div>
                 <div class="col d-flex justify-content-between" style="font-size: 14px">
-                    <button id="tambah" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
+                    <button id="tambah" type="button" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
                         Tambah dokumen lain
                     </button>
                     <button class="btn btn-primary" type="submit" style="fill: white; font-size: 14px">
