@@ -124,7 +124,7 @@
                     <th class="w-25">Kota/Kabupaten/Kecamatan</th>
                     <td class="w-25">{{ $data->city_discrict_sub_district ?? 'Belum ada data'}}</td>
                     <td>
-                        <select class="form-select w-100 h-100 form-control form-control-sm" aria-label="Small select example">
+                        <select class="form-select w-100 h-100 form-control form-control-sm" aria-label="Small select example" name="city_discrict_sub_district">
                             <option selected value="{{ $data->city_discrict_sub_district ?? '' }}">{{ $data->city_discrict_sub_district ?? 'Pilih...' }}</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>

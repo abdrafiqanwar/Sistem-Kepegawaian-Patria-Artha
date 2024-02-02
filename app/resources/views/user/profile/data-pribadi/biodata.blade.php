@@ -52,7 +52,7 @@
                         <th class="w-25">NIDN</th>
                         <td class="w-25">{{ $data->nidn ?? 'Belum ada data' }}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm @error('nidn') is-invalid @enderror" name="nidn" value="{{ old('nidn') }}">
+                            <input type="text" class="w-100 form-control form-control-sm @error('nidn') is-invalid @enderror" name="nidn" value="{{ $data->nidn ?? '' }}">
                             @error('nidn')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -64,7 +64,7 @@
                         <th class="w-25">Nama</th>
                         <td class="w-25">{{ $data->full_name ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}">
+                            <input type="text" class="w-100 form-control form-control-sm @error('full_name') is-invalid @enderror" name="full_name" value="{{ $data->full_name ?? '' }}">
                             @error('full_name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -77,7 +77,7 @@
                         <td class="w-25">{{ $data->gender ?? 'Belum ada data' }}</td>
                         <td>
                             <select class="form-select w-100 h-100 form-control form-control-sm @error('gender') is-invalid @enderror" aria-label="Small select example" name="gender">
-                                <option value="">Pilih...</option>
+                                <option selected value="{{ $data->gender ?? '' }}">{{ $data->gender ?? 'Pilih...' }}</option>
                                 <option value="MALE">Laki-Laki</option>
                                 <option value="FEMALE">Perempuan</option>
                             </select>
@@ -92,7 +92,7 @@
                         <th class="w-25">Tempat Lahir</th>
                         <td class="w-25">{{ $data->place_of_birth ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm @error('place_of_birth') is-invalid @enderror" name="place_of_birth" value="{{ old('place_of_birth') }}">
+                            <input type="text" class="w-100 form-control form-control-sm @error('place_of_birth') is-invalid @enderror" name="place_of_birth" value="{{ $data->place_of_birth ?? '' }}">
                             @error('place_of_birth')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -104,7 +104,7 @@
                         <th class="w-25">Tanggal Lahir</th>
                         <td class="w-25">{{ $data->date_of_birth ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="date" class="w-100 form-control form-control-sm @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}">
+                            <input type="date" class="w-100 form-control form-control-sm @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ $data->date_of_birth ?? '' }}">
                             @error('date_of_birth')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -116,7 +116,7 @@
                         <th class="w-25">Nama Ibu Kandung</th>
                         <td class="w-25">{{ $data->mother_name ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm @error('mother_name') is-invalid @enderror" name="mother_name" value="{{ old('mother_name') }}">
+                            <input type="text" class="w-100 form-control form-control-sm @error('mother_name') is-invalid @enderror" name="mother_name" value="{{ $data->mother_name ?? '' }}">
                             @error('mother_name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
