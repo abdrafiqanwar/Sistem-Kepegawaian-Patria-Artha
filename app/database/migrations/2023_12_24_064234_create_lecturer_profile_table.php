@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('lecturer_profile', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('nidn')->unique();
+            $table->string('nidn');
             $table->string('full_name');
             $table->enum('gender', ['MALE', 'FEMALE']);
             $table->string('place_of_birth');

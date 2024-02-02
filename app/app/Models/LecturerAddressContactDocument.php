@@ -13,8 +13,8 @@ class LecturerAddressContactDocument extends Model
 
     protected $fillable = [
         'lac_id',
+        'file_doc',
         'file_name',
-        'file_path',
         'description',
         'document_type_id',
     ];
