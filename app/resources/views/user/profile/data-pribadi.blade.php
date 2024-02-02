@@ -119,59 +119,54 @@
                 <div class="table-responsive">
                     <table class="table mt-2 mb-0" style="font-size: 14px">
                         <tr>
-                            <td style="width: 35%">Email</td>
-                            <td style="width: 5%">:</td>
-                            <td>suhendra@patria-artha@ac.id</td>
+                            <td style="width: 15%">Email</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->email ?? 'Belum ada data' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Alamat</td>
-                            <td style="width: 5%">:</td>
-                            <td>Hartaco Blok I P13 Balang Baru</td>
+                            <td style="width: 15%">Alamat</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->address ?? 'Belum ada data' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">RT</td>
-                            <td style="width: 5%">:</td>
-                            <td>2</td>
+                            <td style="width: 15%">RT</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->rt ?? '-' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">RW</td>
-                            <td style="width: 5%">:</td>
-                            <td>7</td>
+                            <td style="width: 15%">RW</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->rw ?? '-' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Dusun</td>
-                            <td style="width: 5%">:</td>
-                            <td>(Tidak ada data)</td>
+                            <td style="width: 15%">Dusun</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->sub_village ?? '-' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Desa/Kelurahan</td>
-                            <td style="width: 5%">:</td>
-                            <td>Balang Baru</td>
+                            <td style="width: 15%">Desa/Kelurahan</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->village ?? '-'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Kota/Kabupaten/Kecamatan</td>
-                            <td style="width: 5%">:</td>
-                            <td>Kota Makassar</td>
+                            <td style="width: 15%">Kota/Kabupaten/Kecamatan</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->city_discrict_sub_district ?? '-'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Provinsi</td>
-                            <td style="width: 5%">:</td>
-                            <td>Prov. Sulawesi Selatan</td>
+                            <td style="width: 15%">Kode Pos</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->postal_code ?? '-'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">Kode Pos</td>
-                            <td style="width: 5%">:</td>
-                            <td>90222</td>
+                            <td style="width: 15%">No. Telepon Rumah</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->home_phone_number ?? '-'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 35%">No. Telepon Rumah</td>
-                            <td style="width: 5%">:</td>
-                            <td>0411869761</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 35%">No. HP</td>
-                            <td style="width: 5%">:</td>
-                            <td>082396319222</td>
+                            <td style="width: 15%">No. HP</td>
+                            <td style="width: 1%">:</td>
+                            <td>{{ $address->phone_number ?? '-'}}</td>
                         </tr>
                     </table>
                 </div>
