@@ -131,42 +131,42 @@
                         <tr>
                             <td style="width: 15%">RT</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $address->rt ?? '-' }}</td>
+                            <td>{{ $address->rt ?? 'Belum ada data' }}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">RW</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $address->rw ?? '-' }}</td>
+                            <td>{{ $address->rw ?? 'Belum ada data' }}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">Dusun</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $address->sub_village ?? '-' }}</td>
+                            <td>{{ $address->sub_village ?? 'Belum ada data' }}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">Desa/Kelurahan</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $address->village ?? '-'}}</td>
+                            <td>{{ $address->village ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">Kota/Kabupaten/Kecamatan</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $address->city_discrict_sub_district ?? '-'}}</td>
+                            <td>{{ $address->city_discrict_sub_district ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">Kode Pos</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $address->postal_code ?? '-'}}</td>
+                            <td>{{ $address->postal_code ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">No. Telepon Rumah</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $address->home_phone_number ?? '-'}}</td>
+                            <td>{{ $address->home_phone_number ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
                             <td style="width: 15%">No. HP</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $address->phone_number ?? '-'}}</td>
+                            <td>{{ $address->phone_number ?? 'Belum ada data'}}</td>
                         </tr>
                     </table>
                 </div>
