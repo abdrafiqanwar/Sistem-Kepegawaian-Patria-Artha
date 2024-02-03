@@ -346,7 +346,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Data Pribadi',
-                    'route'  => 'user.data-pribadi',
+                    'route'  => 'user.personal-data',
                     'icon' => false,
                 ],
                 [

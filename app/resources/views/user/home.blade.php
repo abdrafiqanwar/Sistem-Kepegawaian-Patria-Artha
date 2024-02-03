@@ -3,9 +3,11 @@
 @section('title', 'Beranda')
 
 @section('content_header')
-    <a href="{{ route('user.home') }}" class="btn p-0">
-        <h6>Beranda</h6>
-    </a>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Beranda</li>
+    </ol>
+</nav>
 @stop
 
 @section('content')

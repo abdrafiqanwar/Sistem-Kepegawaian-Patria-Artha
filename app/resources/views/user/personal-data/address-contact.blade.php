@@ -3,43 +3,28 @@
 @section('title', 'Profile | Data Pribadi')
 
 @section('content_header')
-<div class="d-flex">
-    <a href="{{ route('user.home') }}" class="btn p-0">
-        <h6>Beranda</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Profil</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Data Pribadi</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="" class="btn p-0">
-        <h6>Alamat dan Kontak</h6>
-    </a>
-</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('user.home') }}">Beranda</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Profile</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Data Pribadi</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Alamat dan Kontak</li>
+    </ol>
+</nav>
 @stop
 
 @section('content')
     <div class="card p-3">
         <div class="d-flex justify-content-between">
             <h5 class="text-bold">Form Ajuan Perubahan Data Alamat dan Kontak</h5>
-            <a href="{{ route('user.data-pribadi') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+            <a href="{{ route('user.personal-data') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                 <i class="fas fa-arrow-left"></i>
                 Kembali
             </a>
         </div>
         <p style="font-size: 14px">Perubahan data ini memerlukan validasi yang akan diproses dalam maksimal 21 hari kerja setelah diajukan</p>
 
-        <form action="{{ route('user.alamat-kontak.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('user.address-contact.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
         <div class="table-responsive">
             <table class="table mt-2 border-left border-right border-bottom" style="font-size: 14px">
@@ -187,8 +172,8 @@
                     <span style="color: red">*</span>
                 </p>
                 <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('nama') is-invalid @enderror" placeholder="Pilih file" name="nama">
-                @error('nama')
+                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
+                @error('ktp_image_path')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

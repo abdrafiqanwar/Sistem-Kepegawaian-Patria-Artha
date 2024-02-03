@@ -3,43 +3,28 @@
 @section('title', 'Profile | Data Pribadi')
 
 @section('content_header')
-<div class="d-flex">
-    <a href="{{ route('user.home') }}" class="btn p-0">
-        <h6>Beranda</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Profil</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Data Pribadi</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="" class="btn p-0">
-        <h6>Biodata</h6>
-    </a>
-</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('user.home') }}">Beranda</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Profile</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Data Pribadi</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Biodata</li>
+    </ol>
+</nav>
 @stop
 
 @section('content')
     <div class="card p-3">
         <div class="d-flex justify-content-between">
             <h5 class="text-bold">Formulir Ajuan Perubahan Data Profil</h5>
-            <a href="{{ route('user.data-pribadi') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+            <a href="{{ route('user.personal-data') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                 <i class="fas fa-arrow-left"></i>
                 Kembali
             </a>
         </div>
         <p style="font-size: 14px">Perubahan data ini memerlukan validasi yang akan diproses dalam maksimal 21 hari kerja setelah diajukan</p>
 
-        <form action="{{ route('user.biodata.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('user.profile.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="table-responsive">
                 <table class="table border-left border-right border-bottom" style="font-size: 14px">
@@ -74,12 +59,38 @@
                     </tr>
                     <tr>
                         <th class="w-25">Jenis Kelamin</th>
-                        <td class="w-25">{{ $data->gender ?? 'Belum ada data' }}</td>
+                        @if($data)
+                            @if($data->gender == 'MALE')
+                            <td class="w-25">Laki-Laki</td>
+                            @elseif($data->gender == 'FEMALE')
+                            <td class="w-25">Perempuan</td>
+                            @endif
+                        @else
+                            <td>Belum ada data</td>
+                        @endif
                         <td>
                             <select class="form-select w-100 h-100 form-control form-control-sm @error('gender') is-invalid @enderror" aria-label="Small select example" name="gender">
-                                <option selected value="{{ $data->gender ?? '' }}">{{ $data->gender ?? 'Pilih...' }}</option>
+                                <option selected value="{{ $data->gender ?? '' }}">
+                                    @if($data)
+                                        @if($data->gender == 'MALE')
+                                        Laki-Laki
+                                        @elseif($data->gender == 'FEMALE')
+                                        Perempuan
+                                        @endif
+                                    @else
+                                        Pilih...
+                                    @endif
+                                </option>
+                                @if($data)
+                                    @if($data->gender == 'FEMALE')
+                                    <option value="MALE">Laki-Laki</option>
+                                    @elseif($data->gender == 'MALE')
+                                    <option value="FEMALE">Perempuan</option>
+                                    @endif
+                                @else
                                 <option value="MALE">Laki-Laki</option>
                                 <option value="FEMALE">Perempuan</option>
+                                @endif
                             </select>
                             @error('gender')
                                 <span class="invalid-feedback" role="alert">

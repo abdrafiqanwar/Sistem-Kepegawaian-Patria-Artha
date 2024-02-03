@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\User\Profile\DataPribadi;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Http\Controllers\Controller;
 
-class BiodataController extends Controller
+class ProfileController extends Controller
 {
     public function index(){
         $data = Profile::where('user_id', auth()->user()->id)->orderByDesc('created_at')->first();
-        return view('user.profile.data-pribadi.biodata', compact('data'));
+        return view('user.personal-data.profile', compact('data'));
     }
 
     public function store(Request $request){
@@ -43,7 +43,7 @@ class BiodataController extends Controller
             'kk_image_path' => $request->kk_image_path->getClientOriginalName(),
         ]);
 
-        return redirect()->route('user.data-pribadi');
+        return redirect()->route('user.personal-data');
     }
     
     public function image(Request $request){
@@ -57,6 +57,6 @@ class BiodataController extends Controller
         $data->profile_image_path = $nama_file;
         $data->save();
 
-        return redirect()->route('user.data-pribadi');
+        return redirect()->route('user.personal-data');
     }
 }
