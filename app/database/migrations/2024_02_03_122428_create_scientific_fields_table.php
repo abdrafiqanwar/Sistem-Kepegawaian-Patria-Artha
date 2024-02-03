@@ -11,24 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturer_functional', function (Blueprint $table) {
+        Schema::create('scientific_fields', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('functional_id');
-            $table->string('employment_number');
-            $table->date('functional_start_at');
-            $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
-            $table->string('reason_for_rejection')->nullable();
             $table->timestamps();
+
+            $table->foreign('id')
+                ->references('id')
+                ->on('scientific_field_types')
+                ->onDelete('cascade');
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->onDelete('cascade');
-
-            $table->foreign('functional_id')
-                ->references('id')
-                ->on('functionals')
                 ->onDelete('cascade');
         });
     }
@@ -38,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lecturer_functional');
+        Schema::dropIfExists('scientific_fields');
     }
 };

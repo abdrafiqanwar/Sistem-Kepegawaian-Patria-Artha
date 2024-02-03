@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturer_citizenships', function (Blueprint $table) {
+        Schema::create('staffings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('nik');
-            $table->enum('religion', ['ISLAM', 'KRISTEN', 'KATOLIK', 'HINDU', 'BUDHA', 'KONGHUCU']);
-            $table->string('nationality')->default('Indonesia');
-            $table->string('kk_image_path');
-            $table->string('ktp_image_path');
+            $table->string('nip')->nullable();
+            $table->string('sk_cpns')->nullable();
+            $table->date('sk_cpns_start_at')->nullable();
+            $table->string('sk_tmmd_number')->nullable();
+            $table->date('sk_tmmd_start_at')->nullable();
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
             $table->text('reason_for_rejection')->nullable();
+            $table->string('source_of_income');
             $table->timestamps();
 
             $table->foreign('user_id')
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lecturer_citizenship');
+        Schema::dropIfExists('staffings');
     }
 };

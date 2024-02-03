@@ -11,23 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lac_documents', function (Blueprint $table) {
+        Schema::create('citizenship_documents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('lac_id');
+            $table->unsignedBigInteger('citizenship_id');
             $table->string('file_doc');
-            $table->string('file_name');
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('document_type_id');
             $table->timestamps();
 
-            $table->foreign('lac_id')
+            $table->foreign('citizenship_id')
                 ->references('id')
-                ->on('lecturer_address_contact')
-                ->onDelete('cascade');
-
-            $table->foreign('document_type_id')
-                ->references('id')
-                ->on('document_types')
+                ->on('citizenships')
                 ->onDelete('cascade');
         });
     }
@@ -37,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lac_documents');
+        Schema::dropIfExists('citizenship_documents');
     }
 };

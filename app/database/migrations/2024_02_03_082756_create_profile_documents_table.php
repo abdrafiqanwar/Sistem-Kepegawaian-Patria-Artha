@@ -11,10 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('functionals', function (Blueprint $table) {
+        Schema::create('profile_documents', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->unsignedBigInteger('profile_id');
+            $table->string('file_doc');
+            $table->text('description')->nullable();
             $table->timestamps();
+
+            $table->foreign('profile_id')
+                ->references('id')
+                ->on('profiles')
+                ->onDelete('cascade');
         });
     }
 
@@ -23,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('functionals');
+        Schema::dropIfExists('profile_documents');
     }
 };

@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'profile_image_path',
     ];
 
     /**
@@ -44,50 +45,50 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function lecturerFamilies()
+    public function addressContacts()
     {
-        return $this->hasMany(LecturerFamily::class);
+        return $this->hasMany(AddressContact::class);
+    }
+    
+    public function citizenships()
+    {
+        return $this->hasMany(Citizenship::class);
     }
 
-    public function lecturerProfiles()
+    public function families()
     {
-        return $this->hasMany(LecturerProfile::class);
+        return $this->hasMany(Family::class);
     }
 
-    public function lecturerCitizenships()
+    public function others()
     {
-        return $this->hasMany(LecturerCitizenship::class);
+        return $this->hasMany(Other::class);
     }
 
-    public function lecturerFunctionals()
+    public function profiles()
     {
-        return $this->hasMany(LecturerFunctional::class);
+        return $this->hasMany(Profile::class);
     }
 
-    public function lecturerAddressContacts()
+    public function scientificFields()
     {
-        return $this->hasMany(LecturerAddressContact::class);
+        return $this->belongsToMany(ScientificFieldType::class, 'scientific_fields', 'user_id', 'scientific_field_id');
     }
 
-    public function lecturerStaffings()
+    public function staffings()
     {
-        return $this->hasMany(LecturerStaffing::class);
+        return $this->hasMany(Staffing::class);
     }
 
-    public function lecturerOthers()
-    {
-        return $this->hasMany(LecturerOther::class);
-    }
+    // public function lecturerFunctionals()
+    // {
+    //     return $this->hasMany(LecturerFunctional::class);
+    // }
 
-    public function lecturerInpassings()
-    {
-        return $this->hasMany(LecturerInpassing::class);
-    }
-
-    public function lecturerScientificField()
-    {
-        return $this->belongsToMany(ScientificField::class, 'scientific_field_user', 'user_id', 'scientific_field_code');
-    }
+    // public function lecturerInpassings()
+    // {
+    //     return $this->hasMany(LecturerInpassing::class);
+    // }
 
     // Mungkin ini bisa dipakai untuk langsung ambil data yang accepted, belum dicoba
     /* public function lecturerProfile() */

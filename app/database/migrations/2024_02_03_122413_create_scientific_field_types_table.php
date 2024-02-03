@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('scientific_fields', function (Blueprint $table) {
-            $table->string('code');
+        Schema::create('scientific_field_types', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
             $table->timestamps();
-            $table->primary('code');
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('scientific_fields');
+        Schema::dropIfExists('scientific_field_types');
     }
 };

@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers\User\Profile\DataPribadi;
 
-use App\Models\DocumentType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\LecturerAddressContact;
-use App\Models\LecturerAddressContactDocument;
+use App\Models\AddressContact;
+use App\Models\AddressContactDocument;
 
 class AlamatController extends Controller
 {
     public function index(){
-        $data = LecturerAddressContact::where('user_id', auth()->user()->id)->orderByDesc('created_at')->first();
-        $doc = DocumentType::all();
+        $data = AddressContact::where('user_id', auth()->user()->id)->orderByDesc('created_at')->first();
         return view('user.profile.data-pribadi.alamat-kontak', compact('data', 'doc'));
     }
     
@@ -28,7 +26,7 @@ class AlamatController extends Controller
         $file_doc = time(). '.' . $request->file_doc->extension();
         $request->file_doc->move(public_path('file_path/profile/data_pribadi'), $file_doc);
 
-        $data = LecturerAddressContact::create([
+        $data = AddressContact::create([
             'user_id' => auth()->user()->id,
             'email' => $validated['email'],
             'address' => $validated['address'],
@@ -42,7 +40,7 @@ class AlamatController extends Controller
             'phone_number' => $request->phone_number,
         ]);
 
-        LecturerAddressContactDocument::create([
+        AddressContactDocument::create([
             'lac_id' => $data->id,
             'file_doc' => $file_doc,
             'file_name' => $validated['file_name'],

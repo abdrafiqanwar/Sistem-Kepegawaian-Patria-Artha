@@ -11,10 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('class_rank', function (Blueprint $table) {
+        Schema::create('other_documents', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->unsignedBigInteger('other_id');
+            $table->string('file_doc');
+            $table->text('description')->nullable();
             $table->timestamps();
+
+            $table->foreign('other_id')
+                ->references('id')
+                ->on('others')
+                ->onDelete('cascade');
         });
     }
 
@@ -23,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('class_rank');
+        Schema::dropIfExists('other_documents');
     }
 };

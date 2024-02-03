@@ -11,10 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('document_types', function (Blueprint $table) {
+        Schema::create('others', function (Blueprint $table) {
             $table->id();
-            $table->string('document_type');
+            $table->unsignedBigInteger('user_id');
+            $table->string('npwp');
+            $table->string('tax_name');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
@@ -23,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('document_types');
+        Schema::dropIfExists('others');
     }
 };

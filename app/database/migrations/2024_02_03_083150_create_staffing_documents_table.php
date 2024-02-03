@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturer_others', function (Blueprint $table) {
+        Schema::create('staffing_documents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('npwp')->unique();
-            $table->string('tax_name');
+            $table->unsignedBigInteger('staffing_id');
+            $table->string('file_doc');
+            $table->text('description')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')
+            $table->foreign('staffing_id')
                 ->references('id')
-                ->on('users')
+                ->on('staffings')
                 ->onDelete('cascade');
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lecturer_others');
+        Schema::dropIfExists('staffing_documents');
     }
 };

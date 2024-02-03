@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturer_functional_document', function (Blueprint $table) {
+        Schema::create('address_contact_documents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('lecturer_functional_id');
-            $table->string('file_name');
-            $table->string('file_name_original');
+            $table->unsignedBigInteger('address_contact_id');
+            $table->string('file_doc');
+            $table->text('description')->nullable();
             $table->timestamps();
 
-            $table->foreign('lecturer_functional_id')
+            $table->foreign('address_contact_id')
                 ->references('id')
-                ->on('lecturer_functional')
+                ->on('address_contacts')
                 ->onDelete('cascade');
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lecturer_functional_document');
+        Schema::dropIfExists('address_contact_documents');
     }
 };

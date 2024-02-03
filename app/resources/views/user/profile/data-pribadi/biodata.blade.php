@@ -144,8 +144,8 @@
                         <span style="color: red">*</span>
                     </p>
                     <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('nama') is-invalid @enderror" placeholder="Pilih file" name="nama">
-                    @error('nama')
+                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
+                    @error('ktp_image_path')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -161,8 +161,8 @@
                         <span style="color: red">*</span>
                     </p>
                     <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
-                    @error('ktp_image_path')
+                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('kk_image_path') is-invalid @enderror" placeholder="Pilih file" name="kk_image_path">
+                    @error('kk_image_path')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
