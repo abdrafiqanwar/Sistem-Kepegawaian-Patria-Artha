@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class LecturerProfile extends Model
+class Profile extends Model
 {
     use HasFactory;
-
-    protected $table = 'lecturer_profile';
 
     protected $fillable = [
         'user_id',
@@ -19,10 +18,10 @@ class LecturerProfile extends Model
         'place_of_birth',
         'date_of_birth',
         'mother_name',
-        'is_accepted',
-        'reason_for_rejection',
         'ktp_image_path',
         'kk_image_path',
+        'is_accepted',
+        'reason_for_rejection',
     ];
 
     public function user()

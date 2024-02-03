@@ -5,7 +5,6 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\User;
-use App\Models\DocumentType;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -34,10 +33,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'user@gmail.com',
             'password' => bcrypt('user'),
             'role' => 'LECTURER',
-        ]);
-
-        DocumentType::create([
-            'document_type' => 'KTP',
         ]);
     }
 }

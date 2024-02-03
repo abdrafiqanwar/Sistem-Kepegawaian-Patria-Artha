@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class LecturerCitizenship extends Model
+class Family extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $fillable =[
         'user_id',
-        'nik',
-        'religion',
-        'nationality',
+        'martial_status',
+        'partner_name',
+        'partner_occupation',
+        'partner_nip',
         'kk_image_path',
-        'ktp_image_path',
         'is_accepted',
         'reason_for_rejection',
     ];

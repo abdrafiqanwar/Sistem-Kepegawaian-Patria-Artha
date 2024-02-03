@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\User\Profile\DataPribadi;
 
 use Illuminate\Http\Request;
-use App\Models\LecturerProfile;
+use App\Models\Profile;
 use App\Http\Controllers\Controller;
 
 class BiodataController extends Controller
 {
     public function index(){
-        $data = LecturerProfile::where('user_id', auth()->user()->id)->orderByDesc('created_at')->first();
+        $data = Profile::where('user_id', auth()->user()->id)->orderByDesc('created_at')->first();
         return view('user.profile.data-pribadi.biodata', compact('data'));
     }
 
@@ -31,7 +31,7 @@ class BiodataController extends Controller
         $kk_file = time(). '.' . $request->kk_image_path->extension();
         $request->kk_image_path->move(public_path('file_path/profile/data_pribadi'), $kk_file);
 
-        LecturerProfile::create([
+        Profile::create([
             'user_id' => auth()->user()->id,
             'nidn' => $validated['nidn'],
             'full_name' => $validated['full_name'],
@@ -39,8 +39,8 @@ class BiodataController extends Controller
             'place_of_birth' => $validated['place_of_birth'],
             'date_of_birth' => $validated['date_of_birth'],
             'mother_name' => $validated['mother_name'],
-            'ktp_image_path' => $ktp_file,
-            'kk_image_path' => $kk_file,
+            'ktp_image_path' => $request->ktp_image_path->getClientOriginalName(),
+            'kk_image_path' => $request->kk_image_path->getClientOriginalName(),
         ]);
 
         return redirect()->route('user.data-pribadi');

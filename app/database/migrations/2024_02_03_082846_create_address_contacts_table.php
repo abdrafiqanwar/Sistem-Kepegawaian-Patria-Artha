@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturer_address_contact', function (Blueprint $table) {
+        Schema::create('address_contacts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('email');
@@ -20,12 +20,13 @@ return new class extends Migration
             $table->string('rw')->nullable();
             $table->string('sub_village')->nullable(); // dusun
             $table->string('village')->nullable(); // desa
-            $table->string('city_discrict_sub_district')->nullable(); // kota, kabupaten, kecamatan
+            $table->string('city_discrict_sub_district')->nullable(); // kota, 
             $table->string('postal_code')->nullable();
             $table->string('home_phone_number')->nullable();
             $table->string('phone_number')->nullable();
-            $table->string('reason_for_rejection')->nullable();
+            $table->string('ktp_image_path');
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
+            $table->string('reason_for_rejection')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')
@@ -40,6 +41,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lecturer_address_contact');
+        Schema::dropIfExists('address_contacts');
     }
 };

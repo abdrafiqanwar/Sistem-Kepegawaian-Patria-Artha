@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('scientific_field_user', function (Blueprint $table) {
-            $table->string('scientific_field_code');
+        Schema::create('citizenships', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('nik');
+            $table->enum('religion', ['ISLAM', 'KRISTEN', 'KATOLIK', 'HINDU', 'BUDHA', 'KONGHUCU']);
+            $table->string('nationality')->default('Indonesia');
+            $table->string('kk_image_path');
+            $table->string('ktp_image_path');
+            $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
+            $table->text('reason_for_rejection')->nullable();
             $table->timestamps();
-
-            $table->foreign('scientific_field_code')
-                ->references('code')
-                ->on('scientific_fields')
-                ->onDelete('cascade');
 
             $table->foreign('user_id')
                 ->references('id')
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('scientific_field_user');
+        Schema::dropIfExists('citizenships');
     }
 };

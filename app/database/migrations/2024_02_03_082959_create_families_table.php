@@ -11,19 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturer_staffing', function (Blueprint $table) {
+        Schema::create('families', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('nip')->nullable()->unique();
-            $table->string('sk_cpns')->nullable()->unique();
-            $table->date('sk_cpns_start_at')->unique();
-            $table->string('tmmd_number')->nullable()->unique();
-            $table->date('sk_tmmd_start_at')->unique();
+            $table->boolean('marital_status')->default(false);
+            $table->string('partner_name')->nullable();
+            $table->string('partner_occupation')->nullable();
+            $table->string('partner_nip')->nullable();
+            $table->string('kk_image_path');
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
             $table->text('reason_for_rejection')->nullable();
-            $table->string('source_of_income');
             $table->timestamps();
-
+            
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
@@ -36,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lecturer_staffing');
+        Schema::dropIfExists('families');
     }
 };

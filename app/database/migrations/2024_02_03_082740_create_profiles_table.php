@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturer_family', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->boolean('marital_status')->default(false);
-            $table->string('partner_name')->nullable();
-            $table->string('partner_occupation')->nullable();
-            $table->string('partner_nip')->nullable();
+            $table->string('nidn');
+            $table->string('full_name');
+            $table->enum('gender', ['MALE', 'FEMALE']);
+            $table->string('place_of_birth');
+            $table->date('date_of_birth');
+            $table->string('mother_name');
+            $table->string('ktp_image_path');
             $table->string('kk_image_path');
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
             $table->text('reason_for_rejection')->nullable();
@@ -35,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lecturer_family');
+        Schema::dropIfExists('profiles');
     }
 };

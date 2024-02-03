@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\AddressContactDocument;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class LecturerAddressContact extends Model
+class AddressContact extends Model
 {
     use HasFactory;
-
-    protected $table = 'lecturer_address_contact';
-
+    
     protected $fillable = [
         'user_id',
         'email',
@@ -23,8 +23,9 @@ class LecturerAddressContact extends Model
         'postal_code',
         'home_phone_number',
         'phone_number',
-        'reason_for_rejection',
+        'ktp_image_path',
         'is_accepted',
+        'reason_for_rejection',
     ];
 
     public function user()
@@ -34,6 +35,6 @@ class LecturerAddressContact extends Model
 
     public function documents()
     {
-        return $this->hasMany(LecturerAddressContactDocument::class);
+        return $this->hasMany(AddressContactDocument::class);
     }
 }
