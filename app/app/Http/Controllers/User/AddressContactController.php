@@ -1,32 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\User\Profile\DataPribadi;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\AddressContact;
 use App\Models\AddressContactDocument;
 
-class AlamatController extends Controller
+class AddressContactController extends Controller
 {
     public function index(){
         $data = AddressContact::where('user_id', auth()->user()->id)->orderByDesc('created_at')->first();
-        return view('user.profile.data-pribadi.alamat-kontak', compact('data', 'doc'));
+        return view('user.personal-data.address-contact', compact('data'));
     }
     
     public function store(Request $request){
         $validated = $request->validate([
             'email' => 'required|email',
             'address' => 'required',
-            'file_doc' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048',
-            'file_name' => 'required',
-            'document_type_id' => 'required',
+            'ktp_image_path' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048',
         ]);
 
-        $file_doc = time(). '.' . $request->file_doc->extension();
-        $request->file_doc->move(public_path('file_path/profile/data_pribadi'), $file_doc);
+        $ktp_image_path = time(). '.' . $request->ktp_image_path->extension();
+        $request->ktp_image_path->move(public_path('file_path/profile/data_pribadi'), $ktp_image_path);
 
-        $data = AddressContact::create([
+        AddressContact::create([
             'user_id' => auth()->user()->id,
             'email' => $validated['email'],
             'address' => $validated['address'],
@@ -38,16 +36,9 @@ class AlamatController extends Controller
             'postal_code' => $request->postal_code,
             'home_phone_number' => $request->home_phone_number,
             'phone_number' => $request->phone_number,
+            'ktp_image_path' => $request->ktp_image_path->getClientOriginalName(),
         ]);
 
-        AddressContactDocument::create([
-            'lac_id' => $data->id,
-            'file_doc' => $file_doc,
-            'file_name' => $validated['file_name'],
-            'description' => $request->description,
-            'document_type_id' => $request->document_type_id,
-        ]);
-
-        return redirect()->route('user.data-pribadi');
+        return redirect()->route('user.personal-data');
     }
 }

@@ -3,36 +3,21 @@
 @section('title', 'Profile | Data Pribadi')
 
 @section('content_header')
-<div class="d-flex">
-    <a href="{{ route('user.home') }}" class="btn p-0">
-        <h6>Beranda</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Profil</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Data Pribadi</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.bidang-keilmuan') }}" class="btn p-0">
-        <h6>Bidang Keilmuan</h6>
-    </a>
-</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('user.home') }}">Beranda</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Profile</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Data Pribadi</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Bidang Keilmuan</li>
+    </ol>
+</nav>
 @stop
 
 @section('content')
     <div class="card p-3">
         <div class="d-flex justify-content-between">
             <h5 class="text-bold">Bidang Keilmuan Saya</h5>
-            <a href="{{ route('user.data-pribadi') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+            <a href="{{ route('user.personal-data') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                 <i class="fas fa-arrow-left"></i>
                 Kembali
             </a>

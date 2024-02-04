@@ -48,26 +48,26 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 
 Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User', 'middleware' => ['user', 'auth']], function(){
     Route::get('/', 'HomeController@index')->name('user.home');
 
-    Route::group(['prefix' => 'profile', 'namespace' => 'Profile'], function(){
-        Route::group(['prefix' => 'data-pribadi', 'namespace' => 'DataPribadi'], function(){
-            Route::get('/', 'DataPribadiController@index')->name('user.data-pribadi');
+    Route::group(['prefix' => 'profile'], function(){
+        Route::group(['prefix' => 'data-pribadi'], function(){
+            Route::get('/', 'PersonalDataController@index')->name('user.personal-data');
 
-            Route::get('/biodata', 'BiodataController@index')->name('user.biodata');
-            Route::post('/biodata', 'BiodataController@store')->name('user.biodata.store');
-            Route::post('/biodata.image', 'BiodataController@image')->name('user.biodata.image');
+            Route::get('/biodata', 'ProfileController@index')->name('user.profile');
+            Route::post('/biodata', 'ProfileController@store')->name('user.profile.store');
+            Route::post('/biodata.image', 'ProfileController@image')->name('user.profile.image');
 
-            Route::get('/alamat-kontak', 'AlamatController@index')->name('user.alamat-kontak');
-            Route::post('/alamat-kontak', 'AlamatController@store')->name('user.alamat-kontak.store');
+            Route::get('/alamat-kontak', 'AddressContactController@index')->name('user.address-contact');
+            Route::post('/alamat-kontak', 'AddressContactController@store')->name('user.address-contact.store');
 
-            Route::get('/keluarga', 'KeluargaController@index')->name('user.keluarga');
+            Route::get('/keluarga', 'FamilyController@index')->name('user.family');
 
-            Route::get('/kependudukan', 'KependudukanController@index')->name('user.kependudukan');
+            Route::get('/kependudukan', 'CitizenshipController@index')->name('user.citizenship');
 
-            Route::get('/kepegawaian', 'KepegawaianController@index')->name('user.kepegawaian');
+            Route::get('/kepegawaian', 'StaffingController@index')->name('user.staffing');
 
-            Route::get('/bidang-keilmuan', 'KeilmuanController@index')->name('user.bidang-keilmuan');
+            Route::get('/bidang-keilmuan', 'ScientificFieldController@index')->name('user.scientific-field');
             
-            Route::get('/lain', 'LainController@index')->name('user.lain');
+            Route::get('/lain', 'OtherController@index')->name('user.other');
         });
 
         Route::group(['prefix' => 'inpassing', 'namespace' => 'Inpassing'], function(){

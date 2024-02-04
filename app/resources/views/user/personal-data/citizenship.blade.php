@@ -3,36 +3,21 @@
 @section('title', 'Profile | Data Pribadi')
 
 @section('content_header')
-<div class="d-flex">
-    <a href="{{ route('user.home') }}" class="btn p-0">
-        <h6>Beranda</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Profil</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Data Pribadi</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="" class="btn p-0">
-        <h6>Keluarga</h6>
-    </a>
-</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('user.home') }}">Beranda</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Profile</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Data Pribadi</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Kependudukan</li>
+    </ol>
+</nav>
 @stop
 
 @section('content')
     <div class="card p-3">
         <div class="d-flex justify-content-between">
-            <h5 class="text-bold">Formulir Ajuan Perubahan Data Keluarga</h5>
-            <a href="{{ route('user.data-pribadi') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+            <h5 class="text-bold">Formulir Ajuan Perubahan Data Kependudukan</h5>
+            <a href="{{ route('user.personal-data') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                 <i class="fas fa-arrow-left"></i>
                 Kembali
             </a>
@@ -47,29 +32,22 @@
                     <th class="text-center">Data Baru</th>
                 </tr>
                 <tr>
-                    <th class="w-25">Status Perkawinan</th>
-                    <td class="w-25">Cerai</td>
+                    <th class="w-25">NIK</th>
+                    <td class="w-25">7371100201770009</td>
                     <td>
                         <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Nama Suami/Istri</th>
-                    <td class="w-25">Hasvivi Hasdin</td>
+                    <th class="w-25">Agama</th>
+                    <td class="w-25">Islam</td>
                     <td>
                         <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Pekerjaan Suami/Istri</th>
-                    <td class="w-25">Tidak bekerja</td>
-                    <td>
-                        <input type="text" class="w-100 form-control form-control-sm">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="w-25">NIP Suami/Istri</th>
-                    <td class="w-25">-</td>
+                    <th class="w-25">Kewarganegaraan</th>
+                    <td class="w-25">Indonesia</td>
                     <td>
                         <input type="text" class="w-100 form-control form-control-sm">
                     </td>
@@ -82,11 +60,12 @@
             <p>Mohon melampirkan file gambar asli yang jelas dan tidak blur</p>
             <p>Dokumen yang dilampirkan adalah dokumen wajib dan dokumen yang sesuai dengan data yang diusulkan.</p>
             <p class="mb-0">Dokumen Wajib:</p>
+            <p class="mb-0">- KTP</p>
             <p class="mb-0">- KK</p>
         </div>
 
         <div class="row border d-block mt-2" style="font-size: 14px">
-            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">KK</p>
+            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">KTP</p>
             <div class="pl-2 pr-2 mb-2">
                 <p class="m-0 font-weight-bold">
                     Dokumen Dilampirkan
@@ -95,6 +74,23 @@
                 <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
                 <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('nama') is-invalid @enderror" placeholder="Pilih file" name="nama">
                 @error('nama')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+        
+        <div class="row border d-block mt-2" style="font-size: 14px">
+            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">KK</p>
+            <div class="pl-2 pr-2 mb-2">
+                <p class="m-0 font-weight-bold">
+                    Dokumen Dilampirkan
+                    <span style="color: red">*</span>
+                </p>
+                <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
+                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
+                @error('ktp_image_path')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -121,16 +117,16 @@
 @stop   
 
 @section('js')
-    <script>
-        let dokumenRow = 0;
+<script>
+    let dokumenRow = 0;
 
-        $('#tambah').click(() =>{
-            dokumenRow++;
-            inputDokumen(dokumenRow);
-        })
+    $('#tambah').click(() =>{
+        dokumenRow++;
+        inputDokumen(dokumenRow);
+    })
 
-        inputDokumen = (i) => {
-            let tr = `<div class="row border d-block mt-2" style="font-size: 14px" id="dokumen-${i}">
+    inputDokumen = (i) => {
+        let tr = `<div class="row border d-block mt-2" style="font-size: 14px" id="dokumen-${i}">
                 <div class="d-flex justify-content-between bg-secondary py-1 pl-2 mb-2">
                 <p class="font-weight-bold">Dokumen</p>
                 <button dokumen-id="${i}" class="btn pt-0 pb-0" style="font-size: 12px; fill: white">
@@ -152,12 +148,12 @@
                 </div>
             </div>`;
 
-        $('#parent').append(tr);
-        }       
-
-        $('#parent').on('click', 'button', function(){
-            let id = $(this).attr('dokumen-id');
-            $(`#dokumen-${id}`).remove();
-        })
-    </script>
+    $('#parent').append(tr);
+    }       
+    
+    $('#parent').on('click', 'button', function(){
+        let id = $(this).attr('dokumen-id');
+        $(`#dokumen-${id}`).remove();
+    })
+</script>
 @stop

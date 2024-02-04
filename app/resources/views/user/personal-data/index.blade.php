@@ -3,23 +3,13 @@
 @section('title', 'Profile | Data Pribadi')
 
 @section('content_header')
-    <div class="d-flex">
-        <a href="{{ route('user.home') }}" class="btn p-0">
-            <h6>Beranda</h6>
-        </a>
-
-        <h6 class="pl-2 pr-2">/</h6>
-
-        <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-            <h6>Profil</h6>
-        </a>
-
-        <h6 class="pl-2 pr-2">/</h6>
-
-        <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-            <h6>Data Pribadi</h6>
-        </a>
-    </div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('user.home') }}">Beranda</a></li>
+        <li class="breadcrumb-item"><a href="">Profile</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data Pribadi</li>
+    </ol>
+</nav>
 @stop
 
 @section('content')
@@ -28,7 +18,7 @@
             <div class="card p-3">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Profil</h5>
-                    <a href="{{ route('user.biodata') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px">Ajukan Perubahan</a>
+                    <a href="{{ route('user.profile') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px">Ajukan Perubahan</a>
                 </div>
                 @if(auth()->user()->profile_image_path)
                 <div class="text-center">
@@ -44,7 +34,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3l-73.4 73.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l128-128c12.5-12.5 32.8-12.5 45.3 0l128 128c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L288 109.3zM64 352H192c0 35.3 28.7 64 64 64s64-28.7 64-64H448c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V416c0-35.3 28.7-64 64-64zM432 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg>
                 </button>
 
-                <form action="{{ route('user.biodata.image') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('user.profile.image') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal fade" id="foto" tabindex="-1" aria-labelledby="fotoLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -73,33 +63,41 @@
                 <div class="table-responsive">
                     <table class="table mt-2 mb-0" style="font-size: 14px">
                         <tr>
-                            <td style="width: 15%">NIDN</td>
+                            <td style="width: 30%">NIDN</td>
                             <td style="width: 1%">:</td>
                             <td>{{ $biodata->nidn ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">Nama</td>
-                            <td style="width: 1%">:</td>
+                            <td>Nama</td>
+                            <td>:</td>
                             <td>{{ $biodata->full_name ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">Jenis Kelamin</td>
-                            <td style="width: 1%">:</td>
-                            <td class="w-25">{{ $biodata->gender ?? 'Belum ada data' }}</td>
+                            <td>Jenis Kelamin</td>
+                            <td>:</td>
+                            @if($biodata)
+                                @if($biodata->gender == 'MALE')
+                                <td>Laki-Laki</td>
+                                @elseif($biodata->gender == 'FEMALE')
+                                <td>Perempuan</td>
+                                @endif
+                            @else
+                                <td>Belum ada data</td>
+                            @endif
                         </tr>
                         <tr>
-                            <td style="width: 15%">Tempat Lahir</td>
-                            <td style="width: 1%">:</td>
+                            <td>Tempat Lahir</td>
+                            <td>:</td>
                             <td>{{ $biodata->place_of_birth ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">Tangal Lahir</td>
-                            <td style="width: 1%">:</td>
+                            <td>Tangal Lahir</td>
+                            <td>:</td>
                             <td>{{ $biodata->date_of_birth ?? 'Belum ada data'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">Nama Ibu Kandung</td>
-                            <td style="width: 1%">:</td>
+                            <td>Nama Ibu Kandung</td>
+                            <td>:</td>
                             <td>{{ $biodata->mother_name ?? 'Belum ada data'}}</td>
                         </tr>
                     </table>
@@ -111,7 +109,7 @@
             <div class="card p-3">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Alamat dan Kontak</h5>
-                    <a href="{{ route('user.alamat-kontak') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+                    <a href="{{ route('user.address-contact') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                         <i class="fas fa-pencil-alt"></i>
                     </a>
                 </div>
@@ -121,52 +119,52 @@
                         <tr>
                             <td style="width: 15%">Email</td>
                             <td style="width: 1%">:</td>
-                            <td>{{ $address->email ?? 'Belum ada data' }}</td>
+                            <td>{{ $address->email ?? '-' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">Alamat</td>
-                            <td style="width: 1%">:</td>
-                            <td>{{ $address->address ?? 'Belum ada data' }}</td>
+                            <td>Alamat</td>
+                            <td>:</td=>
+                            <td>{{ $address->address ?? '-' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">RT</td>
-                            <td style="width: 1%">:</td>
-                            <td>{{ $address->rt ?? 'Belum ada data' }}</td>
+                            <td>RT</td>
+                            <td>:</td>
+                            <td>{{ $address->rt ?? '-' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">RW</td>
-                            <td style="width: 1%">:</td>
-                            <td>{{ $address->rw ?? 'Belum ada data' }}</td>
+                            <td>RW</td>
+                            <td>:</td>
+                            <td>{{ $address->rw ?? '-' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">Dusun</td>
-                            <td style="width: 1%">:</td>
-                            <td>{{ $address->sub_village ?? 'Belum ada data' }}</td>
+                            <td>Dusun</td>
+                            <td>:</td>
+                            <td>{{ $address->sub_village ?? '-' }}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">Desa/Kelurahan</td>
-                            <td style="width: 1%">:</td>
-                            <td>{{ $address->village ?? 'Belum ada data'}}</td>
+                            <td>Desa/Kelurahan</td>
+                            <td>:</td>
+                            <td>{{ $address->village ?? '-'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">Kota/Kabupaten/Kecamatan</td>
-                            <td style="width: 1%">:</td>
-                            <td>{{ $address->city_discrict_sub_district ?? 'Belum ada data'}}</td>
+                            <td>Kota/Kabupaten/Kecamatan</td>
+                            <td>:</td>
+                            <td>{{ $address->city_discrict_sub_district ?? '-'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">Kode Pos</td>
-                            <td style="width: 1%">:</td>
-                            <td>{{ $address->postal_code ?? 'Belum ada data'}}</td>
+                            <td>Kode Pos</td>
+                            <td>:</td>
+                            <td>{{ $address->postal_code ?? '-'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">No. Telepon Rumah</td>
-                            <td style="width: 1%">:</td>
-                            <td>{{ $address->home_phone_number ?? 'Belum ada data'}}</td>
+                            <td>No. Telepon Rumah</td>
+                            <td>:</td>
+                            <td>{{ $address->home_phone_number ?? '-'}}</td>
                         </tr>
                         <tr>
-                            <td style="width: 15%">No. HP</td>
-                            <td style="width: 1%">:</td>
-                            <td>{{ $address->phone_number ?? 'Belum ada data'}}</td>
+                            <td>No. HP</td>
+                            <td>:</td>
+                            <td>{{ $address->phone_number ?? '-'}}</td>
                         </tr>
                     </table>
                 </div>
@@ -179,7 +177,7 @@
             <div class="card p-3">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Keluarga</h5>
-                    <a href="{{ route('user.keluarga') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+                    <a href="{{ route('user.family') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                         Ajukan Perubahan
                     </a>
                 </div>
@@ -215,7 +213,7 @@
             <div class="card p-3">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Kependudukan</h5>
-                    <a href="{{ route('user.kependudukan') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+                    <a href="{{ route('user.citizenship') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                         Ajukan Perubahan
                     </a>
                 </div>
@@ -248,7 +246,7 @@
             <div class="card p-3">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Kepegawaian</h5>
-                    <a href="{{ route('user.kepegawaian') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+                    <a href="{{ route('user.staffing') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                         <i class="fas fa-pencil-alt"></i>
                     </a>
                 </div>
@@ -314,7 +312,7 @@
             <div class="card p-3">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Bidang Keilmuan</h5>
-                    <a href="{{ route('user.bidang-keilmuan') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+                    <a href="{{ route('user.scientific-field') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                         Ajukan Perubahan
                     </a>
                 </div>
@@ -332,7 +330,7 @@
             <div class="card p-3">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Lain-lain</h5>
-                    <a href="{{ route('user.lain') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+                    <a href="{{ route('user.other') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                         <i class="fas fa-pencil-alt"></i>
                     </a>
                 </div>

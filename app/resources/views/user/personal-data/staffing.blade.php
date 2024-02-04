@@ -3,68 +3,79 @@
 @section('title', 'Profile | Data Pribadi')
 
 @section('content_header')
-<div class="d-flex">
-    <a href="{{ route('user.home') }}" class="btn p-0">
-        <h6>Beranda</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Profil</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="{{ route('user.data-pribadi') }}" class="btn p-0">
-        <h6>Data Pribadi</h6>
-    </a>
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="" class="btn p-0">
-        <h6>Kependudukan</h6>
-    </a>
-</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('user.home') }}">Beranda</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Profile</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.personal-data') }}">Data Pribadi</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Kepegawaian</li>
+    </ol>
+</nav>
 @stop
 
 @section('content')
     <div class="card p-3">
         <div class="d-flex justify-content-between">
-            <h5 class="text-bold">Formulir Ajuan Perubahan Data Kependudukan</h5>
-            <a href="{{ route('user.data-pribadi') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+            <h5 class="text-bold">Formulir Ajuan Perubahan Data Kepegawaian</h5>
+            <a href="{{ route('user.personal-data') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
                 <i class="fas fa-arrow-left"></i>
                 Kembali
             </a>
         </div>
-        <p style="font-size: 14px">Perubahan data ini memerlukan validasi yang akan diproses dalam maksimal 21 hari kerja setelah diajukan</p>
 
         <div class="table-responsive">
-            <table class="table border-left border-right border-bottom" style="font-size: 14px">
+            <table class="table border-left border-right border-bottom mt-2" style="font-size: 14px">
                 <tr>
                     <th class="w-25"></th>
                     <th class="text-center w-25">Data Saat Ini</th>
                     <th class="text-center">Data Baru</th>
                 </tr>
                 <tr>
-                    <th class="w-25">NIK</th>
-                    <td class="w-25">7371100201770009</td>
+                    <th class="w-25">NIP (khusus PNS)</th>
+                    <td class="w-25">(Tidak ada data)</td>
+                    <td>
+                        <input type="text" class="w-100 form-control form-control-sm">
+                        <p class="mb-0 font-italic" style="font-size: 12px">*Pastikan NIP lengkap 18 digit</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="w-25">Nomor SK CPNS</th>
+                    <td class="w-25">(Tidak ada data)</td>
                     <td>
                         <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Agama</th>
-                    <td class="w-25">Islam</td>
+                    <th class="w-25">SK CPNS Terhitung Mulai Tanggal</th>
+                    <td class="w-25">(Tidak ada data)</td>
                     <td>
                         <input type="text" class="w-100 form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Kewarganegaraan</th>
-                    <td class="w-25">Indonesia</td>
+                    <th class="w-25">Nomor SK TMMD</th>
+                    <td class="w-25">(Tidak ada data)</td>
                     <td>
                         <input type="text" class="w-100 form-control form-control-sm">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="w-25">Tanggal Mulai Menjadi Dosen (TMMD)</th>
+                    <td class="w-25">30 Januari 2012</td>
+                    <td>
+                        <input type="text" class="w-100 form-control form-control-sm">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="w-25">Sumber Gaji</th>
+                    <td class="w-25">(Tidak ada data)</td>
+                    <td>
+                        <select class="form-select form-select-sm w-100 form-control form-control-sm" aria-label="Small select example">
+                            <option selected>Pilih...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
                     </td>
                 </tr>
             </table>
@@ -75,12 +86,13 @@
             <p>Mohon melampirkan file gambar asli yang jelas dan tidak blur</p>
             <p>Dokumen yang dilampirkan adalah dokumen wajib dan dokumen yang sesuai dengan data yang diusulkan.</p>
             <p class="mb-0">Dokumen Wajib:</p>
-            <p class="mb-0">- KTP</p>
-            <p class="mb-0">- KK</p>
+            <p class="mb-0">- SK CPNS (khusus PNS)</p>
+            <p class="mb-0">- SK Tugas Belajar (bila ada)</p>
+            <p class="mb-0">- SK Pengaktifan Kembali (bila ada)</p>
         </div>
 
         <div class="row border d-block mt-2" style="font-size: 14px">
-            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">KTP</p>
+            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">SK CPNS</p>
             <div class="pl-2 pr-2 mb-2">
                 <p class="m-0 font-weight-bold">
                     Dokumen Dilampirkan
@@ -97,7 +109,24 @@
         </div>
         
         <div class="row border d-block mt-2" style="font-size: 14px">
-            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">KK</p>
+            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">SK Tugas Belajar</p>
+            <div class="pl-2 pr-2 mb-2">
+                <p class="m-0 font-weight-bold">
+                    Dokumen Dilampirkan
+                    <span style="color: red">*</span>
+                </p>
+                <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
+                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
+                @error('ktp_image_path')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="row border d-block mt-2" style="font-size: 14px">
+            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">SK Pengaktifan Kembali</p>
             <div class="pl-2 pr-2 mb-2">
                 <p class="m-0 font-weight-bold">
                     Dokumen Dilampirkan
@@ -162,10 +191,9 @@
                     @enderror
                 </div>
             </div>`;
+        $('#parent').append(tr);
+    }
 
-    $('#parent').append(tr);
-    }       
-    
     $('#parent').on('click', 'button', function(){
         let id = $(this).attr('dokumen-id');
         $(`#dokumen-${id}`).remove();
