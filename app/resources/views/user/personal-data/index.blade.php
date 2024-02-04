@@ -13,9 +13,10 @@
 @stop
 
 @section('content')
-    <div class="row">
-        <div class="col">
-            <div class="card p-3">
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="card p-3 w-100">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Profil</h5>
                     <a href="{{ route('user.profile') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px">Ajukan Perubahan</a>
@@ -104,9 +105,96 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="card p-3 w-100">
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-bold">Kependudukan</h5>
+                    <a href="{{ route('user.citizenship') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+                        Ajukan Perubahan
+                    </a>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table mt-2 mb-0" style="font-size: 14px">
+                        <tr>
+                            <td style="width: 35%">NIK</td>
+                            <td style="width: 5%">:</td>
+                            <td>3171100201770009</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 35%">Agama</td>
+                            <td style="width: 5%">:</td>
+                            <td>Islam</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 35%">Kewarganegaraan</td>
+                            <td style="width: 5%">:</td>
+                            <td>Indonesia</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card p-3 w-100">
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-bold">Keluarga</h5>
+                    <a href="{{ route('user.family') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+                        Ajukan Perubahan
+                    </a>
+                </div>
 
-        <div class="col">
-            <div class="card p-3">
+                <div class="table-responsive">
+                    <table class="table mt-2 mb-0" style="font-size: 14px">
+                        <tr>
+                            <td style="width: 35%">Status Perkawinan</td>
+                            <td style="width: 5%">:</td>
+                            <td>Cerai</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 35%">Nama Suami/Istri</td>
+                            <td style="width: 5%">:</td>
+                            <td>Hasvivi Hasdin</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 35%">NIP Suami/Istri</td>
+                            <td style="width: 5%">:</td>
+                            <td>(Tidak ada data)</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 35%">Pekerjaan Suami/Istri</td>
+                            <td style="width: 5%">:</td>
+                            <td>Tidak bekerja</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-2"></div>
+    <div class="col">
+        <div class="row">
+            <div class="card p-3 w-100">
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-bold">Bidang Keilmuan</h5>
+                    <a href="{{ route('user.scientific-field') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
+                        Ajukan Perubahan
+                    </a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table mt-2 mb-0" style="font-size: 14px">
+                        <tr>
+                            <td style="width: 35%">Kelompok Bidang</td>
+                            <td style="width: 5%">:</td>
+                            <td>(Tidak ada data)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card p-3 w-100">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Alamat dan Kontak</h5>
                     <a href="{{ route('user.address-contact') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
@@ -170,80 +258,8 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <div class="card p-3">
-                <div class="d-flex justify-content-between">
-                    <h5 class="text-bold">Keluarga</h5>
-                    <a href="{{ route('user.family') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
-                        Ajukan Perubahan
-                    </a>
-                </div>
-
-                <div class="table-responsive">
-                    <table class="table mt-2 mb-0" style="font-size: 14px">
-                        <tr>
-                            <td style="width: 35%">Status Perkawinan</td>
-                            <td style="width: 5%">:</td>
-                            <td>Cerai</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 35%">Nama Suami/Istri</td>
-                            <td style="width: 5%">:</td>
-                            <td>Hasvivi Hasdin</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 35%">NIP Suami/Istri</td>
-                            <td style="width: 5%">:</td>
-                            <td>(Tidak ada data)</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 35%">Pekerjaan Suami/Istri</td>
-                            <td style="width: 5%">:</td>
-                            <td>Tidak bekerja</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card p-3">
-                <div class="d-flex justify-content-between">
-                    <h5 class="text-bold">Kependudukan</h5>
-                    <a href="{{ route('user.citizenship') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
-                        Ajukan Perubahan
-                    </a>
-                </div>
-                
-                <div class="table-responsive">
-                    <table class="table mt-2 mb-0" style="font-size: 14px">
-                        <tr>
-                            <td style="width: 35%">NIK</td>
-                            <td style="width: 5%">:</td>
-                            <td>3171100201770009</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 35%">Agama</td>
-                            <td style="width: 5%">:</td>
-                            <td>Islam</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 35%">Kewarganegaraan</td>
-                            <td style="width: 5%">:</td>
-                            <td>Indonesia</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <div class="card p-3">
+        <div class="row">
+            <div class="card p-3 w-100">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Kepegawaian</h5>
                     <a href="{{ route('user.staffing') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
@@ -307,27 +323,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="col">
-            <div class="card p-3">
-                <div class="d-flex justify-content-between">
-                    <h5 class="text-bold">Bidang Keilmuan</h5>
-                    <a href="{{ route('user.scientific-field') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
-                        Ajukan Perubahan
-                    </a>
-                </div>
-
-                <div class="table-responsive">
-                    <table class="table mt-2 mb-0" style="font-size: 14px">
-                        <tr>
-                            <td style="width: 35%">Kelompok Bidang</td>
-                            <td style="width: 5%">:</td>
-                            <td>(Tidak ada data)</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="card p-3">
+        <div class="row">
+            <div class="card p-3 w-100">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Lain-lain</h5>
                     <a href="{{ route('user.other') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
@@ -357,6 +354,7 @@
             </div>
         </div>
     </div>
+</div>
 @stop
 
 @section('css')
