@@ -13,6 +13,7 @@ class ProfileDocument extends Model
     protected $fillable = [
         'profile_id',
         'file_doc',
+        'file_name',
         'description',
     ];
 

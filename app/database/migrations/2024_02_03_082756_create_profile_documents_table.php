@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('profile_id');
             $table->string('file_doc');
+            $table->string('file_name');
             $table->text('description')->nullable();
             $table->timestamps();
 

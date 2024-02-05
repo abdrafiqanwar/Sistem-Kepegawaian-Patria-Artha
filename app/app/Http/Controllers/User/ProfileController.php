@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\User;
 
-use Illuminate\Http\Request;
 use App\Models\Profile;
+use Illuminate\Http\Request;
+use App\Models\ProfileDocument;
 use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
@@ -26,12 +27,12 @@ class ProfileController extends Controller
         ]);
         
         $ktp_file = time(). '.' . $request->ktp_image_path->extension();
-        $request->ktp_image_path->move(public_path('file_path/profile/data_pribadi'), $ktp_file);
+        $request->ktp_image_path->move(public_path('file_path/profile/personal-data'), $ktp_file);
         
         $kk_file = time(). '.' . $request->kk_image_path->extension();
-        $request->kk_image_path->move(public_path('file_path/profile/data_pribadi'), $kk_file);
+        $request->kk_image_path->move(public_path('file_path/profile/personal-data'), $kk_file);
 
-        Profile::create([
+        $data = Profile::create([
             'user_id' => auth()->user()->id,
             'nidn' => $validated['nidn'],
             'full_name' => $validated['full_name'],
@@ -39,9 +40,25 @@ class ProfileController extends Controller
             'place_of_birth' => $validated['place_of_birth'],
             'date_of_birth' => $validated['date_of_birth'],
             'mother_name' => $validated['mother_name'],
-            'ktp_image_path' => $request->ktp_image_path->getClientOriginalName(),
-            'kk_image_path' => $request->kk_image_path->getClientOriginalName(),
+            'ktp_image_path' => $ktp_file,
+            'kk_image_path' => $kk_file,
+            'ktp_name' => $request->ktp_image_path->getClientOriginalName(),
+            'kk_name' => $request->kk_image_path->getClientOriginalName(),
         ]);
+
+        if(isset($request->file_doc)){
+            foreach($request->file_doc as $key => $value){  
+                $file_doc = time(). '.' . $value->extension();
+                $value->move(public_path('file_path/profile/personal-data'), $file_doc);
+
+                ProfileDocument::create([
+                'profile_id' => $data->id,
+                'file_doc' => $file_doc,
+                'file_name' => $value->getClientOriginalName(),
+                'description' => $request->description[$key] ?? '-',
+            ]);
+            }
+        }
 
         return redirect()->route('user.personal-data');
     }
@@ -53,7 +70,7 @@ class ProfileController extends Controller
 
         $data = auth()->user();
         $nama_file = time(). '.' . $request->profile_image_path->extension();
-        $request->profile_image_path->move(public_path('file_path/profile/data_pribadi'), $nama_file);
+        $request->profile_image_path->move(public_path('file_path/profile/personal-data'), $nama_file);
         $data->profile_image_path = $nama_file;
         $data->save();
 

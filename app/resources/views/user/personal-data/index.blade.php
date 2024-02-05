@@ -23,7 +23,7 @@
                 </div>
                 @if(auth()->user()->profile_image_path)
                 <div class="text-center">
-                    <img src="{{ asset('file_path/profile/data_pribadi/'.auth()->user()->profile_image_path) }}" class="p-3 img-fluid" style="width: 200px; height: 200px"/>
+                    <img src="{{ asset('file_path/profile/personal-data/'.auth()->user()->profile_image_path) }}" class="p-3 img-fluid" style="width: 200px; height: 200px"/>
                 </div>
                 @else
                 <div class="text-center">
