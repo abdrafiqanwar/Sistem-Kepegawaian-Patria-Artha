@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('profile_documents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('profile_id');
-            $table->string('file_doc');
+            $table->string('file_path');
             $table->string('file_name');
             $table->text('description')->nullable();
             $table->timestamps();

@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('citizenship_documents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('citizenship_id');
-            $table->string('file_doc');
+            $table->string('file_path');
+            $table->string('file_name');
             $table->text('description')->nullable();
             $table->timestamps();
 

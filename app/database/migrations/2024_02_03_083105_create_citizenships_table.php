@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('nationality')->default('Indonesia');
             $table->string('kk_image_path');
             $table->string('ktp_image_path');
+            $table->string('kk_name');
+            $table->string('ktp_name');
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
             $table->text('reason_for_rejection')->nullable();
             $table->timestamps();

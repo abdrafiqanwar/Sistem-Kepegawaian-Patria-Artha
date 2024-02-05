@@ -19,9 +19,15 @@ return new class extends Migration
             $table->date('sk_cpns_start_at')->nullable();
             $table->string('sk_tmmd_number')->nullable();
             $table->date('sk_tmmd_start_at')->nullable();
+            $table->string('source_of_income');
+            $table->string('sk_cpns_path')->nullable();
+            $table->string('sk_learning_assignments_path')->nullable();
+            $table->string('sk_reactivation_path')->nullable();
+            $table->string('sk_cpns_name')->nullable();
+            $table->string('sk_learning_assignments_name')->nullable();
+            $table->string('sk_reactivation_name')->nullable();
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
             $table->text('reason_for_rejection')->nullable();
-            $table->string('source_of_income');
             $table->timestamps();
 
             $table->foreign('user_id')

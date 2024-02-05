@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('npwp');
             $table->string('tax_name');
+            $table->string('npwp_path');
+            $table->string('npwp_name');
             $table->timestamps();
 
             $table->foreign('user_id')

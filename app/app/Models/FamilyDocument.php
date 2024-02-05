@@ -12,7 +12,8 @@ class FamilyDocument extends Model
 
     protected $fillable = [
         'family_id',
-        'file_doc',
+        'file_path',
+        'file_name',
         'description',
     ];
 

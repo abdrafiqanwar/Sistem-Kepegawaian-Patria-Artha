@@ -14,6 +14,8 @@ class Other extends Model
         'user_id',
         'npwp',
         'tax_name',
+        'npwp_path',
+        'npwp_name',
     ];
 
     public function user()

@@ -17,9 +17,15 @@ class Staffing extends Model
         'sk_cpns_start_at',
         'sk_tmmd_number',
         'sk_tmmd_start_at',
+        'source_of_income',
+        'sk_cpns_path',
+        'sk_learning_assignments_path',
+        'sk_reactivation_path',
+        'sk_cpns_name',
+        'sk_learning_assignments_name',
+        'sk_reactivation_name',
         'is_accepted',
         'reason_for_rejection',
-        'source_of_income',
     ];
 
     public function user()

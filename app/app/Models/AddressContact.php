@@ -24,6 +24,7 @@ class AddressContact extends Model
         'home_phone_number',
         'phone_number',
         'ktp_image_path',
+        'ktp_name',
         'is_accepted',
         'reason_for_rejection',
     ];

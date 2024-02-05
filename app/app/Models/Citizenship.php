@@ -17,6 +17,8 @@ class Citizenship extends Model
         'nationality',
         'kk_image_path',
         'ktp_image_path',
+        'kk_name',
+        'ktp_name',
         'is_accepted',
         'reason_for_rejection',
     ];

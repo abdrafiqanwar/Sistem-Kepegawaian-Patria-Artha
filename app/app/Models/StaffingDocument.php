@@ -12,7 +12,8 @@ class StaffingDocument extends Model
 
     protected $fillable = [
         'staffing_id',
-        'file_doc',
+        'file_path',
+        'file_name',
         'description',
     ];
 

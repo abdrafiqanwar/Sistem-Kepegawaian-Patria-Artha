@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('scientific_fields', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('scientific_field_type_id');
             $table->timestamps();
 
-            $table->foreign('id')
+            $table->foreign('scientific_field_type_id')
                 ->references('id')
                 ->on('scientific_field_types')
                 ->onDelete('cascade');

@@ -46,14 +46,14 @@ class ProfileController extends Controller
             'kk_name' => $request->kk_image_path->getClientOriginalName(),
         ]);
 
-        if(isset($request->file_doc)){
-            foreach($request->file_doc as $key => $value){  
-                $file_doc = time(). '.' . $value->extension();
-                $value->move(public_path('file_path/profile/personal-data'), $file_doc);
+        if(isset($request->file_path)){
+            foreach($request->file_path as $key => $value){  
+                $file_path = time(). '.' . $value->extension();
+                $value->move(public_path('file_path/profile/personal-data'), $file_path);
 
                 ProfileDocument::create([
                 'profile_id' => $data->id,
-                'file_doc' => $file_doc,
+                'file_path' => $file_path,
                 'file_name' => $value->getClientOriginalName(),
                 'description' => $request->description[$key] ?? '-',
             ]);
