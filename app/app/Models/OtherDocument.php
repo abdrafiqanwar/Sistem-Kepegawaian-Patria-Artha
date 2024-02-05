@@ -12,7 +12,8 @@ class OtherDocument extends Model
 
     protected $fillable = [
         'other_id',
-        'file_doc',
+        'file_path',
+        'file_name',
         'description',
     ];
 

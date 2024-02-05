@@ -13,6 +13,7 @@ class ScientificField extends Model
 
     protected $fillable = [
         'user_id',
+        'scientific_field_type_id',
     ];
     
     public function user()

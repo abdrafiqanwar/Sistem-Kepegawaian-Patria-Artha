@@ -138,60 +138,77 @@
                 </table>
             </div>
 
-            <div class="font-weight-bold w-50" style="font-size: 12px">
-                <p class="mb-0">Dokumen Bukti</p>
-                <p>Mohon melampirkan file gambar asli yang jelas dan tidak blur</p>
-                <p>Dokumen yang dilampirkan adalah dokumen wajib dan dokumen yang sesuai dengan data yang diusulkan.</p>
-                <p class="mb-0">Dokumen Wajib:</p>
-                <p class="mb-0">- KTP</p>
-                <p class="mb-0">- KK</p>
-            </div>
+            {{-- @foreach($data->documents as $doc)
+                <a href="{{ asset('file_path/profile/personal-data/'.$doc->file_doc) }}">file</a>
+                <p>{{ $doc->description }}</p>
+            @endforeach --}}
 
-            <div class="row border d-block mt-2" style="font-size: 14px">
-                <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">KTP</p>
-                <div class="pl-2 pr-2 mb-2">
-                    <p class="m-0 font-weight-bold">
-                        Dokumen Dilampirkan
-                        <span style="color: red">*</span>
-                    </p>
-                    <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
-                    @error('ktp_image_path')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="font-weight-bold" style="font-size: 12px">
+                            <p class="mb-0">Dokumen Bukti</p>
+                            <p>Mohon melampirkan file gambar asli yang jelas dan tidak blur</p>
+                            <p>Dokumen yang dilampirkan adalah dokumen wajib dan dokumen yang sesuai dengan data yang diusulkan.</p>
+                            <p class="mb-0">Dokumen Wajib:</p>
+                            <p class="mb-0">- KTP</p>
+                            <p class="mb-0">- KK</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row border d-block mt-2" style="font-size: 14px">
-                <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">KK</p>
-                <div class="pl-2 pr-2 mb-2">
-                    <p class="m-0 font-weight-bold">
-                        Dokumen Dilampirkan
-                        <span style="color: red">*</span>
-                    </p>
-                    <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('kk_image_path') is-invalid @enderror" placeholder="Pilih file" name="kk_image_path">
-                    @error('kk_image_path')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            </div>
-            
-            <div class="" id="parent">
-            </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="border d-block w-100" style="font-size: 14px">
+                            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">KTP</p>
+                            <div class="pl-2 pr-2 mb-2">
+                                <p class="m-0 font-weight-bold">
+                                    Dokumen Dilampirkan
+                                    <span style="color: red">*</span>
+                                </p>
+                                <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
+                                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
+                                @error('ktp_image_path')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="border d-block w-100 mt-2" style="font-size: 14px">
+                            <p class="bg-secondary font-weight-bold py-1 pl-2 mb-2">KK</p>
+                            <div class="pl-2 pr-2 mb-2">
+                                <p class="m-0 font-weight-bold">
+                                    Dokumen Dilampirkan
+                                    <span style="color: red">*</span>
+                                </p>
+                                <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
+                                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('kk_image_path') is-invalid @enderror" placeholder="Pilih file" name="kk_image_path">
+                                @error('kk_image_path')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="mt-2 d-flex justify-content-between">
-                <button id="tambah" type="button" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
-                    Tambah dokumen lain
-                </button>
-                <button class="btn btn-primary" type="submit" style="fill: white; font-size: 14px">
-                    <i class="fas fa-save"></i>
-                    Simpan
-                </button>
+                    <div class="" id="parent">
+                    </div>
+        
+                    <div class="row">
+                        <div class="mt-2 d-flex justify-content-between w-100">
+                            <button id="tambah" type="button" class="btn p-0 font-weight-bold" style="color: cornflowerblue; font-size: 14px">
+                                Tambah dokumen lain
+                            </button>
+                            <button class="btn btn-primary" type="submit" style="fill: white; font-size: 14px">
+                                <i class="fas fa-save"></i>
+                                Simpan
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -210,7 +227,8 @@
         })
 
         inputDokumen = (i) => {
-            let tr = `<div class="row border d-block mt-2" style="font-size: 14px" id="dokumen-${i}">
+            let tr = `<div class="row">
+                <div class="border d-block w-100 mt-2" style="font-size: 14px" id="dokumen-${i}">
                 <div class="d-flex justify-content-between bg-secondary py-1 pl-2 mb-2">
                 <p class="font-weight-bold">Dokumen</p>
                 <button dokumen-id="${i}" class="btn pt-0 pb-0" style="font-size: 12px; fill: white">
@@ -223,38 +241,22 @@
                         <span style="color: red">*</span>
                     </p>
                     <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
-                    @error('ktp_image_path')
+                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('file_path') is-invalid @enderror" placeholder="Pilih file" name="file_path[]">
+                    @error('file_path')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
+                    <input type="text" class="w-100 form-control form-control-sm @error('description') is-invalid @enderror" name="description[]">
+                    @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
+                </div>
             </div>`;
-
-            // let tr = `<div class="row mt-2" id="dokumen-${i}">
-            //     <div class="col-lg-4" style="font-size: 12px">
-            //     </div>
-    
-            //     <div class="col border pb-3 pl-0 pr-0" style="font-size: 14px">
-            //         <div class="d-flex justify-content-between bg-secondary" style="margin-bottom: 16px">
-            //             <p class="p-1 pl-2 font-weight-bold mb-auto">Dokumen</p>
-            //             <button dokumen-id="${i}" class="btn pt-0 pb-0" style="font-size: 12px; fill: white">
-            //                 <i class="fas fa-times" style="color:white"></i>
-            //             </button>
-            //         </div>
-    
-            //         <div class="pl-2 pr-2">
-            //             <p class="m-0 font-weight-bold">
-            //                 Dokumen Dilampirkan
-            //                 <span style="color: red">*</span>
-            //             </p>
-            //             <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>
-            //             <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100" placeholder="Pilih file">
-            //         </div>
-            //     </div>
-            // </div>`;
-
         $('#parent').append(tr);
         }       
         

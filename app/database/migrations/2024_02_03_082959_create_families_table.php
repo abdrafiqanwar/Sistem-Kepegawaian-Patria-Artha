@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('partner_occupation')->nullable();
             $table->string('partner_nip')->nullable();
             $table->string('kk_image_path');
+            $table->string('kk_name');
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
             $table->text('reason_for_rejection')->nullable();
             $table->timestamps();

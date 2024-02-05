@@ -17,6 +17,7 @@ class Family extends Model
         'partner_occupation',
         'partner_nip',
         'kk_image_path',
+        'kk_name',
         'is_accepted',
         'reason_for_rejection',
     ];

@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('home_phone_number')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('ktp_image_path');
+            $table->string('ktp_name');
             $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
             $table->string('reason_for_rejection')->nullable();
             $table->timestamps();
@@ -32,7 +33,7 @@ return new class extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->cascadeOnDelete();
+                ->onDelete('cascade');
         });
     }
 
