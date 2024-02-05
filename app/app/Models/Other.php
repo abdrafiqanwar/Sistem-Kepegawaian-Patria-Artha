@@ -16,6 +16,8 @@ class Other extends Model
         'tax_name',
         'npwp_path',
         'npwp_name',
+        'is_accepted',
+        'reason_for_rejection',
     ];
 
     public function user()
