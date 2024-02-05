@@ -24,7 +24,7 @@ class AddressContactController extends Controller
         $ktp_image_path = time(). '.' . $request->ktp_image_path->extension();
         $request->ktp_image_path->move(public_path('file_path/profile/data_pribadi'), $ktp_image_path);
 
-        AddressContact::create([
+        $data = AddressContact::create([
             'user_id' => auth()->user()->id,
             'email' => $validated['email'],
             'address' => $validated['address'],
@@ -36,8 +36,23 @@ class AddressContactController extends Controller
             'postal_code' => $request->postal_code,
             'home_phone_number' => $request->home_phone_number,
             'phone_number' => $request->phone_number,
-            'ktp_image_path' => $request->ktp_image_path->getClientOriginalName(),
+            'ktp_image_path' => $ktp_image_path,
+            'ktp_name' => $request->ktp_image_path->getClientOriginalName(),
         ]);
+
+        if(isset($request->file_path)){
+            foreach($request->file_path as $key => $value){  
+                $file_path = time(). '.' . $value->extension();
+                $value->move(public_path('file_path/profile/personal-data'), $file_path);
+
+                AddressContactDocument::create([
+                'address_contact_id' => $data->id,
+                'file_path' => $file_path,
+                'file_name' => $value->getClientOriginalName(),
+                'description' => $request->description[$key] ?? '-',
+            ]);
+            }
+        }
 
         return redirect()->route('user.personal-data');
     }
