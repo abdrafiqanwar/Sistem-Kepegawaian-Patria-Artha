@@ -24,7 +24,7 @@
         </div>
         <p style="font-size: 14px">Perubahan data ini memerlukan validasi yang akan diproses dalam maksimal 21 hari kerja setelah diajukan</p>
 
-        <form action="{{ route('user.profile.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('user.profile.store') }}" method="POST" enctype="multipart/form-data" id="form">
             @csrf
             <div class="table-responsive">
                 <table class="table border-left border-right border-bottom" style="font-size: 14px">
@@ -264,5 +264,12 @@
             let id = $(this).attr('dokumen-id');
             $(`#dokumen-${id}`).remove();
         })
+    </script>
+    <script>
+        @if($data)
+            @if($data->is_accepted == 'PENDING')
+                $('#form').attr("action", "{{ route('user.profile.update') }}")
+            @endif
+        @endif
     </script>
 @stop

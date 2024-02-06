@@ -54,6 +54,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User', 'm
 
             Route::get('/biodata', 'ProfileController@index')->name('user.profile');
             Route::post('/biodata', 'ProfileController@store')->name('user.profile.store');
+            Route::post('/biodata.update', 'ProfileController@update')->name('user.profile.update');
             Route::post('/biodata.image', 'ProfileController@image')->name('user.profile.image');
 
             Route::get('/alamat-kontak', 'AddressContactController@index')->name('user.address-contact');

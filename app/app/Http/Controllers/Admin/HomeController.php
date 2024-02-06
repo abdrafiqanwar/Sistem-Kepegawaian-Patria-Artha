@@ -14,7 +14,7 @@ class HomeController extends Controller
         $jumlahDosen = User::where('role', 'LECTURER')->count();
 
         $jumlahDosenGender = DB::table('users')
-            ->leftJoin('lecturer_profile as lp', function ($join) {
+            ->leftJoin('profiles as lp', function ($join) {
                 $join->on('users.id', '=', 'lp.user_id')
                     ->where('users.role', 'LECTURER');
             })
