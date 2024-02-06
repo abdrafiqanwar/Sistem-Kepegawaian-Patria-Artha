@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('tax_name');
             $table->string('npwp_path');
             $table->string('npwp_name');
+            $table->enum('is_accepted', ['ACCEPTED', 'REJECTED', 'PENDING'])->default('PENDING');
+            $table->text('reason_for_rejection')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')

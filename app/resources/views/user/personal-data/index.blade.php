@@ -178,7 +178,7 @@
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Bidang Keilmuan</h5>
                     <a href="{{ route('user.scientific-field') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
-                        Ajukan Perubahan
+                        Ubah
                     </a>
                 </div>
 
@@ -197,9 +197,7 @@
             <div class="card p-3 w-100">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Alamat dan Kontak</h5>
-                    <a href="{{ route('user.address-contact') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
-                        <i class="fas fa-pencil-alt"></i>
-                    </a>
+                    <a href="{{ route('user.address-contact') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">Ajukan Perubahan</a>
                 </div>
 
                 <div class="table-responsive">
@@ -262,9 +260,7 @@
             <div class="card p-3 w-100">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Kepegawaian</h5>
-                    <a href="{{ route('user.staffing') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
-                        <i class="fas fa-pencil-alt"></i>
-                    </a>
+                    <a href="{{ route('user.staffing') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">Ajukan Perubahan</a>
                 </div>
 
                 <div class="table-responsive">
@@ -327,9 +323,7 @@
             <div class="card p-3 w-100">
                 <div class="d-flex justify-content-between">
                     <h5 class="text-bold">Lain-lain</h5>
-                    <a href="{{ route('user.other') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">
-                        <i class="fas fa-pencil-alt"></i>
-                    </a>
+                    <a href="{{ route('user.other') }}" class="btn btn-secondary btn-sm mt-auto mb-auto" style="font-size: 12px; fill: white">Ajukan Perubahan</a>
                 </div>
 
                 <div class="table-responsive">
