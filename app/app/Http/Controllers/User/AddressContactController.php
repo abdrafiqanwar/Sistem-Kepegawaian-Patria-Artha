@@ -22,7 +22,7 @@ class AddressContactController extends Controller
         ]);
 
         $ktp_image_path = time(). '.' . $request->ktp_image_path->extension();
-        $request->ktp_image_path->move(public_path('file_path/profile/data_pribadi'), $ktp_image_path);
+        $request->ktp_image_path->move(public_path('file_path/profile/personal-data'), $ktp_image_path);
 
         $data = AddressContact::create([
             'user_id' => auth()->user()->id,
