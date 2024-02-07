@@ -27,17 +27,17 @@
         <form action="{{ route('user.profile.store') }}" method="POST" enctype="multipart/form-data" id="form">
             @csrf
             <div class="table-responsive">
-                <table class="table border-left border-right border-bottom" style="font-size: 14px">
+                <table class="table border" style="font-size: 14px">
                     <tr>
                         <th class="w-25"></th>
                         <th class="text-center w-25">Data Saat Ini</th>
                         <th class="text-center">Data Baru</th>
                     </tr>
                     <tr>
-                        <th class="w-25">NIDN</th>
-                        <td class="w-25">{{ $data->nidn ?? 'Belum ada data' }}</td>
+                        <th>NIDN</th>
+                        <td>{{ $data->nidn ?? 'Belum ada data' }}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm @error('nidn') is-invalid @enderror" name="nidn" value="{{ old('nidn') }}">
+                            <input type="text" class="form-control form-control-sm @error('nidn') is-invalid @enderror" name="nidn" value="{{ old('nidn') }}">
                             @error('nidn')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -46,10 +46,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="w-25">Nama</th>
-                        <td class="w-25">{{ $data->full_name ?? 'Belum ada data'}}</td>
+                        <th>Nama</th>
+                        <td>{{ $data->full_name ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}">
+                            <input type="text" class="form-control form-control-sm @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}">
                             @error('full_name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -58,10 +58,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="w-25">Jenis Kelamin</th>
+                        <th>Jenis Kelamin</th>
                         <td>{{ $data->gender ?? 'Belum ada data' }}</td>
                         <td>
-                            <select class="form-select w-100 h-100 form-control form-control-sm @error('gender') is-invalid @enderror" aria-label="Small select example" name="gender">
+                            <select class="form-select h-100 form-control form-control-sm @error('gender') is-invalid @enderror" aria-label="Small select example" name="gender">
                                 <option selected value="{{ old('gender') }}">
                                     @if( old('gender') == 'MALE')
                                     Laki-Laki
@@ -82,10 +82,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="w-25">Tempat Lahir</th>
-                        <td class="w-25">{{ $data->place_of_birth ?? 'Belum ada data'}}</td>
+                        <th>Tempat Lahir</th>
+                        <td>{{ $data->place_of_birth ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm @error('place_of_birth') is-invalid @enderror" name="place_of_birth" value="{{ old('place_of_birth') }}">
+                            <input type="text" class="form-control form-control-sm @error('place_of_birth') is-invalid @enderror" name="place_of_birth" value="{{ old('place_of_birth') }}">
                             @error('place_of_birth')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -94,10 +94,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="w-25">Tanggal Lahir</th>
-                        <td class="w-25">{{ $data->date_of_birth ?? 'Belum ada data'}}</td>
+                        <th>Tanggal Lahir</th>
+                        <td>{{ $data->date_of_birth ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="date" class="w-100 form-control form-control-sm @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}">
+                            <input type="date" class="form-control form-control-sm @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}">
                             @error('date_of_birth')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -106,10 +106,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="w-25">Nama Ibu Kandung</th>
-                        <td class="w-25">{{ $data->mother_name ?? 'Belum ada data'}}</td>
+                        <th>Nama Ibu Kandung</th>
+                        <td>{{ $data->mother_name ?? 'Belum ada data'}}</td>
                         <td>
-                            <input type="text" class="w-100 form-control form-control-sm @error('mother_name') is-invalid @enderror" name="mother_name" value="{{ old('mother_name') }}">
+                            <input type="text" class="form-control form-control-sm @error('mother_name') is-invalid @enderror" name="mother_name" value="{{ old('mother_name') }}">
                             @error('mother_name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
