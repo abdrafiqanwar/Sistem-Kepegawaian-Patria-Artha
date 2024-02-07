@@ -59,15 +59,7 @@
                     </tr>
                     <tr>
                         <th class="w-25">Jenis Kelamin</th>
-                        @if($data)
-                            @if($data->gender == 'MALE')
-                            <td class="w-25">Laki-Laki</td>
-                            @elseif($data->gender == 'FEMALE')
-                            <td class="w-25">Perempuan</td>
-                            @endif
-                        @else
-                            <td>Belum ada data</td>
-                        @endif
+                        <td>{{ $data->gender ?? 'Belum ada data' }}</td>
                         <td>
                             <select class="form-select w-100 h-100 form-control form-control-sm @error('gender') is-invalid @enderror" aria-label="Small select example" name="gender">
                                 <option selected value="{{ old('gender') }}">

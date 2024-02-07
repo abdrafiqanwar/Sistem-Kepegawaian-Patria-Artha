@@ -76,15 +76,7 @@
                         <tr>
                             <td>Jenis Kelamin</td>
                             <td>:</td>
-                            @if($biodata)
-                                @if($biodata->gender == 'MALE')
-                                <td>Laki-Laki</td>
-                                @elseif($biodata->gender == 'FEMALE')
-                                <td>Perempuan</td>
-                                @endif
-                            @else
-                                <td>Belum ada data</td>
-                            @endif
+                            <td>{{ $biodata->gender ?? 'Belum ada data' }}</td>
                         </tr>
                         <tr>
                             <td>Tempat Lahir</td>

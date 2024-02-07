@@ -41,13 +41,13 @@ class Profile extends Model
         return date('d F Y', strtotime($value));
     }
 
-    // public function getGenderAttribute($value){
-    //     if($value == 'MALE'){
-    //         return 'Laki-Laki';
-    //     }elseif($value == 'FEMALE'){
-    //         return 'Perempuan';
-    //     }else{
-    //         return 'Tidak Diketahui';
-    //     }
-    // }
+    public function getGenderAttribute($value){
+        if($value == 'MALE'){
+            return 'Laki-Laki';
+        }elseif($value == 'FEMALE'){
+            return 'Perempuan';
+        }else{
+            return 'Tidak Diketahui';
+        }
+    }
 }
