@@ -27,17 +27,17 @@
         <form action="{{ route('user.address-contact.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
         <div class="table-responsive">
-            <table class="table mt-2 border-left border-right border-bottom" style="font-size: 14px">
+            <table class="table border" style="font-size: 14px">
                 <tr>
                     <th class="w-25"></th>
                     <th class="text-center w-25">Data Saat Ini</th>
                     <th class="text-center">Data Baru</th>
                 </tr>
                 <tr>
-                    <th class="w-25">Email</th>
-                    <td class="w-25">{{ $data->email ?? 'Belum ada data'}}</td>
+                    <th>Email</th>
+                    <td>{{ $data->email ?? 'Belum ada data'}}</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm  @error('email') is-invalid @enderror" name="email" value="{{ $data->email ?? '' }}">
+                        <input type="text" class="form-control form-control-sm  @error('email') is-invalid @enderror" name="email" value="{{ $data->email ?? '' }}">
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -46,10 +46,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Alamat</th>
-                    <td class="w-25">{{ $data->address ?? 'Belum ada data'}}</td>
+                    <th>Alamat</th>
+                    <td>{{ $data->address ?? 'Belum ada data'}}</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm  @error('address') is-invalid @enderror" name="address" value="{{ $data->address ?? '' }}">
+                        <input type="text" class="form-control form-control-sm  @error('address') is-invalid @enderror" name="address" value="{{ $data->address ?? '' }}">
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -58,10 +58,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">RT</th>
-                    <td class="w-25">{{ $data->rt ?? 'Belum ada data'}}</td>
+                    <th>RT</th>
+                    <td>{{ $data->rt ?? 'Belum ada data'}}</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm  @error('rt') is-invalid @enderror" name="rt" value="{{ $data->rt ?? '' }}">
+                        <input type="text" class="form-control form-control-sm  @error('rt') is-invalid @enderror" name="rt" value="{{ $data->rt ?? '' }}">
                         @error('rt')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -70,10 +70,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">RW</th>
-                    <td class="w-25">{{ $data->rw ?? 'Belum ada data' }}</td>
+                    <th>RW</th>
+                    <td>{{ $data->rw ?? 'Belum ada data' }}</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm  @error('rw') is-invalid @enderror" name="rw" value="{{ $data->rw ?? '' }}">
+                        <input type="text" class="form-control form-control-sm  @error('rw') is-invalid @enderror" name="rw" value="{{ $data->rw ?? '' }}">
                         @error('rw')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -82,10 +82,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Dusun</th>
-                    <td class="w-25">{{ $data->sub_village ?? 'Belum ada data' }}</td>
+                    <th>Dusun</th>
+                    <td>{{ $data->sub_village ?? 'Belum ada data' }}</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm  @error('sub_village') is-invalid @enderror" name="sub_village" value="{{ $data->sub_village ?? '' }}">
+                        <input type="text" class="form-control form-control-sm  @error('sub_village') is-invalid @enderror" name="sub_village" value="{{ $data->sub_village ?? '' }}">
                         @error('sub_village')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -94,10 +94,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Desa/Kelurahan</th>
-                    <td class="w-25">{{ $data->village ?? 'Belum ada data'}}</td>
+                    <th>Desa/Kelurahan</th>
+                    <td>{{ $data->village ?? 'Belum ada data'}}</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm  @error('village') is-invalid @enderror" name="village" value="{{ $data->village ?? '' }}">
+                        <input type="text" class="form-control form-control-sm  @error('village') is-invalid @enderror" name="village" value="{{ $data->village ?? '' }}">
                         @error('village')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -106,10 +106,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Kota/Kabupaten/Kecamatan</th>
-                    <td class="w-25">{{ $data->city_discrict_sub_district ?? 'Belum ada data'}}</td>
+                    <th>Kota/Kabupaten/Kecamatan</th>
+                    <td>{{ $data->city_discrict_sub_district ?? 'Belum ada data'}}</td>
                     <td>
-                        <select class="form-select w-100 h-100 form-control form-control-sm" aria-label="Small select example" name="city_discrict_sub_district">
+                        <select class="form-select h-100 form-control form-control-sm" aria-label="Small select example" name="city_discrict_sub_district">
                             <option selected value="{{ $data->city_discrict_sub_district ?? '' }}">{{ $data->city_discrict_sub_district ?? 'Pilih...' }}</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -118,10 +118,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Kode Pos</th>
-                    <td class="w-25">{{ $data->postal_code ?? 'Belum ada data' }}</td>
+                    <th>Kode Pos</th>
+                    <td>{{ $data->postal_code ?? 'Belum ada data' }}</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm  @error('postal_code') is-invalid @enderror" name="postal_code" value="{{ $data->postal_code ?? '' }}">
+                        <input type="text" class="form-control form-control-sm  @error('postal_code') is-invalid @enderror" name="postal_code" value="{{ $data->postal_code ?? '' }}">
                         @error('postal_code')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -130,10 +130,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">No. Telepon Rumah</th>
-                    <td class="w-25">{{ $data->home_phone_number ?? 'Belum ada data'}}</td>
+                    <th>No. Telepon Rumah</th>
+                    <td>{{ $data->home_phone_number ?? 'Belum ada data'}}</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm  @error('home_phone_number') is-invalid @enderror" name="home_phone_number" value="{{ $data->home_phone_number ?? '' }}">
+                        <input type="text" class="form-control form-control-sm  @error('home_phone_number') is-invalid @enderror" name="home_phone_number" value="{{ $data->home_phone_number ?? '' }}">
                         @error('home_phone_number')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -142,10 +142,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">No. HP</th>
-                    <td class="w-25">{{ $data->phone_number ?? 'Belum ada data'}}</td>
+                    <th>No. HP</th>
+                    <td>{{ $data->phone_number ?? 'Belum ada data'}}</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm  @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ $data->phone_number ?? '' }}">
+                        <input type="text" class="form-control form-control-sm  @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ $data->phone_number ?? '' }}">
                         @error('phone_number')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
