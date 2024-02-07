@@ -13,7 +13,11 @@
 @section('content')
     <div class="card">
         <div class="d-flex flex-wrap">
-            <img src="https://source.unsplash.com/random/150x150?sig=1" class="rounded-circle p-3 img-fluid"/>
+            @if(auth()->user()->profile_image_path)
+            <img src="{{ asset('file_path/profile/personal-data/'.auth()->user()->profile_image_path) }}" class="rounded-circle p-3 img-fluid" style="width: 200px; height: 200px;"/>
+            @else
+            <img src="{{ asset('img/user.jpg') }}" class="rounded-circle p-3 img-fluid" style="width: 200px; height: 200px;"/>
+            @endif
             <div class="flex-row mt-auto mb-auto p-3">
                 <h4 class="text-bold">Selamat Datang</h4>
                 <h4 class="text-bold">Suhendra S</h4>
