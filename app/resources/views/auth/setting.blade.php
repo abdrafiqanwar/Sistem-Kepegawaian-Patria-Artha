@@ -27,52 +27,36 @@
     <h5 class="text-bold">Setting</h5>
 
     <div class="col-md-6 mt-2">
-        @if($msg = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ $msg }} 
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        @endif
-
-        @if($msg = Session::get('error'))
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            {{ $msg }} 
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        @endif
-
-        @if($errors->any())
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <ul style="list-style: none" class="pl-0">
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        @endif
-
         <h6 class="text-black-50">Ubah Password</h6>
 
         <form action="{{ route('setting.change') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="old_password" class="form-check-label">Password Lama</label>
-                <input type="password" name="old_password" id="old_password" class="form-control">
+                <input type="password" name="old_password" id="old_password" class="form-control @error('old_password') is-invalid @enderror">
+                @error('old_password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="new_password" class="form-check-label">Password Baru</label>
-                <input type="password" name="new_password" id="new_password" class="form-control">
+                <input type="password" name="new_password" id="new_password" class="form-control @error('new_password') is-invalid @enderror">
+                @error('new_password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="confirm_password" class="form-check-label">Konfirmasi Password Baru</label>
-                <input type="password" name="confirm_password" id="confirm_password" class="form-control">
+                <input type="password" name="confirm_password" id="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror">
+                @error('confirm_password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
@@ -84,4 +68,22 @@
 @stop
 
 @section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    @if(Session::has('error'))
+    toastr.options = {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+    toastr.error("{{ Session::get('error') }}");
+    @endif
+
+    @if(Session::has('success'))
+    toastr.options = {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+    toastr.success("{{ Session::get('success') }}");
+    @endif
+</script>
 @stop

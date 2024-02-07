@@ -23,18 +23,6 @@
 
 @section('auth_body')
 
-    @if(session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
-
-    @if(session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
-
     <form action="{{ route('login.post') }}" method="post">
         @csrf
 
@@ -125,4 +113,34 @@
             </a>
         </p>
     @endif --}}
+@stop
+
+@section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    @if(Session::has('error'))
+    toastr.options = {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+    toastr.error("{{ Session::get('error') }}");
+    @endif
+
+    @if(Session::has('status'))
+    toastr.options = {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+    toastr.success("{{ Session::get('status') }}");
+    @endif
+
+    @if(Session::has('success'))
+    toastr.options = {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+    toastr.success("{{ Session::get('success') }}");
+    @endif
+</script>
 @stop
