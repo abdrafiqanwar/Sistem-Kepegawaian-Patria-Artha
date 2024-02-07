@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('families', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->boolean('marital_status')->default(false);
+            $table->enum('marital_status', ['MARRIED', 'SINGLE', 'DIVORCED']);
             $table->string('partner_name')->nullable();
             $table->string('partner_occupation')->nullable();
             $table->string('partner_nip')->nullable();

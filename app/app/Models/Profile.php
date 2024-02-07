@@ -37,6 +37,10 @@ class Profile extends Model
         return $this->hasMany(ProfileDocument::class);
     }
 
+    public function getDateOfBirthAttribute($value){
+        return date('d F Y', strtotime($value));
+    }
+
     // public function getGenderAttribute($value){
     //     if($value == 'MALE'){
     //         return 'Laki-Laki';

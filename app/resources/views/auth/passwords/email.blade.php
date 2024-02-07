@@ -13,12 +13,6 @@
 
 @section('auth_body')
 
-    @if(session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
-
     <form action="{{ route('password.email') }}" method="post">
         @csrf
 
@@ -48,4 +42,18 @@
 
     </form>
 
+@stop
+
+@section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    @if(Session::has('status'))
+    toastr.options = {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+    toastr.success("{{ Session::get('status') }}");
+    @endif
+</script>
 @stop

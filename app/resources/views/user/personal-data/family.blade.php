@@ -35,7 +35,12 @@
                     <th class="w-25">Status Perkawinan</th>
                     <td class="w-25">Cerai</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm">
+                        <select class="form-select w-100 h-100 form-control form-control-sm" aria-label="Small select example" name="city_discrict_sub_district">
+                            <option selected value="{{ $data->city_discrict_sub_district ?? '' }}">{{ $data->city_discrict_sub_district ?? 'Pilih...' }}</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>

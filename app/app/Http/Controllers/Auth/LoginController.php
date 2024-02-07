@@ -27,9 +27,9 @@ class LoginController extends Controller
         if (auth()->attempt($credentials)) {
             $user = auth()->user();
             if($user->role == 'ADMIN'){
-                return redirect()->intended('admin');
+                return redirect()->intended('admin')->with('success', 'Login Berhasil');
             }else{
-                return redirect()->intended('user');
+                return redirect()->intended('')->with('success', 'Login Berhasil');
             }
         }
 
@@ -39,7 +39,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('login')->with('success', 'Logout Berhasil');
     }
 
     public function request(){
@@ -66,7 +66,8 @@ class LoginController extends Controller
         $request->validate([
             'token' => 'required',
             'email' => 'required|email',
-            'password' => 'required|confirmed',
+            'password' => 'required',
+            'password_confirmation' => 'required|same:password',
         ]);
 
         $status = Password::reset(
