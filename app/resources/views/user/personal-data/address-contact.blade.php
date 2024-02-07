@@ -242,7 +242,7 @@
                         </span>
                     @enderror
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="form-control form-control-sm @error('description') is-invalid @enderror" name="description[]">
+                    <textarea class="w-100 form-control form-control-sm @error('description') is-invalid @enderror" name="description[]" cols="1" rows="2"></textarea>
                     @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
