@@ -25,14 +25,14 @@
         <p style="font-size: 14px">Perubahan data ini tidak memerlukan validasi dan dapat langsung disimpan ke sistem</p>
 
         <div class="table-responsive">
-            <table class="table border-left border-right border-bottom" style="font-size: 14px">
+            <table class="table border" style="font-size: 14px">
                 <tr>
-                    <th class="w-75">Pilih Kelompok Bidang</th>
+                    <th class="w-75 text-center">Pilih Kelompok Bidang</th>
                     <th class="text-center">Aksi</th>
                 </tr>
                 <tr>
-                    <td class="w-75">   
-                        <select class="form-select w-100 form-control form-control-sm" aria-label="Small select example">
+                    <td>   
+                        <select class="form-select form-control form-control-sm" aria-label="Small select example">
                             <option selected>Pilih...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>

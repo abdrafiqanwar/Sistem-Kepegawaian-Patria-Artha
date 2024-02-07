@@ -61,7 +61,7 @@
                         <th>Jenis Kelamin</th>
                         <td>{{ $data->gender ?? 'Belum ada data' }}</td>
                         <td>
-                            <select class="form-select h-100 form-control form-control-sm @error('gender') is-invalid @enderror" aria-label="Small select example" name="gender">
+                            <select class="form-select form-control form-control-sm @error('gender') is-invalid @enderror" aria-label="Small select example" name="gender">
                                 <option selected value="{{ old('gender') }}">
                                     @if( old('gender') == 'MALE')
                                     Laki-Laki
@@ -148,7 +148,7 @@
                                     <span style="color: red">*</span>
                                 </p>
                                 <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
+                                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="@error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
                                 @error('ktp_image_path')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -166,7 +166,7 @@
                                     <span style="color: red">*</span>
                                 </p>
                                 <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('kk_image_path') is-invalid @enderror" placeholder="Pilih file" name="kk_image_path">
+                                <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="@error('kk_image_path') is-invalid @enderror" placeholder="Pilih file" name="kk_image_path">
                                 @error('kk_image_path')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -223,14 +223,14 @@
                         <span style="color: red">*</span>
                     </p>
                     <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('file_path') is-invalid @enderror" placeholder="Pilih file" name="file_path[]">
+                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="@error('file_path') is-invalid @enderror" placeholder="Pilih file" name="file_path[]">
                     @error('file_path')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="w-100 form-control form-control-sm @error('description') is-invalid @enderror" name="description[]">
+                    <input type="text" class="form-control form-control-sm @error('description') is-invalid @enderror" name="description[]">
                     @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

@@ -25,24 +25,24 @@
         <p style="font-size: 14px">Perubahan data ini memerlukan validasi yang akan diproses dalam maksimal 21 hari kerja setelah diajukan</p>
 
         <div class="table-responsive">
-            <table class="table border-left border-right border-bottom" style="font-size: 14px">
+            <table class="table border" style="font-size: 14px">
                 <tr>
                     <th class="w-25"></th>
                     <th class="text-center w-25">Data Saat Ini</th>
                     <th class="text-center">Data Baru</th>
                 </tr>
                 <tr>
-                    <th class="w-25">NIK</th>
-                    <td class="w-25">7371100201770009</td>
+                    <th>NIK</th>
+                    <td>7371100201770009</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm">
+                        <input type="text" class="form-control form-control-sm">
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Agama</th>
-                    <td class="w-25">Islam</td>
+                    <th>Agama</th>
+                    <td>Islam</td>
                     <td>
-                        <select class="form-select w-100 h-100 form-control form-control-sm" aria-label="Small select example" name="city_discrict_sub_district">
+                        <select class="form-select form-control form-control-sm" aria-label="Small select example" name="city_discrict_sub_district">
                             <option selected value="{{ $data->city_discrict_sub_district ?? '' }}">{{ $data->city_discrict_sub_district ?? 'Pilih...' }}</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -51,10 +51,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Kewarganegaraan</th>
-                    <td class="w-25">Indonesia</td>
+                    <th>Kewarganegaraan</th>
+                    <td>Indonesia</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm">
+                        <input type="text" class="form-control form-control-sm">
                     </td>
                 </tr>
             </table>
@@ -83,7 +83,7 @@
                                 <span style="color: red">*</span>
                             </p>
                             <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                            <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
+                            <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="@error('ktp_image_path') is-invalid @enderror" placeholder="Pilih file" name="ktp_image_path">
                             @error('ktp_image_path')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -101,7 +101,7 @@
                                 <span style="color: red">*</span>
                             </p>
                             <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                            <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('kk_image_path') is-invalid @enderror" placeholder="Pilih file" name="kk_image_path">
+                            <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="@error('kk_image_path') is-invalid @enderror" placeholder="Pilih file" name="kk_image_path">
                             @error('kk_image_path')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -157,14 +157,14 @@
                         <span style="color: red">*</span>
                     </p>
                     <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('file_path') is-invalid @enderror" placeholder="Pilih file" name="file_path[]">
+                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="@error('file_path') is-invalid @enderror" placeholder="Pilih file" name="file_path[]">
                     @error('file_path')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="w-100 form-control form-control-sm @error('description') is-invalid @enderror" name="description[]">
+                    <input type="text" class="form-control form-control-sm @error('description') is-invalid @enderror" name="description[]">
                     @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

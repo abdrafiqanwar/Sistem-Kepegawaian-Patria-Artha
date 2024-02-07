@@ -25,25 +25,25 @@
         <p style="font-size: 14px">Perubahan data ini memerlukan validasi yang akan diproses dalam maksimal 21 hari kerja setelah diajukan</p>
 
         <div class="table-responsive">
-            <table class="table border-left border-right border-bottom mt-2" style="font-size: 14px">
+            <table class="table border" style="font-size: 14px">
                 <tr>
                     <th class="w-25"></th>
                     <th class="text-center w-25">Data Saat Ini</th>
                     <th class="text-center">Data Baru</th>
                 </tr>
                 <tr>
-                    <th class="w-25">NPWP</th>
-                    <td class="w-25">853599539904000</td>
+                    <th>NPWP</th>
+                    <td>853599539904000</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm">
+                        <input type="text" class="form-control form-control-sm">
                         <p class="mb-0 font-italic" style="font-size: 12px">*Masukkan Nomor NPWP tanpa menggunakan titik (.) dan dash (-)</p>
                     </td>
                 </tr>
                 <tr>
-                    <th class="w-25">Nama Wajib Pajak</th>
-                    <td class="w-25">(Tidak ada data)</td>
+                    <th>Nama Wajib Pajak</th>
+                    <td>(Tidak ada data)</td>
                     <td>
-                        <input type="text" class="w-100 form-control form-control-sm">
+                        <input type="text" class="form-control form-control-sm">
                     </td>
                 </tr>
             </table>
@@ -71,7 +71,7 @@
                                 <span style="color: red">*</span>
                             </p>
                             <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                            <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('npwp_path') is-invalid @enderror" placeholder="Pilih file" name="npwp_path">
+                            <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="@error('npwp_path') is-invalid @enderror" placeholder="Pilih file" name="npwp_path">
                             @error('npwp_path')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -127,14 +127,14 @@
                         <span style="color: red">*</span>
                     </p>
                     <p class="font-italic m-0 pb-1" style="font-size: 12px">(Jenis file yang diijinkan: pdf, jpg, jpeg, png dengan ukuran maksimal 2MB)</p>   
-                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="w-100 @error('file_path') is-invalid @enderror" placeholder="Pilih file" name="file_path[]">
+                    <input type="file" accept=".pdf, .jpg, .jpeg, .png" class="@error('file_path') is-invalid @enderror" placeholder="Pilih file" name="file_path[]">
                     @error('file_path')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                     <p class="m-0 mt-2 font-weight-bold pb-1">Keterangan</p>
-                    <input type="text" class="w-100 form-control form-control-sm @error('description') is-invalid @enderror" name="description[]">
+                    <input type="text" class="form-control form-control-sm @error('description') is-invalid @enderror" name="description[]">
                     @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
