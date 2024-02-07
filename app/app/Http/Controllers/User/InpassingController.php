@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User\Profile\Inpassing;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,18 +8,18 @@ use Illuminate\Http\Request;
 class InpassingController extends Controller
 {
     public function index(){
-        return view('user.profile.inpassing');
+        return view('user.inpassing.index');
     }
 
     public function detail(){
-        return view('user.profile.inpassing.detail');
+        return view('user.inpassing.detail');
     }
 
     public function create(){
-        return view('user.profile.inpassing.new');
+        return view('user.inpassing.new');
     }
 
     public function edit(){
-        return view('user.profile.inpassing.edit');
+        return view('user.inpassing.edit');
     }
 }

@@ -45,7 +45,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 
     });
 });
 
-Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User', 'middleware' => ['user', 'auth']], function(){
+Route::group(['prefix' => '', 'namespace' => 'App\Http\Controllers\User', 'middleware' => ['user', 'auth']], function(){
     Route::get('/', 'HomeController@index')->name('user.home');
 
     Route::group(['prefix' => 'profile'], function(){
@@ -71,13 +71,13 @@ Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers\User', 'm
             Route::get('/lain', 'OtherController@index')->name('user.other');
         });
 
-        Route::group(['prefix' => 'inpassing', 'namespace' => 'Inpassing'], function(){
+        Route::group(['prefix' => 'inpassing'], function(){
             Route::get('/', 'InpassingController@index')->name('user.inpassing');
             Route::get('/detail', 'InpassingController@detail')->name('user.inpassing.detail');
 
-            Route::get('/edit', 'InpassingController@edit')->name('user.inpassing.edit');
-            
             Route::get('/create', 'InpassingController@create')->name('user.inpassing.create');
+            
+            Route::get('/edit', 'InpassingController@edit')->name('user.inpassing.edit');
         });
 
         Route::group(['prefix' => 'jabatan-fungsional', 'namespace' => 'JabatanFungsional'], function(){
