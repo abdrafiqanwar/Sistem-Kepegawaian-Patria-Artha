@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'SISTER | Login',
+    'title' => '| SISTER',
     'logo_img' => 'img/univ.png',
     'title_prefix' => '',
     'title_postfix' => '',

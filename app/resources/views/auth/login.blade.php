@@ -18,7 +18,8 @@
     @php( $password_reset_url = $password_reset_url ? url($password_reset_url) : '' )
 @endif
 
-@section('auth_header', __('adminlte::adminlte.login_message'))
+@section('title_prefix', 'Login')
+@section('auth_header', 'Masuk ke Akun')
 
 @section('auth_body')
 

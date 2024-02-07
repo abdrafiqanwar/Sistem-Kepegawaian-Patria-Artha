@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Profile | Data Pribadi')
+@section('title_prefix', 'Data Pribadi')
 
 @section('content_header')
 <nav aria-label="breadcrumb">

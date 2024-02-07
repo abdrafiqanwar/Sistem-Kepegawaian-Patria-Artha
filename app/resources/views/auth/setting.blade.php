@@ -1,27 +1,25 @@
 @extends('adminlte::page')
 
-@section('title', 'Setting')
+@section('title_prefix', 'Setting')
 
 @section('content_header')
-<div class="d-flex">
     @can('admin')
-    <a href="{{ route('admin.home') }}" class="btn p-0">
-        <h6>Beranda</h6>
-    </a>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Beranda</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Setting</li>
+        </ol>
+    </nav>
     @endcan
     
     @can('user')
-    <a href="{{ route('user.home') }}" class="btn p-0">
-        <h6>Beranda</h6>
-    </a>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('user.home') }}">Beranda</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Setting</li>
+        </ol>
+    </nav>
     @endcan
-
-    <h6 class="pl-2 pr-2">/</h6>
-
-    <a href="" class="btn p-0">
-        <h6>Setting</h6>
-    </a>
-</div>
 @stop
 
 @section('content')
