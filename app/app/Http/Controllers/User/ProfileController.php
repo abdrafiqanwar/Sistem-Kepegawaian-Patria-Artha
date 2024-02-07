@@ -60,7 +60,7 @@ class ProfileController extends Controller
             }
         }
 
-        return redirect()->route('user.personal-data');
+        return redirect()->route('user.personal-data')->with('success', 'Data berhasil disimpan');
     }
 
     public function update(Request $request){
@@ -112,7 +112,7 @@ class ProfileController extends Controller
             }
         }
 
-        return redirect()->route('user.personal-data');
+        return redirect()->route('user.personal-data')->with('success', 'Data berhasil disimpan');
     }
     
     public function image(Request $request){
@@ -126,6 +126,6 @@ class ProfileController extends Controller
         $data->profile_image_path = $nama_file;
         $data->save();
 
-        return redirect()->route('user.personal-data');
+        return redirect()->route('user.personal-data')->with('success', 'Foto berhasil disimpan');
     }
 }

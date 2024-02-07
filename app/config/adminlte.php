@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'SISTER | Login',
+    'title' => '| SISTER',
     'logo_img' => 'img/univ.png',
     'title_prefix' => '',
     'title_postfix' => '',
@@ -31,7 +31,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
